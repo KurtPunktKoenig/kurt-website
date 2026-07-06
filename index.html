@@ -1,852 +1,358 @@
 <!DOCTYPE html>
-<html class="scroll-smooth" lang="de">
+<html lang="de">
 <head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>KURT · einfach KI</title>
-<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
-<script id="tailwind-config">
-  tailwind.config = {
-    darkMode: "class",
-    theme: {
-      extend: {
-        colors: {
-          "surface-container": "#f0eded",
-          "primary-container": "#1a2b3c",
-          "tertiary-container": "#38260b",
-          "on-secondary-fixed": "#1c1c1a",
-          "on-tertiary-container": "#a88c69",
-          "inverse-on-surface": "#f3f0f0",
-          "on-primary": "#ffffff",
-          "primary": "#1a2b3c",
-          "error": "#ba1a1a",
-          "secondary": "#5f5e5c",
-          "surface-container-highest": "#e4e2e1",
-          "on-tertiary-fixed": "#281802",
-          "on-error": "#ffffff",
-          "on-secondary-container": "#636260",
-          "on-surface-variant": "#44474c",
-          "on-background": "#1b1c1c",
-          "inverse-surface": "#303030",
-          "surface-container-lowest": "#ffffff",
-          "inverse-primary": "#b7c8de",
-          "surface-container-high": "#eae8e7",
-          "secondary-fixed": "#e5e2df",
-          "surface-tint": "#4f6073",
-          "on-primary-fixed": "#0b1d2d",
-          "on-surface": "#1b1c1c",
-          "on-error-container": "#93000a",
-          "surface-container-low": "#f6f3f2",
-          "on-primary-container": "#8192a7",
-          "tertiary": "#211200",
-          "secondary-container": "#e2dfdc",
-          "outline": "#74777d",
-          "surface-dim": "#dcd9d9",
-          "primary-fixed": "#d2e4fb",
-          "on-primary-fixed-variant": "#38485a",
-          "tertiary-fixed-dim": "#e1c29b",
-          "on-tertiary-fixed-variant": "#584326",
-          "surface": "#fbf9f8",
-          "secondary-fixed-dim": "#c8c6c3",
-          "surface-variant": "#e4e2e1",
-          "error-container": "#ffdad6",
-          "on-tertiary": "#ffffff",
-          "surface-bright": "#fbf9f8",
-          "on-secondary-fixed-variant": "#474745",
-          "background": "#fbf9f8",
-          "outline-variant": "#c4c6cd",
-          "tertiary-fixed": "#feddb5",
-          "on-secondary": "#ffffff",
-          "primary-fixed-dim": "#b7c8de",
-          "brand-gold": "#c9a227"
-        },
-        borderRadius: {
-          DEFAULT: "0.125rem",
-          lg: "0.25rem",
-          xl: "0.5rem",
-          full: "9999px"
-        },
-        spacing: {
-          "unit": "8px",
-          "margin-desktop": "80px",
-          "margin-mobile": "24px",
-          "container-max": "1280px",
-          "stack-sm": "16px",
-          "gutter": "32px",
-          "stack-lg": "64px",
-          "stack-xl": "128px",
-          "stack-md": "40px"
-        },
-        fontFamily: {
-          sans: ["Manrope", "sans-serif"]
-        },
-        fontSize: {
-          "body-md":  ["16px", { lineHeight: "1.7", fontWeight: "400" }],
-          "label-md": ["13px", { lineHeight: "1.4", letterSpacing: "0.08em", fontWeight: "600" }],
-          "display-lg-mobile": ["38px", { lineHeight: "1.1", letterSpacing: "-0.025em", fontWeight: "600" }],
-          "body-lg":  ["18px", { lineHeight: "1.75", fontWeight: "400" }],
-          "headline-md": ["22px", { lineHeight: "1.35", fontWeight: "500" }],
-          "display-lg": ["56px", { lineHeight: "1.05", letterSpacing: "-0.03em", fontWeight: "600" }],
-          "label-sm": ["11px", { lineHeight: "1.4", fontWeight: "600" }],
-          "headline-lg": ["34px", { lineHeight: "1.2", letterSpacing: "-0.015em", fontWeight: "500" }]
-        }
-      }
-    }
-  }
-</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kurt König – KI für Geschäftsführer und Unternehmer</title>
+<meta name="description" content="KI-Beratung für Architekturbüros, Ingenieurbüros und wissensintensive Unternehmen. Orientierung statt Technikshow. Alles beginnt mit einem Kaffee.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
-  *, *::before, *::after { box-sizing: border-box; }
+  :root{
+    --warmweiss:#FBF9F5;
+    --anthrazit:#2C2B28;
+    --schwarz:#171614;
+    --gold:#B8922E;
+    --gold-hell:#D9BC6B;
+    --grau:#6E6B63;
+    --linie:#E7E2D8;
+    --max:1080px;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    font-family:'Inter',system-ui,sans-serif;
+    background:var(--warmweiss);
+    color:var(--anthrazit);
+    line-height:1.65;
+    font-size:17px;
+    -webkit-font-smoothing:antialiased;
+  }
+  h1,h2,h3,.serif{font-family:'Fraunces',Georgia,serif;font-weight:400}
+  .wrap{max-width:var(--max);margin:0 auto;padding:0 28px}
+  section{padding:110px 0}
+  .eyebrow{
+    font-size:12px;letter-spacing:.22em;text-transform:uppercase;
+    color:var(--gold);font-weight:600;margin-bottom:22px;
+  }
+  a{color:inherit}
 
-  html { font-family: "Manrope", sans-serif; }
+  /* ---------- Navigation ---------- */
+  nav{
+    position:sticky;top:0;z-index:50;
+    background:rgba(251,249,245,.92);backdrop-filter:blur(8px);
+    border-bottom:1px solid var(--linie);
+  }
+  .nav-inner{
+    max-width:var(--max);margin:0 auto;padding:18px 28px;
+    display:flex;justify-content:space-between;align-items:center;
+  }
+  .logo{font-family:'Fraunces',serif;font-size:20px;letter-spacing:.01em;text-decoration:none}
+  .logo span{color:var(--gold)}
+  .nav-links{display:flex;gap:34px;list-style:none}
+  .nav-links a{
+    text-decoration:none;font-size:14px;font-weight:500;color:var(--grau);
+    transition:color .2s;
+  }
+  .nav-links a:hover,.nav-links a:focus-visible{color:var(--anthrazit)}
+  .nav-cta{
+    text-decoration:none;font-size:14px;font-weight:600;
+    color:var(--anthrazit);border:1px solid var(--gold);
+    padding:9px 20px;border-radius:100px;transition:background .2s,color .2s;
+  }
+  .nav-cta:hover,.nav-cta:focus-visible{background:var(--gold);color:#fff}
+  @media(max-width:760px){.nav-links{display:none}}
 
-  body {
-    background-color: #fbf9f8;
-    color: #1b1c1c;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    overflow-x: hidden;
+  /* ---------- Hero ---------- */
+  .hero{padding:150px 0 130px;text-align:center;position:relative;overflow:hidden}
+  .hero h1{
+    font-size:clamp(42px,7vw,84px);
+    line-height:1.08;letter-spacing:-.015em;font-weight:300;
+    max-width:15ch;margin:0 auto 34px;
   }
+  .hero h1 em{font-style:italic;color:var(--gold)}
+  .hero p{
+    max-width:52ch;margin:0 auto 46px;color:var(--grau);font-size:19px;
+  }
+  .btn{
+    display:inline-block;text-decoration:none;font-weight:600;font-size:16px;
+    background:var(--anthrazit);color:#fff;
+    padding:16px 38px;border-radius:100px;
+    transition:background .2s,transform .15s;
+  }
+  .btn:hover,.btn:focus-visible{background:var(--schwarz);transform:translateY(-1px)}
+  .btn.gold{background:var(--gold)}
+  .btn.gold:hover{background:#A07E24}
+  .hero .hint{margin-top:20px;font-size:14px;color:var(--grau)}
 
-  /* ── Material icons ── */
-  .material-symbols-outlined {
-    font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+  /* Kaffeering als Signaturelement */
+  .ring{
+    position:absolute;border-radius:50%;
+    border:1.5px solid var(--gold-hell);opacity:.35;pointer-events:none;
   }
+  .ring.r1{width:420px;height:420px;top:-140px;right:-120px}
+  .ring.r2{width:260px;height:260px;top:-40px;right:20px;opacity:.2}
+  .ring.r3{width:340px;height:340px;bottom:-180px;left:-140px;opacity:.25}
 
-  /* ── Nav ── */
-  .nav-bar {
-    position: fixed;
-    top: 0;
-    width: 100%;
-    z-index: 50;
-    background: rgba(251,249,248,0.75);
-    backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(20px);
-    border-bottom: 1px solid transparent;
-    transition: border-color 0.35s, padding 0.35s, background 0.35s;
-  }
-  .nav-bar.scrolled {
-    border-color: rgba(196,198,205,0.25);
-    background: rgba(251,249,248,0.92);
-  }
-  .nav-inner {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 28px 80px;
-    max-width: 1280px;
-    margin: 0 auto;
-    transition: padding 0.35s;
-  }
-  .nav-bar.scrolled .nav-inner { padding-top: 16px; padding-bottom: 16px; }
-  @media (max-width: 768px) {
-    .nav-inner { padding-left: 24px; padding-right: 24px; }
-  }
+  /* ---------- Orientierung ---------- */
+  .split{display:grid;grid-template-columns:1fr 1fr;gap:70px;align-items:start}
+  @media(max-width:820px){.split{grid-template-columns:1fr;gap:36px}}
+  .split h2{font-size:clamp(30px,4vw,44px);line-height:1.15;letter-spacing:-.01em}
+  .split .lead{font-size:18px;margin-bottom:22px}
+  .split p{color:var(--grau);margin-bottom:18px}
+  .split p strong{color:var(--anthrazit);font-weight:600}
 
-  .nav-link {
-    font-size: 13px;
-    font-weight: 600;
-    letter-spacing: 0.07em;
-    text-transform: uppercase;
-    color: #5f5e5c;
-    text-decoration: none;
-    position: relative;
-    transition: color 0.2s;
-  }
-  .nav-link::after {
-    content: '';
-    position: absolute;
-    bottom: -3px;
-    left: 0;
-    width: 0;
-    height: 1px;
-    background: #c9a227;
-    transition: width 0.3s ease;
-  }
-  .nav-link:hover { color: #1a2b3c; }
-  .nav-link:hover::after { width: 100%; }
+  /* ---------- Für wen ---------- */
+  .dark{background:var(--anthrazit);color:#F4F1EA}
+  .dark .eyebrow{color:var(--gold-hell)}
+  .dark h2{font-size:clamp(30px,4vw,44px);margin-bottom:56px;max-width:22ch}
+  .who-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:#3D3C38}
+  @media(max-width:820px){.who-grid{grid-template-columns:1fr}}
+  .who{background:var(--anthrazit);padding:38px 32px}
+  .who h3{font-size:22px;margin-bottom:12px;color:#fff}
+  .who p{color:#B7B3A8;font-size:15.5px}
 
-  .btn-primary {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    background: #1a2b3c;
-    color: #fff;
-    font-size: 13px;
-    font-weight: 600;
-    letter-spacing: 0.07em;
-    text-transform: uppercase;
-    text-decoration: none;
-    padding: 14px 32px;
-    border-radius: 9999px;
-    border: 1px solid rgba(201,162,39,0.25);
-    transition: background 0.25s, transform 0.15s, box-shadow 0.25s;
-    box-shadow: 0 1px 3px rgba(26,43,60,0.08);
+  /* ---------- Angebote ---------- */
+  .angebote h2{font-size:clamp(30px,4vw,44px);margin-bottom:14px}
+  .angebote .sub{color:var(--grau);max-width:56ch;margin-bottom:64px}
+  .offer{
+    display:grid;grid-template-columns:180px 1fr auto;gap:28px;
+    padding:36px 0;border-top:1px solid var(--linie);align-items:baseline;
   }
-  .btn-primary:hover {
-    background: #253b52;
-    box-shadow: 0 4px 16px rgba(26,43,60,0.14);
-    transform: translateY(-1px);
-  }
-  .btn-primary:active { transform: translateY(0); }
+  .offer:last-of-type{border-bottom:1px solid var(--linie)}
+  @media(max-width:820px){.offer{grid-template-columns:1fr;gap:8px}}
+  .offer .tag{font-size:13px;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);font-weight:600}
+  .offer h3{font-size:24px;margin-bottom:8px}
+  .offer p{color:var(--grau);max-width:58ch;font-size:16px}
+  .offer .dauer{font-size:14px;color:var(--grau);white-space:nowrap}
+  .offer.flag{background:linear-gradient(90deg,rgba(184,146,46,.06),transparent 70%);
+    border-top:1px solid var(--gold-hell);padding-left:20px;padding-right:20px;margin:0 -20px}
+  .offer.flag+.offer{border-top:1px solid var(--gold-hell)}
 
-  .btn-light {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    background: #fbf9f8;
-    color: #1a2b3c;
-    font-size: 13px;
-    font-weight: 600;
-    letter-spacing: 0.07em;
-    text-transform: uppercase;
-    text-decoration: none;
-    padding: 18px 40px;
-    border-radius: 9999px;
-    border: 1px solid rgba(201,162,39,0.4);
-    transition: background 0.25s, transform 0.15s, box-shadow 0.25s;
-    box-shadow: 0 2px 8px rgba(26,43,60,0.06);
+  /* ---------- Haltung ---------- */
+  .haltung{background:#F4F0E8}
+  .haltung h2{font-size:clamp(30px,4vw,44px);margin-bottom:60px}
+  .prinzip-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:44px 60px}
+  @media(max-width:760px){.prinzip-grid{grid-template-columns:1fr}}
+  .prinzip h3{font-size:21px;margin-bottom:8px}
+  .prinzip h3::before{
+    content:"";display:inline-block;width:26px;height:2px;background:var(--gold);
+    vertical-align:middle;margin-right:14px;
   }
-  .btn-light:hover {
-    background: #f0eded;
-    box-shadow: 0 6px 24px rgba(26,43,60,0.12);
-    transform: translateY(-1px);
-  }
+  .prinzip p{color:var(--grau);font-size:15.5px;padding-left:40px}
 
-  /* ── Sections ── */
-  .section-label {
-    display: block;
-    font-size: 11px;
-    font-weight: 600;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-    color: rgba(95,94,92,0.55);
-    margin-bottom: 20px;
+  /* ---------- Über ---------- */
+  .ueber .zitat{
+    font-family:'Fraunces',serif;font-size:clamp(24px,3vw,32px);
+    line-height:1.4;font-style:italic;max-width:26ch;margin-bottom:30px;
   }
+  .ueber .zitat span{color:var(--gold)}
 
-  /* ── Gold accent line ── */
-  .gold-line {
-    display: inline-block;
-    width: 32px;
-    height: 1px;
-    background: #c9a227;
-    margin-right: 16px;
-    vertical-align: middle;
+  /* ---------- Kontakt ---------- */
+  .kontakt{text-align:center;padding:130px 0}
+  .kontakt h2{
+    font-size:clamp(36px,6vw,64px);font-weight:300;line-height:1.15;
+    max-width:16ch;margin:0 auto 24px;
   }
+  .kontakt h2 em{font-style:italic;color:var(--gold)}
+  .kontakt p{color:var(--grau);max-width:48ch;margin:0 auto 44px}
+  .kontakt .wege{
+    margin-top:44px;display:flex;gap:40px;justify-content:center;flex-wrap:wrap;
+    font-size:16px;
+  }
+  .kontakt .wege a{text-decoration:none;color:var(--anthrazit);font-weight:500;border-bottom:1px solid var(--gold);padding-bottom:2px}
+  .kontakt .wege a:hover{color:var(--gold)}
 
-  /* ── Cards ── */
-  .card-soft {
-    background: #f6f3f2;
-    border-radius: 1.5rem;
-    border: 1px solid rgba(196,198,205,0.2);
-    transition: box-shadow 0.3s, transform 0.3s;
-  }
-  .card-soft:hover {
-    box-shadow: 0 8px 32px rgba(26,43,60,0.07);
-    transform: translateY(-2px);
-  }
+  footer{border-top:1px solid var(--linie);padding:34px 0;font-size:13.5px;color:var(--grau)}
+  .foot{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px}
+  footer a{color:var(--grau);text-decoration:none}
+  footer a:hover{color:var(--anthrazit)}
 
-  /* ── Image containers ── */
-  .img-hero {
-    border-radius: 1.25rem;
-    overflow: hidden;
-    border: 1px solid rgba(201,162,39,0.22);
-    box-shadow: 0 24px 64px rgba(26,43,60,0.08), 0 2px 8px rgba(26,43,60,0.04);
+  /* Reveal */
+  .reveal{opacity:0;transform:translateY(18px);transition:opacity .7s ease,transform .7s ease}
+  .reveal.in{opacity:1;transform:none}
+  @media(prefers-reduced-motion:reduce){
+    .reveal{opacity:1;transform:none;transition:none}
+    html{scroll-behavior:auto}
   }
-  .img-dark {
-    border-radius: 1.5rem;
-    overflow: hidden;
-    border: 1px solid rgba(201,162,39,0.18);
-    box-shadow: 0 32px 80px rgba(0,0,0,0.2);
-  }
-  .img-portrait {
-    border-radius: 1rem;
-    overflow: hidden;
-    border: 1px solid rgba(196,198,205,0.2);
-    box-shadow: 0 24px 64px rgba(26,43,60,0.1);
-  }
-
-  /* ── Feature items ── */
-  .feature-item {
-    display: flex;
-    gap: 16px;
-    align-items: flex-start;
-    padding: 24px 0;
-    border-bottom: 1px solid rgba(196,198,205,0.2);
-    transition: opacity 0.2s;
-  }
-  .feature-item:last-child { border-bottom: none; }
-  .feature-item:hover { opacity: 0.8; }
-
-  /* ── Stat block ── */
-  .stat-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 1px;
-    background: rgba(196,198,205,0.2);
-    border-radius: 1rem;
-    overflow: hidden;
-    margin-top: 48px;
-  }
-  .stat-cell {
-    background: #fbf9f8;
-    padding: 32px;
-  }
-
-  /* ── Scroll animations ── */
-  .fade-up {
-    opacity: 0;
-    transform: translateY(24px);
-    transition: opacity 0.65s ease, transform 0.65s ease;
-  }
-  .fade-up.visible {
-    opacity: 1;
-    transform: translateY(0);
-  }
-  .fade-up.delay-1 { transition-delay: 0.1s; }
-  .fade-up.delay-2 { transition-delay: 0.2s; }
-  .fade-up.delay-3 { transition-delay: 0.3s; }
-  .fade-up.delay-4 { transition-delay: 0.4s; }
-
-  /* ── Mobile menu ── */
-  .mobile-menu {
-    display: none;
-    position: fixed;
-    inset: 0;
-    z-index: 40;
-    background: rgba(251,249,248,0.98);
-    backdrop-filter: blur(20px);
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 40px;
-    padding: 24px;
-  }
-  .mobile-menu.open { display: flex; }
-  .mobile-menu a {
-    font-size: 28px;
-    font-weight: 600;
-    color: #1a2b3c;
-    text-decoration: none;
-    letter-spacing: -0.02em;
-  }
-
-  /* ── Divider ── */
-  .section-divider {
-    width: 48px;
-    height: 1px;
-    background: linear-gradient(90deg, #c9a227, transparent);
-    margin-bottom: 32px;
-  }
-
-  /* ── Contact card glow ── */
-  .contact-card {
-    background: #1a2b3c;
-    color: #fff;
-    border-radius: 2.5rem;
-    border: 1px solid rgba(201,162,39,0.25);
-    position: relative;
-    overflow: hidden;
-  }
-  .contact-glow {
-    position: absolute;
-    width: 480px;
-    height: 480px;
-    background: radial-gradient(circle, rgba(201,162,39,0.08) 0%, transparent 70%);
-    top: -120px;
-    right: -120px;
-    pointer-events: none;
-  }
-  .contact-glow-2 {
-    position: absolute;
-    width: 320px;
-    height: 320px;
-    background: radial-gradient(circle, rgba(201,162,39,0.05) 0%, transparent 70%);
-    bottom: -80px;
-    left: 40px;
-    pointer-events: none;
-  }
-
-  /* ── Checklist ── */
-  .check-item {
-    display: flex;
-    align-items: center;
-    gap: 14px;
-    padding: 12px 0;
-  }
-  .check-icon {
-    width: 22px;
-    height: 22px;
-    border-radius: 50%;
-    background: rgba(201,162,39,0.12);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-shrink: 0;
-  }
-  .check-icon .material-symbols-outlined {
-    font-size: 14px;
-    color: #c9a227;
-  }
-
-  /* ── Horizontal rule ── */
-  hr.subtle { border: none; border-top: 1px solid rgba(196,198,205,0.2); }
-
-  /* ── Logo placeholder ── */
-  .logo-placeholder {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    text-decoration: none;
-  }
-  .logo-circle {
-    width: 44px;
-    height: 44px;
-    background: #1a2b3c;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: relative;
-    flex-shrink: 0;
-  }
-  .logo-circle::after {
-    content: '';
-    position: absolute;
-    inset: -2px;
-    border-radius: 50%;
-    border: 1px solid rgba(201,162,39,0.35);
-  }
-  .logo-text-wrap { display: flex; flex-direction: column; line-height: 1.1; }
-  .logo-name {
-    font-size: 17px;
-    font-weight: 700;
-    color: #1a2b3c;
-    letter-spacing: 0.04em;
-  }
-  .logo-claim {
-    font-size: 10px;
-    font-weight: 500;
-    color: #c9a227;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-  }
+  :focus-visible{outline:2px solid var(--gold);outline-offset:3px}
 </style>
 </head>
 <body>
 
-<!-- ════════════════════════════════
-     MOBILE MENU
-════════════════════════════════ -->
-<div class="mobile-menu" id="mobileMenu">
-  <button onclick="closeMobile()" style="position:absolute;top:28px;right:24px;background:none;border:none;cursor:pointer;">
-    <span class="material-symbols-outlined" style="font-size:28px;color:#1a2b3c;">close</span>
-  </button>
-  <a href="#workshops" onclick="closeMobile()">Workshops</a>
-  <a href="#strategy" onclick="closeMobile()">Strategie</a>
-  <a href="#about" onclick="closeMobile()">Über Kurt</a>
-  <a href="#contact" onclick="closeMobile()">Kontakt</a>
-  <a href="#contact" class="btn-primary" onclick="closeMobile()">Jetzt anfragen</a>
-</div>
-
-<!-- ════════════════════════════════
-     NAVIGATION
-════════════════════════════════ -->
-<nav class="nav-bar" id="nav">
+<nav>
   <div class="nav-inner">
-    <!-- Logo -->
-    <a href="#" class="logo-placeholder">
-      <img alt="KURT – EINFACH KI" style="height:48px;width:auto;object-fit:contain;"
-           src="https://lh3.googleusercontent.com/aida/AP1WRLvqvgGEsRouUAPOLp5Ta3_JmjRMonKRQMaMafdlV8olFVlWgOzcAieZGRuSABfpARytb8-sEWXPsAMA0C19bpmSbaiGUxADQwEsWfF67chkWKGupOwkH_YH0AqXhfhRMp3IlaeG3x-Ku5-V7GkE06vr0wwIN3tCzLtt_dxhuwMr4fPvJ7_CIvKDBZuxKAVPfytdnQ11WranpVG983ilDC8JsbKjpKw_btZ7IGMd-eS9ga7Dg7_LdAUmVw"
-           onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"/>
-      <div style="display:none" class="logo-placeholder">
-        <div class="logo-circle">
-          <span style="color:#fff;font-size:15px;font-weight:700;letter-spacing:0.04em;">K</span>
-        </div>
-        <div class="logo-text-wrap">
-          <span class="logo-name">KURT</span>
-          <span class="logo-claim">einfach KI</span>
-        </div>
-      </div>
-    </a>
-
-    <!-- Desktop nav -->
-    <div style="display:flex;align-items:center;gap:48px;" class="hidden-mobile">
-      <a class="nav-link" href="#workshops">Workshops</a>
-      <a class="nav-link" href="#strategy">Strategie</a>
-      <a class="nav-link" href="#about">Über Kurt</a>
-      <a class="nav-link" href="#contact">Kontakt</a>
-      <a class="btn-primary" href="#contact">Anfragen</a>
-    </div>
-
-    <!-- Mobile toggle -->
-    <button onclick="openMobile()" style="background:none;border:none;cursor:pointer;display:none;" class="show-mobile">
-      <span class="material-symbols-outlined" style="font-size:24px;color:#1a2b3c;">menu</span>
-    </button>
+    <a class="logo" href="#top">Kurt König<span>.</span></a>
+    <ul class="nav-links">
+      <li><a href="#orientierung">Orientierung</a></li>
+      <li><a href="#fuer-wen">Für wen</a></li>
+      <li><a href="#angebote">Angebote</a></li>
+      <li><a href="#haltung">Haltung</a></li>
+    </ul>
+    <a class="nav-cta" href="#kontakt">Kaffee vereinbaren</a>
   </div>
 </nav>
 
-<main style="padding-top:120px;">
-
-<!-- ════════════════════════════════
-     1. HERO
-════════════════════════════════ -->
-<section style="max-width:1280px;margin:0 auto;padding:80px 80px 128px;">
-  <div style="display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center;">
-
-    <div class="fade-up" style="order:2;">
-      <span class="section-label">
-        <span class="gold-line"></span>KI-Beratung für Unternehmen
-      </span>
-      <h1 style="font-size:clamp(36px,4.5vw,56px);font-weight:600;line-height:1.05;letter-spacing:-0.03em;color:#1a2b3c;margin:0 0 28px;max-width:480px;">
-        KI zum Anfassen für Führungskräfte und Teams
-      </h1>
-      <p style="font-size:18px;line-height:1.75;color:#5f5e5c;margin:0 0 48px;max-width:420px;">
-        Mehr Zeit für Menschen. Weniger Zeit für Dokumentation.
-      </p>
-      <div style="display:flex;flex-direction:column;gap:16px;align-items:flex-start;">
-        <a class="btn-primary" href="#contact" style="padding:18px 40px;font-size:13px;">
-          Kostenloses Erstgespräch
-        </a>
-      </div>
-      <div style="margin-top:56px;display:flex;align-items:center;gap:16px;">
-        <div style="height:1px;width:48px;background:rgba(196,198,205,0.6);"></div>
-        <p style="font-size:11px;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:rgba(95,94,92,0.5);">
-          Vertrauen · Fokus · Ergebnisse
-        </p>
-      </div>
+<header class="hero" id="top">
+  <div class="ring r1"></div><div class="ring r2"></div><div class="ring r3"></div>
+  <div class="wrap">
+    <p class="eyebrow reveal">KI für Geschäftsführer und Unternehmer</p>
+    <h1 class="reveal">Alles beginnt mit <em>einem Kaffee.</em></h1>
+    <p class="reveal">Ich helfe Architekturbüros, Ingenieurbüros und wissensintensiven Unternehmen, KI sinnvoll einzusetzen. Ohne Technikshow. Mit klaren Anwendungsfällen, die Menschen mitnehmen.</p>
+    <div class="reveal">
+      <a class="btn gold" href="#kontakt">Gespräch vereinbaren</a>
+      <p class="hint">Unverbindlich. 30 Minuten. Ein Kaffee.</p>
     </div>
-
-    <div class="fade-up delay-2" style="order:2;">
-      <div class="img-hero" style="aspect-ratio:4/3;">
-        <img alt="Zwei Menschen im Gespräch beim Workshop"
-             style="width:100%;height:100%;object-fit:cover;display:block;transition:transform 0.6s ease;"
-             onmouseover="this.style.transform='scale(1.02)'"
-             onmouseout="this.style.transform='scale(1)'"
-             src="https://lh3.googleusercontent.com/aida/AP1WRLuWqsp_Vb68N3DoBwOAEhZRlcZ83-Kpjm41Uxz7zgT0eqhFqh0POXrHOz4E-lQE6YjbV8qyFAoX-Fex6PWDaauGHDahXCslSZoFqSLF5mGyN_yBIikdFfoTBVJ9HdOL5p0xfkAH68QqLQVra2uM_1AJ_MNpBYufHXQICiY57yvtD7BYK66lsZEonzImtrRA_QpLYcqj3t2YfawwgBNyF8v1E0My9KsapEADIxz-iwvVxCeFy2xCFk_vxjs"/>
-      </div>
-    </div>
-
   </div>
-</section>
+</header>
 
-<!-- ════════════════════════════════
-     2. WORKSHOPS (dunkel)
-════════════════════════════════ -->
-<section style="background:#1a2b3c;color:#fff;padding:128px 0;" id="workshops">
-  <div style="max-width:1280px;margin:0 auto;padding:0 80px;">
-
-    <div class="fade-up" style="margin-bottom:72px;">
-      <span style="display:block;font-size:11px;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:rgba(201,162,39,0.7);margin-bottom:20px;">
-        <span style="display:inline-block;width:24px;height:1px;background:#c9a227;margin-right:12px;vertical-align:middle;"></span>
-        Praxisorientiert
-      </span>
-      <h2 style="font-size:clamp(28px,3vw,36px);font-weight:500;line-height:1.2;letter-spacing:-0.015em;margin:0;max-width:480px;">
-        Energie und echte Interaktion
-      </h2>
+<section id="orientierung">
+  <div class="wrap split">
+    <div class="reveal">
+      <p class="eyebrow">Warum</p>
+      <h2>Menschen kaufen Orientierung.<br>Nicht KI.</h2>
     </div>
-
-    <div style="display:grid;grid-template-columns:7fr 5fr;gap:64px;align-items:center;">
-
-      <div class="fade-up delay-1">
-        <div class="img-dark" style="aspect-ratio:16/9;">
-          <img alt="Kollaboration am Whiteboard"
-               style="width:100%;height:100%;object-fit:cover;display:block;transition:transform 0.6s ease;"
-               onmouseover="this.style.transform='scale(1.02)'"
-               onmouseout="this.style.transform='scale(1)'"
-               src="https://lh3.googleusercontent.com/aida/AP1WRLsCrrPpqJL3eCmlRVhC_xxj25iUiP73cacQvO9csk9W898CVVlSbpVArbE9dDMVF4l_TJaZasN44SjvElKpXwo7xQmTnvqcLwE1PW7p2ZY-DEzNtdcgyMwBygNeiZYKZJvYvRGm6jSMtF58SiLMZnEoaPjGiUIjB9S9Sp4-tLXy9Nkf5e5yW191Jbys0FL1x0-DXc2h44b9JhPEh_pKZN25nAxWurCBM9ajsqW5_zhNdEc1h0hND5qlhtk"/>
-        </div>
-      </div>
-
-      <div class="fade-up delay-2">
-        <h3 style="font-size:22px;font-weight:500;line-height:1.35;margin:0 0 20px;color:#fff;">
-          Greifbare Ergebnisse entwickeln
-        </h3>
-        <p style="font-size:16px;line-height:1.75;color:rgba(255,255,255,0.65);margin:0 0 40px;">
-          In unseren Workshops verlassen wir die abstrakte Theorie. Wir nutzen physische Räume und direkte Interaktion, um KI als echtes Werkzeug in Ihrem Team zu verankern.
-        </p>
-        <div>
-          <div class="check-item" style="border-bottom:1px solid rgba(255,255,255,0.08);padding-bottom:16px;margin-bottom:16px;">
-            <div class="check-icon"><span class="material-symbols-outlined">check</span></div>
-            <span style="font-size:15px;color:rgba(255,255,255,0.8);">Direkte Anwendung auf Ihre Projekte</span>
-          </div>
-          <div class="check-item">
-            <div class="check-icon"><span class="material-symbols-outlined">check</span></div>
-            <span style="font-size:15px;color:rgba(255,255,255,0.8);">Physische Strategie-Boards</span>
-          </div>
-        </div>
-      </div>
-
+    <div class="reveal">
+      <p class="lead">KI verändert gerade, wie Unternehmen arbeiten. Viele spüren: Das betrifft uns. Aber wo anfangen?</p>
+      <p><strong>Genau dort setze ich an.</strong> Nicht mit Tool-Listen und Buzzwords, sondern mit der Frage, wo KI in Ihrem Alltag echten Nutzen schafft – in Projekten, Kommunikation, Dokumentation und Wissensbewahrung.</p>
+      <p>Das Ergebnis ist keine Präsentation, die man abheftet. Es sind sichtbare Ergebnisse, die am nächsten Morgen genutzt werden.</p>
     </div>
   </div>
 </section>
 
-<!-- ════════════════════════════════
-     3. STRATEGIE
-════════════════════════════════ -->
-<section style="max-width:1280px;margin:0 auto;padding:128px 80px;" id="strategy">
-  <div style="display:grid;grid-template-columns:5fr 7fr;gap:80px;align-items:center;">
-
-    <div class="fade-up" style="order:2;">
-      <div class="section-divider"></div>
-      <span class="section-label">Struktur</span>
-      <h2 style="font-size:clamp(28px,3vw,36px);font-weight:500;line-height:1.2;letter-spacing:-0.015em;color:#1a2b3c;margin:0 0 24px;">
-        KI-Architektur für Ihr Business
-      </h2>
-      <p style="font-size:16px;line-height:1.75;color:#5f5e5c;margin:0 0 40px;">
-        Wir blicken tief in Ihre Unternehmensprozesse. Gemeinsam identifizieren wir die Hebel, bei denen Technologie Ihre Mitarbeiter wirklich entlastet und Raum für kreative Wertschöpfung schafft.
-      </p>
-      <div class="card-soft" style="padding:32px;">
-        <h4 style="font-size:16px;font-weight:600;color:#1a2b3c;margin:0 0 12px;">Praxisnahe Strategie</h4>
-        <p style="font-size:15px;line-height:1.7;color:rgba(95,94,92,0.75);margin:0;">
-          Keine theoretischen Konzepte, sondern funktionierende Abläufe mit der Präzision eines Architekturbüros.
-        </p>
+<section class="dark" id="fuer-wen">
+  <div class="wrap">
+    <p class="eyebrow reveal">Für wen</p>
+    <h2 class="reveal">Für Unternehmen, die von Wissen und Menschen leben.</h2>
+    <div class="who-grid reveal">
+      <div class="who">
+        <h3>Architekturbüros</h3>
+        <p>Entwürfe, Ausschreibungen, Protokolle, Bauherren-Kommunikation – KI entlastet dort, wo Routinearbeit Zeit frisst, die am Entwurf fehlt.</p>
       </div>
-    </div>
-
-    <div class="fade-up delay-2" style="order:1;">
-      <div style="border-radius:1.5rem;overflow:hidden;aspect-ratio:16/9;border:1px solid rgba(196,198,205,0.2);box-shadow:0 20px 60px rgba(26,43,60,0.06);">
-        <img alt="Strategische Zusammenarbeit"
-             style="width:100%;height:100%;object-fit:cover;display:block;transition:transform 0.6s ease;"
-             onmouseover="this.style.transform='scale(1.02)'"
-             onmouseout="this.style.transform='scale(1)'"
-             src="https://lh3.googleusercontent.com/aida/AP1WRLsrtjnKIZ_p9of2h_4uh5lo3e2_RTr63yZ6sel8_0yB4gkbyshOoRaPbVP-oa9dqiF6mlbqQIxctoZ9uaDguGHPt27L2_4bL5GcRZTtDMdyZ60kKhLfAl2X-ogf-Sap0ad03Jw4gIvdIXJZ4lkm0I5605RYzCwJmEf2QZArj6epcTygCqjnMa_qixti1vaDW8cOG8JCYRVzRZ96r7-vihKe1O21hBzJ3M_hU8FgGBOkTYQCidYRCj5BwQ"/>
+      <div class="who">
+        <h3>Ingenieurbüros</h3>
+        <p>Berichte, Dokumentation, Recherche, Wissenssicherung – präzise Unterstützung für präzise Arbeit.</p>
       </div>
-    </div>
-
-  </div>
-</section>
-
-<!-- ════════════════════════════════
-     4. POTENZIALANALYSE
-════════════════════════════════ -->
-<section style="background:#f6f3f2;padding:128px 0;">
-  <div style="max-width:1280px;margin:0 auto;padding:0 80px;">
-    <div style="display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center;">
-
-      <div class="fade-up">
-        <div style="border-radius:1.5rem;overflow:hidden;border:1px solid rgba(201,162,39,0.12);box-shadow:0 16px 48px rgba(26,43,60,0.07);">
-          <img alt="Strategie-Details und Fokus"
-               style="width:100%;height:100%;object-fit:cover;display:block;aspect-ratio:4/3;transition:transform 0.6s ease;"
-               onmouseover="this.style.transform='scale(1.02)'"
-               onmouseout="this.style.transform='scale(1)'"
-               src="https://lh3.googleusercontent.com/aida/AP1WRLuL6EeEN8vFAU_OYPUtHZCH2V0A6S4EWUNNCOhMerUFp9s3IbyI0HxrMo58nRl7qus0OLW8QHZmM3nIaTnWNKUK6PNKYSJKOmdRL_n02BvPKg6Lji7TaNARuyKJB5WIujELx8SzeAtEfnrKokChDtwYnQSRFuebHfa8rqZITA1jdzDsUJsD-WgnAMXCdXdWgkLf-rnGZwFk-d34m2KYC-m56TwJMA9AX2bXvVWowT6_74uaP1q0Y1JOUQ"/>
-        </div>
-      </div>
-
-      <div class="fade-up delay-2">
-        <div class="section-divider"></div>
-        <span class="section-label">Analyse</span>
-        <h2 style="font-size:clamp(28px,3vw,36px);font-weight:500;line-height:1.2;letter-spacing:-0.015em;color:#1a2b3c;margin:0 0 24px;">
-          Ehrliche Potenziale erkennen
-        </h2>
-        <p style="font-size:17px;line-height:1.75;color:#5f5e5c;margin:0 0 48px;">
-          In exklusiven Review-Sessions analysieren wir die Chancen für Ihr Führungsteam. Wir trennen Hype von Nutzbarkeit und schaffen Klarheit für Ihre nächsten Entscheidungen.
-        </p>
-        <div class="feature-item">
-          <span class="material-symbols-outlined" style="color:#c9a227;font-size:26px;margin-top:2px;flex-shrink:0;">lightbulb</span>
-          <div>
-            <h4 style="font-size:14px;font-weight:700;letter-spacing:0.04em;color:#1a2b3c;margin:0 0 6px;">Klarheit statt Buzzwords</h4>
-            <p style="font-size:14px;line-height:1.6;color:rgba(95,94,92,0.7);margin:0;">Wir sprechen die Sprache von Entscheidern, nicht von IT-Abteilungen.</p>
-          </div>
-        </div>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-<!-- ════════════════════════════════
-     5. ÜBER KURT
-════════════════════════════════ -->
-<section style="max-width:1280px;margin:0 auto;padding:128px 80px;" id="about">
-  <div style="display:grid;grid-template-columns:5fr 7fr;gap:80px;align-items:center;">
-
-    <div class="fade-up">
-      <div class="img-portrait" style="aspect-ratio:4/5;">
-        <img alt="Kurt König Portrait"
-             style="width:100%;height:100%;object-fit:cover;display:block;"
-             src="https://lh3.googleusercontent.com/aida/AP1WRLvIvJH0RIycafswNkNkok_-YoGp6av9uxFG9zQ_Nm5L5MLL-XTvUqVc87ylFu97Utehmu04jO3KT1Cfd0TGLbWXvg2n__n6IVATGbWGIBI0qwFK-bzCZf-63GusfBzYYy8N3nkuoKuNCRPUaApzH9SwaT1m8a2nZvov6w153-guk30B2dB3Fovgpz_PlFPSemr_d8pl86aEu2rtc8psl7ehDqteIsoI0_Xyi1lf-QZB_ykGIcvsFzCXlg"/>
-      </div>
-    </div>
-
-    <div class="fade-up delay-1">
-      <div class="section-divider"></div>
-      <span class="section-label">Ihr Begleiter</span>
-      <h2 style="font-size:clamp(28px,3vw,36px);font-weight:500;line-height:1.2;letter-spacing:-0.015em;color:#1a2b3c;margin:0 0 32px;">
-        Kurt König
-      </h2>
-      <p style="font-size:17px;line-height:1.8;color:#5f5e5c;margin:0 0 20px;">
-        Mit jahrzehntelanger Erfahrung in Führung und Strategieberatung verstehe ich die Sorgen von Unternehmern. KI ist für mich kein Selbstzweck, sondern ein Befreier von monotonen Aufgaben.
-      </p>
-      <p style="font-size:16px;line-height:1.8;color:rgba(95,94,92,0.75);margin:0 0 56px;">
-        Mein Ansatz ist human-zentriert. Wir nutzen Technologie, um mehr Raum für das zu schaffen, was uns als Menschen ausmacht. Kreativität, Empathie und strategisches Denken.
-      </p>
-
-      <div style="display:grid;grid-template-columns:1fr 1fr;gap:0;border-top:1px solid rgba(196,198,205,0.25);padding-top:48px;">
-        <div style="padding:0 32px 0 0;border-right:1px solid rgba(196,198,205,0.25);">
-          <span class="material-symbols-outlined" style="color:#c9a227;font-size:28px;display:block;margin-bottom:16px;">verified_user</span>
-          <h4 style="font-size:12px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:#1a2b3c;margin:0 0 10px;">Erfahrung</h4>
-          <p style="font-size:14px;line-height:1.6;color:rgba(95,94,92,0.65);margin:0;">Praxiserprobte Strategien aus echten Business-Situationen.</p>
-        </div>
-        <div style="padding:0 0 0 32px;">
-          <span class="material-symbols-outlined" style="color:#c9a227;font-size:28px;display:block;margin-bottom:16px;">architecture</span>
-          <h4 style="font-size:12px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:#1a2b3c;margin:0 0 10px;">Präzision</h4>
-          <p style="font-size:14px;line-height:1.6;color:rgba(95,94,92,0.65);margin:0;">Strukturierte Umsetzung mit Fokus auf nachhaltige Wirkung.</p>
-        </div>
-      </div>
-    </div>
-
-  </div>
-</section>
-
-<!-- ════════════════════════════════
-     6. KONTAKT
-════════════════════════════════ -->
-<section style="padding:0 80px 128px;" id="contact">
-  <div style="max-width:1280px;margin:0 auto;">
-    <div class="contact-card fade-up">
-      <div class="contact-glow"></div>
-      <div class="contact-glow-2"></div>
-      <div style="position:relative;z-index:1;padding:96px;text-align:center;">
-        <span style="display:block;font-size:11px;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:rgba(201,162,39,0.7);margin-bottom:24px;">
-          <span style="display:inline-block;width:20px;height:1px;background:#c9a227;margin-right:10px;vertical-align:middle;"></span>
-          Nächster Schritt
-          <span style="display:inline-block;width:20px;height:1px;background:#c9a227;margin-left:10px;vertical-align:middle;"></span>
-        </span>
-        <h2 style="font-size:clamp(32px,4vw,48px);font-weight:600;line-height:1.1;letter-spacing:-0.025em;margin:0 0 28px;max-width:560px;margin-left:auto;margin-right:auto;">
-          Bereit für den nächsten Schritt?
-        </h2>
-        <p style="font-size:17px;line-height:1.75;color:rgba(255,255,255,0.65);margin:0 auto 56px;max-width:480px;">
-          Lassen Sie uns in einem unverbindlichen Gespräch herausfinden, wo KI Ihr Team wirklich entlasten kann.
-        </p>
-        <a class="btn-light" href="mailto:kontakt@kurt.de">
-          Kostenloses Kennenlernen vereinbaren
-        </a>
+      <div class="who">
+        <h3>Wissensintensive KMU</h3>
+        <p>Für Geschäftsführer, die KI nicht nur ausprobieren, sondern gezielt für bessere Entscheidungen und mehr Freiraum nutzen wollen.</p>
       </div>
     </div>
   </div>
 </section>
 
-</main>
+<section class="angebote" id="angebote">
+  <div class="wrap">
+    <p class="eyebrow reveal">Angebote</p>
+    <h2 class="reveal">Vom ersten Impuls bis zur Begleitung.</h2>
+    <p class="sub reveal">Vier klare Formate. Jeweils ein Ziel. Think Big. Start Small.</p>
 
-<!-- ════════════════════════════════
-     FOOTER
-════════════════════════════════ -->
-<footer style="border-top:1px solid rgba(196,198,205,0.2);padding-top:80px;padding-bottom:40px;">
-  <div style="max-width:1280px;margin:0 auto;padding:0 80px;">
+    <div class="offer reveal">
+      <span class="tag">Einstieg</span>
+      <div>
+        <h3>KI-Impuls</h3>
+        <p>Ein Vortrag oder eine Mitarbeiterversammlung, die Neugier erzeugt statt Angst. Ihr Team sagt danach: „Das betrifft mich – und das will ich ausprobieren."</p>
+      </div>
+      <span class="dauer">60–90 Minuten</span>
+    </div>
 
-    <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:64px;flex-wrap:wrap;gap:32px;">
-      <a href="#" class="logo-placeholder">
-        <img alt="KURT – EINFACH KI" style="height:52px;width:auto;object-fit:contain;"
-             src="https://lh3.googleusercontent.com/aida/AP1WRLvqvgGEsRouUAPOLp5Ta3_JmjRMonKRQMaMafdlV8olFVlWgOzcAieZGRuSABfpARytb8-sEWXPsAMA0C19bpmSbaiGUxADQwEsWfF67chkWKGupOwkH_YH0AqXhfhRMp3IlaeG3x-Ku5-V7GkE06vr0wwIN3tCzLtt_dxhuwMr4fPvJ7_CIvKDBZuxKAVPfytdnQ11WranpVG983ilDC8JsbKjpKw_btZ7IGMd-eS9ga7Dg7_LdAUmVw"
-             onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"/>
-        <div style="display:none" class="logo-placeholder">
-          <div class="logo-circle">
-            <span style="color:#fff;font-size:15px;font-weight:700;">K</span>
-          </div>
-          <div class="logo-text-wrap">
-            <span class="logo-name">KURT</span>
-            <span class="logo-claim">einfach KI</span>
-          </div>
-        </div>
-      </a>
-      <div style="display:flex;gap:40px;flex-wrap:wrap;">
-        <a href="#" style="font-size:14px;color:#5f5e5c;text-decoration:none;transition:color 0.2s;" onmouseover="this.style.color='#1a2b3c'" onmouseout="this.style.color='#5f5e5c'">Impressum</a>
-        <a href="#" style="font-size:14px;color:#5f5e5c;text-decoration:none;transition:color 0.2s;" onmouseover="this.style.color='#1a2b3c'" onmouseout="this.style.color='#5f5e5c'">Datenschutz</a>
-        <a href="#" style="font-size:14px;color:#5f5e5c;text-decoration:none;transition:color 0.2s;" onmouseover="this.style.color='#1a2b3c'" onmouseout="this.style.color='#5f5e5c'">AGB</a>
-        <a href="#" style="font-size:14px;color:#5f5e5c;text-decoration:none;transition:color 0.2s;" onmouseover="this.style.color='#1a2b3c'" onmouseout="this.style.color='#5f5e5c'">LinkedIn</a>
+    <div class="offer reveal">
+      <span class="tag">Klarheit</span>
+      <div>
+        <h3>KI-Klarheitstag</h3>
+        <p>Ein Tag mit der Führung: Wo stehen wir? Wo lohnt sich KI wirklich? Was lassen wir bewusst weg? Ergebnis: eine klare, priorisierte Richtung.</p>
+      </div>
+      <span class="dauer">1 Tag</span>
+    </div>
+
+    <div class="offer flag reveal">
+      <span class="tag">Flaggschiff</span>
+      <div>
+        <h3>AI Leadership Starter Kit</h3>
+        <p>Ein Workshop. Acht Ergebnisse. Ein gemeinsamer Weg. Vom Premium-Fotoprotokoll über Ihren digitalen Denkpartner bis zur Promptbibliothek – Sie nehmen ein komplettes Paket mit, das Sie jeden Tag unterstützt.</p>
+      </div>
+      <span class="dauer">1 Workshop-Tag</span>
+    </div>
+
+    <div class="offer reveal">
+      <span class="tag">Dranbleiben</span>
+      <div>
+        <h3>KI-Begleitung</h3>
+        <p>Regelmäßige Sparrings, damit aus dem Start eine Gewohnheit wird. Evolution statt Revolution – Schritt für Schritt, im echten Alltag.</p>
+      </div>
+      <span class="dauer">fortlaufend</span>
+    </div>
+  </div>
+</section>
+
+<section class="haltung" id="haltung">
+  <div class="wrap">
+    <p class="eyebrow reveal">Haltung</p>
+    <h2 class="reveal">Woran Sie meine Arbeit erkennen.</h2>
+    <div class="prinzip-grid">
+      <div class="prinzip reveal">
+        <h3>Menschen vor Technologie</h3>
+        <p>Technologie ist Mittel, nicht Ziel. Veränderung gelingt, wenn Menschen mitgenommen werden.</p>
+      </div>
+      <div class="prinzip reveal">
+        <h3>Wirkung vor Perfektion</h3>
+        <p>Lieber heute starten und morgen besser werden, als auf den perfekten Plan warten.</p>
+      </div>
+      <div class="prinzip reveal">
+        <h3>Evolution statt Revolution</h3>
+        <p>Kleine Schritte, kontinuierlich verbessert. So entsteht Veränderung, die bleibt.</p>
+      </div>
+      <div class="prinzip reveal">
+        <h3>Spuren schaffen</h3>
+        <p>Erkenntnisse werden gesichert, Wissen bewahrt. Damit gute Gedanken nicht verloren gehen.</p>
       </div>
     </div>
+  </div>
+</section>
 
-    <hr class="subtle"/>
-    <div style="display:flex;justify-content:space-between;align-items:center;padding-top:28px;flex-wrap:wrap;gap:12px;">
-      <p style="font-size:13px;color:rgba(95,94,92,0.4);margin:0;">© 2025 KURT · einfach KI. Alle Rechte vorbehalten.</p>
-      <p style="font-size:13px;color:rgba(95,94,92,0.4);margin:0;">Human Intelligence first.</p>
+<section class="ueber" id="ueber">
+  <div class="wrap split">
+    <div class="reveal">
+      <p class="eyebrow">Über mich</p>
+      <p class="zitat">„Nicht alles selbst wissen. Aber die richtigen <span>Fragen</span> stellen."</p>
     </div>
+    <div class="reveal">
+      <p class="lead">Ich bin Kurt König – Berater für KI, Veränderung und Zusammenarbeit aus Würzburg.</p>
+      <p>Ich begleite seit vielen Jahren Unternehmen durch Veränderungsprozesse: agile Transformation, Teamarbeit, Führung. KI ist für mich die konsequente Fortsetzung dieser Arbeit – ein Werkzeug, das Entscheidungen verbessert und Freiräume schafft, wenn man es richtig einführt.</p>
+      <p>Meine Arbeitsweise: direkt, pragmatisch, kritisch. Keine Technikshow. Sichtbare Ergebnisse.</p>
+    </div>
+  </div>
+</section>
+
+<section class="kontakt" id="kontakt">
+  <div class="wrap">
+    <p class="eyebrow reveal">Kontakt</p>
+    <h2 class="reveal">Lassen Sie uns mit einem <em>Kaffee</em> beginnen.</h2>
+    <p class="reveal">30 Minuten, unverbindlich. Wir sprechen über Ihr Unternehmen und schauen gemeinsam, wo KI für Sie echten Nutzen schaffen kann.</p>
+    <div class="reveal">
+      <a class="btn gold" href="mailto:kurtpunktkoenig@gmail.com?subject=Kaffee%20%26%20KI">Termin anfragen</a>
+      <div class="wege">
+        <a href="tel:+4915248821830">+49 152 4882 183</a>
+        <a href="mailto:kurtpunktkoenig@gmail.com">kurtpunktkoenig@gmail.com</a>
+        <span>Würzburg · remote &amp; vor Ort</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap foot">
+    <span>© 2026 Kurt König · KI für Geschäftsführer und Unternehmer</span>
+    <span><a href="impressum.html">Impressum</a> · <a href="datenschutz.html">Datenschutz</a></span>
   </div>
 </footer>
 
-<!-- ════════════════════════════════
-     RESPONSIVE (Mobile/Tablet)
-════════════════════════════════ -->
-<style>
-  @media (max-width: 768px) {
-    .hidden-mobile { display: none !important; }
-    .show-mobile { display: block !important; }
-
-    section, main > * {
-      padding-left: 24px !important;
-      padding-right: 24px !important;
-    }
-
-    /* Hero */
-    section:first-of-type > div { grid-template-columns: 1fr !important; gap: 40px !important; }
-    section:first-of-type > div > div:first-child { order: 2 !important; }
-    section:first-of-type > div > div:last-child { order: 1 !important; }
-
-    /* All 2-col grids → 1 col */
-    [style*="grid-template-columns:1fr 1fr"],
-    [style*="grid-template-columns:5fr 7fr"],
-    [style*="grid-template-columns:7fr 5fr"] {
-      grid-template-columns: 1fr !important;
-      gap: 40px !important;
-    }
-
-    h1 { font-size: 34px !important; }
-    h2 { font-size: 26px !important; }
-    .contact-card > div { padding: 48px 24px !important; }
-    footer > div { padding-left: 24px !important; padding-right: 24px !important; }
-    footer > div > div:first-child { flex-direction: column !important; align-items: flex-start !important; }
-
-    /* Stack stats */
-    [style*="grid-template-columns:1fr 1fr"]:last-of-type { grid-template-columns: 1fr !important; }
-  }
-
-  @media (min-width: 769px) {
-    .hidden-mobile { display: flex !important; }
-    .show-mobile { display: none !important; }
-  }
-
-  @media (max-width: 1024px) and (min-width: 769px) {
-    .nav-inner { padding-left: 40px !important; padding-right: 40px !important; }
-    section { padding-left: 40px !important; padding-right: 40px !important; }
-  }
-</style>
-
-<!-- ════════════════════════════════
-     SCRIPTS
-════════════════════════════════ -->
 <script>
-  // Nav scroll
-  const nav = document.getElementById('nav');
-  window.addEventListener('scroll', () => {
-    nav.classList.toggle('scrolled', window.scrollY > 24);
-  }, { passive: true });
-
-  // Scroll animations
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('visible');
-      }
-    });
-  }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
-
-  document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
-
-  // Mobile menu
-  function openMobile() { document.getElementById('mobileMenu').classList.add('open'); document.body.style.overflow='hidden'; }
-  function closeMobile() { document.getElementById('mobileMenu').classList.remove('open'); document.body.style.overflow=''; }
-
-  // Button press micro-interaction
-  document.querySelectorAll('a, button').forEach(el => {
-    el.addEventListener('mousedown', () => { el.style.transform = (el.style.transform || '') + ' scale(0.97)'; });
-    el.addEventListener('mouseup', () => { el.style.transform = el.style.transform.replace(' scale(0.97)', ''); });
-    el.addEventListener('mouseleave', () => { el.style.transform = el.style.transform.replace(' scale(0.97)', ''); });
-  });
+  const io=new IntersectionObserver(es=>{
+    es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})
+  },{threshold:.12});
+  document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
 </script>
-
 </body>
 </html>
