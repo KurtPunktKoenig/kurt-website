@@ -1,0 +1,602 @@
+<title>Wissensverlust-Rechner | KI Kurt</title>
+<style>
+  :root {
+    --navy: #1a2744;
+    --navy-light: #2a3a5c;
+    --amber: #c4841d;
+    --amber-glow: #e09a2e;
+    --surface: #f3f4f7;
+    --surface-warm: #fdf6ec;
+    --card: #ffffff;
+    --text: #2c3345;
+    --text-secondary: #5e6678;
+    --text-muted: #8b92a1;
+    --border: #dde0e7;
+    --input-bg: #ffffff;
+    --input-border: #c8ccd4;
+    --input-focus: #c4841d;
+    --result-bg: #fdf6ec;
+    --result-border: #e8d5b8;
+    --breakdown-bg: #f8f9fb;
+    --page-bg: #f3f4f7;
+    --shadow: rgba(26, 39, 68, 0.08);
+    --shadow-strong: rgba(26, 39, 68, 0.14);
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --navy: #b8c4da;
+      --navy-light: #8a9bbd;
+      --amber: #e0a43a;
+      --amber-glow: #f0b84e;
+      --surface: #111820;
+      --surface-warm: #1c1a14;
+      --card: #1a2030;
+      --text: #d4d8e0;
+      --text-secondary: #9aa0b0;
+      --text-muted: #6b7186;
+      --border: #2a3244;
+      --input-bg: #141b28;
+      --input-border: #2e3a50;
+      --input-focus: #e0a43a;
+      --result-bg: #1e1c14;
+      --result-border: #3a3224;
+      --breakdown-bg: #161d2a;
+      --page-bg: #0e1218;
+      --shadow: rgba(0, 0, 0, 0.3);
+      --shadow-strong: rgba(0, 0, 0, 0.5);
+    }
+  }
+
+  :root[data-theme="dark"] {
+    --navy: #b8c4da;
+    --navy-light: #8a9bbd;
+    --amber: #e0a43a;
+    --amber-glow: #f0b84e;
+    --surface: #111820;
+    --surface-warm: #1c1a14;
+    --card: #1a2030;
+    --text: #d4d8e0;
+    --text-secondary: #9aa0b0;
+    --text-muted: #6b7186;
+    --border: #2a3244;
+    --input-bg: #141b28;
+    --input-border: #2e3a50;
+    --input-focus: #e0a43a;
+    --result-bg: #1e1c14;
+    --result-border: #3a3224;
+    --breakdown-bg: #161d2a;
+    --page-bg: #0e1218;
+    --shadow: rgba(0, 0, 0, 0.3);
+    --shadow-strong: rgba(0, 0, 0, 0.5);
+  }
+
+  :root[data-theme="light"] {
+    --navy: #1a2744;
+    --navy-light: #2a3a5c;
+    --amber: #c4841d;
+    --amber-glow: #e09a2e;
+    --surface: #f3f4f7;
+    --surface-warm: #fdf6ec;
+    --card: #ffffff;
+    --text: #2c3345;
+    --text-secondary: #5e6678;
+    --text-muted: #8b92a1;
+    --border: #dde0e7;
+    --input-bg: #ffffff;
+    --input-border: #c8ccd4;
+    --input-focus: #c4841d;
+    --result-bg: #fdf6ec;
+    --result-border: #e8d5b8;
+    --breakdown-bg: #f8f9fb;
+    --page-bg: #f3f4f7;
+    --shadow: rgba(26, 39, 68, 0.08);
+    --shadow-strong: rgba(26, 39, 68, 0.14);
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: -apple-system, 'Segoe UI', system-ui, Helvetica, Arial, sans-serif;
+    color: var(--text);
+    background: var(--page-bg);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .container {
+    max-width: 580px;
+    margin: 0 auto;
+    padding: 2.5rem 1.25rem 4rem;
+  }
+
+  /* --- Header --- */
+  .header {
+    text-align: center;
+    margin-bottom: 2.5rem;
+  }
+
+  .brand {
+    font-family: -apple-system, 'Segoe UI', system-ui, sans-serif;
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--amber);
+    margin-bottom: 1rem;
+  }
+
+  h1 {
+    font-family: Georgia, 'Times New Roman', 'Noto Serif', serif;
+    font-size: clamp(1.6rem, 4.5vw, 2.1rem);
+    font-weight: 700;
+    line-height: 1.25;
+    color: var(--navy);
+    text-wrap: balance;
+    margin-bottom: 0.75rem;
+  }
+
+  .subtitle {
+    font-size: 0.95rem;
+    color: var(--text-secondary);
+    max-width: 420px;
+    margin: 0 auto;
+  }
+
+  /* --- Form --- */
+  .calc-form {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 2rem 1.75rem;
+    box-shadow: 0 2px 12px var(--shadow);
+  }
+
+  .field {
+    margin-bottom: 1.75rem;
+  }
+
+  .field:last-of-type {
+    margin-bottom: 0;
+  }
+
+  .field-label {
+    display: block;
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--text);
+    margin-bottom: 0.3rem;
+    line-height: 1.4;
+  }
+
+  .field-hint {
+    display: block;
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    margin-bottom: 0.6rem;
+    font-style: italic;
+  }
+
+  .input-row {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  input[type="number"] {
+    width: 100%;
+    padding: 0.65rem 0.85rem;
+    font-size: 1rem;
+    font-family: inherit;
+    font-variant-numeric: tabular-nums;
+    color: var(--text);
+    background: var(--input-bg);
+    border: 1.5px solid var(--input-border);
+    border-radius: 6px;
+    outline: none;
+    transition: border-color 0.2s;
+    -moz-appearance: textfield;
+  }
+
+  input[type="number"]::-webkit-inner-spin-button,
+  input[type="number"]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+
+  input[type="number"]:focus {
+    border-color: var(--input-focus);
+    box-shadow: 0 0 0 3px rgba(196, 132, 29, 0.12);
+  }
+
+  .input-unit {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    white-space: nowrap;
+    min-width: fit-content;
+  }
+
+  .input-narrow {
+    max-width: 140px;
+  }
+
+  /* --- Button --- */
+  .btn-calc {
+    display: block;
+    width: 100%;
+    margin-top: 2rem;
+    padding: 0.85rem 1.5rem;
+    font-size: 1rem;
+    font-weight: 600;
+    font-family: inherit;
+    color: #fff;
+    background: var(--amber);
+    border: none;
+    border-radius: 7px;
+    cursor: pointer;
+    transition: background 0.2s, transform 0.1s;
+  }
+
+  .btn-calc:hover {
+    background: var(--amber-glow);
+  }
+
+  .btn-calc:active {
+    transform: scale(0.985);
+  }
+
+  .btn-calc:focus-visible {
+    outline: 2px solid var(--amber);
+    outline-offset: 2px;
+  }
+
+  /* --- Result --- */
+  .result {
+    display: none;
+    margin-top: 2rem;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 20px var(--shadow-strong);
+  }
+
+  .result.visible {
+    display: block;
+    animation: slideIn 0.4s ease-out;
+  }
+
+  @keyframes slideIn {
+    from { opacity: 0; transform: translateY(16px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .result-hero {
+    background: var(--result-bg);
+    border: 1px solid var(--result-border);
+    border-bottom: none;
+    border-radius: 10px 10px 0 0;
+    padding: 2rem 1.75rem 1.5rem;
+    text-align: center;
+  }
+
+  .result-label {
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    margin-bottom: 0.4rem;
+  }
+
+  .result-number {
+    font-family: Georgia, 'Times New Roman', 'Noto Serif', serif;
+    font-size: clamp(2.2rem, 7vw, 3rem);
+    font-weight: 700;
+    font-variant-numeric: tabular-nums;
+    color: var(--amber);
+    line-height: 1.15;
+    margin-bottom: 0.3rem;
+  }
+
+  .result-suffix {
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+  }
+
+  .breakdown {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-top: none;
+    border-radius: 0 0 10px 10px;
+    padding: 1.5rem 1.75rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .breakdown-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 1rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .breakdown-row:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+  }
+
+  .breakdown-info {
+    flex: 1;
+  }
+
+  .breakdown-title {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--text);
+    margin-bottom: 0.15rem;
+  }
+
+  .breakdown-desc {
+    font-size: 0.78rem;
+    color: var(--text-muted);
+    line-height: 1.45;
+  }
+
+  .breakdown-amount {
+    font-size: 1.05rem;
+    font-weight: 700;
+    font-variant-numeric: tabular-nums;
+    color: var(--navy);
+    white-space: nowrap;
+    padding-top: 0.1rem;
+  }
+
+  /* --- Closing --- */
+  .closing {
+    margin-top: 1.5rem;
+    padding: 1.25rem 1.75rem;
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    text-align: center;
+  }
+
+  .closing-text {
+    font-family: Georgia, 'Times New Roman', 'Noto Serif', serif;
+    font-size: 0.95rem;
+    font-style: italic;
+    color: var(--text-secondary);
+    line-height: 1.5;
+    margin-bottom: 1rem;
+  }
+
+  .closing-cta {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+  }
+
+  .closing-cta a {
+    color: var(--amber);
+    text-decoration: none;
+    font-weight: 600;
+  }
+
+  .closing-cta a:hover {
+    text-decoration: underline;
+  }
+
+  /* --- Error --- */
+  .field-error {
+    border-color: #c44 !important;
+  }
+
+  .error-msg {
+    display: none;
+    font-size: 0.8rem;
+    color: #c44;
+    margin-top: 0.5rem;
+    text-align: center;
+  }
+
+  .error-msg.visible {
+    display: block;
+  }
+
+  /* --- Footer --- */
+  .footer {
+    text-align: center;
+    margin-top: 3rem;
+    font-size: 0.75rem;
+    color: var(--text-muted);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .result.visible { animation: none; }
+    .btn-calc { transition: none; }
+  }
+</style>
+
+<div class="container">
+  <header class="header">
+    <div class="brand">KI Kurt</div>
+    <h1>Was kostet es deine Firma, wenn Wissen in den falschen Köpfen steckt?</h1>
+    <p class="subtitle">6 Fragen, 3 Minuten, eine Zahl. Kein Login, kein Kleingedrucktes.</p>
+  </header>
+
+  <div class="calc-form">
+    <div class="field">
+      <label class="field-label" for="persons">Wie viele Schlüsselpersonen gibt es bei euch, ohne die der Laden nicht rund läuft?</label>
+      <span class="field-hint">"Die Leute, bei denen alle sagen: Frag den Müller."</span>
+      <div class="input-row">
+        <input type="number" id="persons" min="1" max="50" placeholder="3" class="input-narrow">
+        <span class="input-unit">Personen</span>
+      </div>
+    </div>
+
+    <div class="field">
+      <label class="field-label" for="salary">Was verdient so eine Person im Schnitt brutto pro Monat?</label>
+      <span class="field-hint">Grobe Schätzung reicht.</span>
+      <div class="input-row">
+        <input type="number" id="salary" min="1000" max="50000" step="100" placeholder="4500" class="input-narrow">
+        <span class="input-unit">€ / Monat</span>
+      </div>
+    </div>
+
+    <div class="field">
+      <label class="field-label" for="replacement">Wie lange dauert es realistisch, so eine Position nachzubesetzen?</label>
+      <span class="field-hint">Denk an den Fachkräftemangel.</span>
+      <div class="input-row">
+        <input type="number" id="replacement" min="1" max="36" placeholder="6" class="input-narrow">
+        <span class="input-unit">Monate</span>
+      </div>
+    </div>
+
+    <div class="field">
+      <label class="field-label" for="rampup">Wie viele Monate braucht ein Nachfolger, bis er wirklich produktiv ist?</label>
+      <span class="field-hint">Nicht bis er da sitzt -- bis er wirklich weiß, wie ihr arbeitet.</span>
+      <div class="input-row">
+        <input type="number" id="rampup" min="1" max="36" placeholder="6" class="input-narrow">
+        <span class="input-unit">Monate</span>
+      </div>
+    </div>
+
+    <div class="field">
+      <label class="field-label" for="searchhours">Wie viele Stunden pro Woche verbringt euer Team damit, Informationen zu suchen, die irgendwo sein müssten?</label>
+      <span class="field-hint">E-Mails durchsuchen, Kollegen fragen, Ablage durchwühlen.</span>
+      <div class="input-row">
+        <input type="number" id="searchhours" min="0" max="80" placeholder="5" class="input-narrow">
+        <span class="input-unit">Stunden / Woche</span>
+      </div>
+    </div>
+
+    <div class="field">
+      <label class="field-label" for="hourlyrate">Was ist der durchschnittliche Stundensatz eures Teams?</label>
+      <span class="field-hint">Gehalt geteilt durch Monatsstunden. 30-50 € ist bei KMU typisch.</span>
+      <div class="input-row">
+        <input type="number" id="hourlyrate" min="10" max="300" placeholder="40" class="input-narrow">
+        <span class="input-unit">€ / Stunde</span>
+      </div>
+    </div>
+
+    <p class="error-msg" id="errorMsg">Bitte fülle alle Felder aus.</p>
+    <button class="btn-calc" id="calcBtn" type="button">Berechnen</button>
+  </div>
+
+  <div class="result" id="result">
+    <div class="result-hero">
+      <div class="result-label">Undokumentiertes Wissen kostet euch</div>
+      <div class="result-number" id="totalAmount">--</div>
+      <div class="result-suffix">pro Jahr</div>
+    </div>
+    <div class="breakdown">
+      <div class="breakdown-row">
+        <div class="breakdown-info">
+          <div class="breakdown-title">Risiko-Kosten</div>
+          <div class="breakdown-desc">Was es kostet, wenn eine Schlüsselperson geht und die Stelle monatelang leer bleibt.</div>
+        </div>
+        <div class="breakdown-amount" id="riskAmount">--</div>
+      </div>
+      <div class="breakdown-row">
+        <div class="breakdown-info">
+          <div class="breakdown-title">Suchzeit-Kosten</div>
+          <div class="breakdown-desc">Was euer Team jedes Jahr damit verbringt, Wissen zu suchen statt zu arbeiten.</div>
+        </div>
+        <div class="breakdown-amount" id="searchAmount">--</div>
+      </div>
+      <div class="breakdown-row">
+        <div class="breakdown-info">
+          <div class="breakdown-title">Einarbeitungs-Kosten</div>
+          <div class="breakdown-desc">Was es kostet, bis ein Nachfolger so weit ist wie sein Vorgänger.</div>
+        </div>
+        <div class="breakdown-amount" id="rampAmount">--</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="closing" id="closing" style="display:none;">
+    <p class="closing-text">"Diese Zahl wird nicht kleiner, wenn du wartest. Aber sie lässt sich absichern."</p>
+    <p class="closing-cta">Fragen? <a href="mailto:kurtpunktkoenig@googlemail.com">Schreib mir.</a></p>
+  </div>
+
+  <footer class="footer">
+    &copy; KI Kurt &middot; KI-Beratung f&uuml;r Unternehmen
+  </footer>
+</div>
+
+<script>
+  function formatEuro(n) {
+    return n.toLocaleString('de-DE', { maximumFractionDigits: 0 }) + ' €';
+  }
+
+  function getVal(id) {
+    const el = document.getElementById(id);
+    const v = parseFloat(el.value);
+    return isNaN(v) ? null : v;
+  }
+
+  document.getElementById('calcBtn').addEventListener('click', function() {
+    const fields = ['persons','salary','replacement','rampup','searchhours','hourlyrate'];
+    let allValid = true;
+
+    fields.forEach(function(id) {
+      const el = document.getElementById(id);
+      const v = getVal(id);
+      if (v === null || v < 0) {
+        el.classList.add('field-error');
+        allValid = false;
+      } else {
+        el.classList.remove('field-error');
+      }
+    });
+
+    const errEl = document.getElementById('errorMsg');
+    if (!allValid) {
+      errEl.classList.add('visible');
+      return;
+    }
+    errEl.classList.remove('visible');
+
+    const persons = getVal('persons');
+    const salary = getVal('salary');
+    const replacement = getVal('replacement');
+    const rampup = getVal('rampup');
+    const searchhours = getVal('searchhours');
+    const hourlyrate = getVal('hourlyrate');
+
+    const risk = persons * replacement * salary;
+    const search = searchhours * hourlyrate * 52;
+    const ramp = persons * rampup * salary * 0.5;
+    const total = risk + search + ramp;
+
+    document.getElementById('riskAmount').textContent = formatEuro(risk);
+    document.getElementById('searchAmount').textContent = formatEuro(search);
+    document.getElementById('rampAmount').textContent = formatEuro(ramp);
+    document.getElementById('totalAmount').textContent = formatEuro(total);
+
+    const resultEl = document.getElementById('result');
+    resultEl.classList.remove('visible');
+    void resultEl.offsetWidth;
+    resultEl.classList.add('visible');
+
+    document.getElementById('closing').style.display = 'block';
+
+    setTimeout(function() {
+      resultEl.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    }, 100);
+  });
+
+  document.querySelectorAll('input[type="number"]').forEach(function(input) {
+    input.addEventListener('keydown', function(e) {
+      if (e.key === 'Enter') {
+        e.preventDefault();
+        document.getElementById('calcBtn').click();
+      }
+    });
+    input.addEventListener('input', function() {
+      this.classList.remove('field-error');
+      document.getElementById('errorMsg').classList.remove('visible');
+    });
+  });
+</script>
