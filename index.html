@@ -101,6 +101,16 @@ h2{font-family:var(--font-display);font-size:2rem;font-weight:600;line-height:1.
 .alltag-callout p{font-family:var(--font-display);font-size:1.3rem;color:var(--text);line-height:1.5}
 .alltag-callout strong{color:var(--accent)}
 
+/* ZUSAMMENARBEIT */
+.zusammenarbeit{padding:5rem 0}
+.zusammenarbeit-intro{font-size:1rem;color:var(--text-mid);line-height:1.7;max-width:600px;margin-top:0.75rem}
+.zusammenarbeit-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1.5rem;margin-top:2.5rem}
+.za-step{padding:2rem 1.75rem;background:var(--bg-alt);border:1px solid var(--border);border-radius:6px}
+.za-step-nr{font-family:var(--font-display);font-size:2rem;font-weight:700;color:var(--accent);line-height:1;margin-bottom:0.75rem}
+.za-step h3{font-family:var(--font-display);font-size:1.15rem;font-weight:600;color:var(--text);margin-bottom:0.5rem}
+.za-step p{font-size:0.85rem;color:var(--text-muted);line-height:1.6}
+.zusammenarbeit-bottom{margin-top:2rem;font-size:0.95rem;color:var(--text-mid);line-height:1.7;max-width:600px}
+
 /* WEG */
 .weg{padding:5rem 0}
 .weg-intro{font-size:1rem;color:var(--text-mid);line-height:1.7;max-width:600px;margin-top:0.75rem}
@@ -173,6 +183,7 @@ h2{font-family:var(--font-display);font-size:2rem;font-weight:600;line-height:1.
   .hero{grid-template-columns:1fr;gap:2.5rem;padding:3rem var(--pad) 2.5rem}
   .problem-grid{grid-template-columns:1fr;gap:2.5rem}
   .alltag-grid{grid-template-columns:1fr}
+  .zusammenarbeit-grid{grid-template-columns:1fr}
   .weg-stages{grid-template-columns:repeat(2,1fr)}
   .weg-stage{border-bottom:1px solid var(--border)}
   .setup-grid{grid-template-columns:1fr;gap:2.5rem}
@@ -217,8 +228,8 @@ h2{font-family:var(--font-display);font-size:2rem;font-weight:600;line-height:1.
 <header class="hero" id="top">
   <div>
     <div class="eyebrow reveal">Firmengedächtnis</div>
-    <h1 class="reveal">Wissen geht, wenn Menschen gehen. Es sei denn, Sie sichern es.</h1>
-    <p class="hero-body reveal">Ihr Firmenwissen: Erfahrung, Prozesse, Entscheidungen. An einem Ort. Eine KI, die Ihre Sprache spricht und Antworten aus dem gibt, was Ihr Team über Jahre aufgebaut hat.</p>
+    <h1 class="reveal">Alle reden von KI. In Ihrer Firma ist es noch ruhig.</h1>
+    <p class="hero-body reveal">Einer hat ChatGPT entdeckt. Ein paar probieren ab und zu. Der Rest wartet ab. Gleichzeitig steckt Ihr bestes Wissen in den Köpfen von Leuten, die irgendwann gehen.<br><br>Ich baue Ihrem Unternehmen ein Gedächtnis: ein KI-System, das Ihr Firmenwissen speichert und auf jede Frage eine echte Antwort gibt. Und ich nehme Ihr ganzes Team mit auf den Weg. Von "KI? Kenne ich nicht" bis "Wie haben wir eigentlich ohne gearbeitet?"</p>
   </div>
   <div class="hero-visual reveal">
     <div class="hv-label">So sieht das im Einsatz aus</div>
@@ -342,6 +353,37 @@ h2{font-family:var(--font-display);font-size:2rem;font-weight:600;line-height:1.
     <div class="alltag-callout reveal">
       <p>E-Mail: Sie speichern und müssen wiederfinden.<br><strong>Firmengedächtnis: Sie erzählen und bekommen Antworten zurück.</strong></p>
     </div>
+  </div>
+</section>
+
+<section class="zusammenarbeit" id="zusammenarbeit">
+  <div class="wrap">
+    <div class="eyebrow reveal">So läuft die Zusammenarbeit</div>
+    <h2 class="reveal">Was passiert, wenn Sie mich anrufen</h2>
+    <p class="zusammenarbeit-intro reveal">Kein IT-Projekt. Ein Veränderungsprozess, der mit Zuhören beginnt und damit endet, dass Ihr Team KI selbstverständlich nutzt.</p>
+    <div class="zusammenarbeit-grid">
+      <div class="za-step reveal">
+        <div class="za-step-nr">1</div>
+        <h3>Zuhören</h3>
+        <p>Ich komme zu Ihnen. Einen Tag lang. Ich höre zu, stelle Fragen, verstehe wie Ihr Wissen fließt und wo es hängenbleibt. Am Ende wissen Sie zum ersten Mal, wo Ihr Unternehmen verwundbar ist.</p>
+      </div>
+      <div class="za-step reveal">
+        <div class="za-step-nr">2</div>
+        <h3>Aufbauen</h3>
+        <p>Ihr Wissen wird Teil des Systems. Schritt für Schritt, ohne etwas umzuwerfen. Ihre Dateien bleiben wo sie sind. Die KI lernt, was Ihre Leute wissen.</p>
+      </div>
+      <div class="za-step reveal">
+        <div class="za-step-nr">3</div>
+        <h3>Mitnehmen</h3>
+        <p>Ihr Team lernt, mit dem System zu arbeiten. Nicht im Schulungsraum, sondern am echten Arbeitsplatz, mit echten Fragen. Die Skeptiker zuerst.</p>
+      </div>
+      <div class="za-step reveal">
+        <div class="za-step-nr">4</div>
+        <h3>Loslassen</h3>
+        <p>Nach ein paar Monaten brauchen Sie mich nicht mehr. Das Team nutzt KI selbstverständlich. Das Wissen bleibt, egal wer kommt oder geht.</p>
+      </div>
+    </div>
+    <p class="zusammenarbeit-bottom reveal">Am Anfang sagen die meisten: "KI ist nichts für uns." Am Ende fragen sie: "Warum haben wir das nicht früher gemacht?"</p>
   </div>
 </section>
 
