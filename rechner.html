@@ -282,6 +282,43 @@
     border-radius: 10px 10px 0 0;
     padding: 2rem 1.75rem 1.5rem;
     text-align: center;
+    display: grid;
+    gap: 1.5rem;
+  }
+
+  .hero-item + .hero-item {
+    border-top: 1px solid var(--result-border);
+    padding-top: 1.5rem;
+  }
+
+  @media (min-width: 560px) {
+    .result-hero {
+      grid-template-columns: 1fr 1fr;
+      gap: 1.25rem;
+    }
+    .hero-item + .hero-item {
+      border-top: none;
+      padding-top: 0;
+      border-left: 1px solid var(--result-border);
+      padding-left: 1.25rem;
+    }
+  }
+
+  .scenario {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-top: none;
+    border-radius: 0 0 10px 10px;
+    padding: 1.1rem 1.5rem 1.3rem;
+    text-align: center;
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    line-height: 1.6;
+  }
+
+  .scenario strong {
+    color: var(--text-primary);
+    font-variant-numeric: tabular-nums;
   }
 
   .result-label {
@@ -312,7 +349,7 @@
     background: var(--card);
     border: 1px solid var(--border);
     border-top: none;
-    border-radius: 0 0 10px 10px;
+    border-radius: 0;
     padding: 1.5rem 1.75rem;
     display: flex;
     flex-direction: column;
@@ -440,7 +477,7 @@
   <header class="header">
     <div class="brand">KI Kurt</div>
     <h1>Was kostet es deine Firma, wenn Wissen in den falschen Köpfen steckt?</h1>
-    <p class="subtitle">6 Fragen, 3 Minuten, eine Zahl. Kein Login, kein Kleingedrucktes.</p>
+    <p class="subtitle">6 Fragen, 3 Minuten, zwei Zahlen. Kein Login, kein Kleingedrucktes.</p>
   </header>
 
   <div class="calc-form">
@@ -504,33 +541,48 @@
 
   <div class="result" id="result">
     <div class="result-hero">
-      <div class="result-label">Undokumentiertes Wissen kostet euch</div>
-      <div class="result-number" id="totalAmount">--</div>
-      <div class="result-suffix">pro Jahr</div>
+      <div class="hero-item">
+        <div class="result-label">Jeder Abgang kostet euch</div>
+        <div class="result-number" id="perExitAmount">--</div>
+        <div class="result-suffix">einmalig, je Schlüsselperson</div>
+      </div>
+      <div class="hero-item">
+        <div class="result-label">Suchen statt arbeiten kostet</div>
+        <div class="result-number" id="searchAmount">--</div>
+        <div class="result-suffix">jedes Jahr, auch ohne Abgang</div>
+      </div>
     </div>
     <div class="breakdown">
       <div class="breakdown-row">
         <div class="breakdown-info">
-          <div class="breakdown-title">Risiko-Kosten</div>
-          <div class="breakdown-desc">Was es kostet, wenn eine Schlüsselperson geht und die Stelle monatelang leer bleibt.</div>
+          <div class="breakdown-title">Ausfall während der Vakanz</div>
+          <div class="breakdown-desc">Die Leistung fällt weg, das Gehalt spart ihr, einen Teil fängt das Team auf. Was bleibt, ist echter Verlust.</div>
         </div>
-        <div class="breakdown-amount" id="riskAmount">--</div>
+        <div class="breakdown-amount" id="vacancyAmount">--</div>
       </div>
       <div class="breakdown-row">
         <div class="breakdown-info">
-          <div class="breakdown-title">Suchzeit-Kosten</div>
-          <div class="breakdown-desc">Was euer Team jedes Jahr damit verbringt, Wissen zu suchen statt zu arbeiten.</div>
+          <div class="breakdown-title">Wiederbesetzung</div>
+          <div class="breakdown-desc">Ausschreibung, Auswahl, Vertragsanbahnung und die Zeit, die eure Leute dafür aufwenden.</div>
         </div>
-        <div class="breakdown-amount" id="searchAmount">--</div>
+        <div class="breakdown-amount" id="hiringAmount">--</div>
       </div>
       <div class="breakdown-row">
         <div class="breakdown-info">
-          <div class="breakdown-title">Einarbeitungs-Kosten</div>
-          <div class="breakdown-desc">Was es kostet, bis ein Nachfolger so weit ist wie sein Vorgänger.</div>
+          <div class="breakdown-title">Einarbeitung</div>
+          <div class="breakdown-desc">Der Nachfolger wird voll bezahlt, bevor er die Leistung seines Vorgängers bringt.</div>
         </div>
         <div class="breakdown-amount" id="rampAmount">--</div>
       </div>
+      <div class="breakdown-row">
+        <div class="breakdown-info">
+          <div class="breakdown-title">Suchzeit im Team</div>
+          <div class="breakdown-desc">Läuft jedes Jahr, unabhängig davon, ob jemand geht.</div>
+        </div>
+        <div class="breakdown-amount" id="searchAmount2">--</div>
+      </div>
     </div>
+    <div class="scenario" id="scenario">--</div>
   </div>
 
   <div class="closing" id="closing" style="display:none;">
@@ -584,15 +636,30 @@
     const searchhours = getVal('searchhours');
     const hourlyrate = getVal('hourlyrate');
 
-    const risk = persons * replacement * salary;
-    const search = searchhours * hourlyrate * 52;
-    const ramp = persons * rampup * salary * 0.5;
-    const total = risk + search + ramp;
+    // Je Abgang einer Schluesselperson, einmalig.
+    // Vakanz: Leistung faellt weg, Gehalt wird gespart, ein Teil wird vom Team aufgefangen.
+    const vacancy = replacement * salary * 0.65;
+    // Wiederbesetzung: Ausschreibung, Auswahl, Aufwand der Kollegen. Rund 20 % eines Jahresgehalts.
+    const hiring = salary * 12 * 0.20;
+    // Einarbeitung: volles Gehalt bei etwa halber Leistung.
+    const ramp = rampup * salary * 0.5;
+    const perExit = vacancy + hiring + ramp;
 
-    document.getElementById('riskAmount').textContent = formatEuro(risk);
+    // Laeuft jedes Jahr, unabhaengig von Abgaengen.
+    const search = searchhours * hourlyrate * 52;
+
+    document.getElementById('perExitAmount').textContent = formatEuro(perExit);
     document.getElementById('searchAmount').textContent = formatEuro(search);
+    document.getElementById('vacancyAmount').textContent = formatEuro(vacancy);
+    document.getElementById('hiringAmount').textContent = formatEuro(hiring);
     document.getElementById('rampAmount').textContent = formatEuro(ramp);
-    document.getElementById('totalAmount').textContent = formatEuro(total);
+    document.getElementById('searchAmount2').textContent = formatEuro(search);
+
+    const personWort = persons === 1 ? 'Schlüsselperson' : 'Schlüsselpersonen';
+    document.getElementById('scenario').innerHTML =
+      'Bei ' + persons + ' ' + personWort + ' summiert sich das auf <strong>' +
+      formatEuro(perExit * persons) + '</strong>, sobald alle ausscheiden. Dazu <strong>' +
+      formatEuro(search) + '</strong> Suchzeit in jedem einzelnen Jahr.';
 
     const resultEl = document.getElementById('result');
     resultEl.classList.remove('visible');
