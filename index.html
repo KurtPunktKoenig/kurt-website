@@ -156,15 +156,22 @@ h2{font-family:var(--font-display);font-size:2rem;font-weight:600;line-height:1.
 .zitat{font-family:var(--font-display);font-size:1.2rem;font-style:italic;color:var(--text-muted);margin-top:1.5rem;padding-top:1.5rem;border-top:1px solid var(--border-light)}
 .zitat span{color:var(--accent);font-weight:600}
 
-/* CTA */
-.cta-section{background:var(--bg-dark);color:#FFF;text-align:center;padding:4.5rem var(--pad)}
-.cta-section h2{color:#FFF;font-size:2.2rem;margin-bottom:1rem}
-.cta-section .cta-body{font-size:0.95rem;color:rgba(255,255,255,0.65);margin-bottom:2rem;max-width:480px;margin-left:auto;margin-right:auto;line-height:1.65}
-.cta-bafa{margin-top:1.25rem;font-size:0.78rem;color:rgba(255,255,255,0.45)}
-.cta-contact{margin-top:2rem;display:flex;justify-content:center;gap:2rem;flex-wrap:wrap}
-.cta-contact a{color:rgba(255,255,255,0.5);text-decoration:none;font-size:0.82rem;transition:color 0.15s}
-.cta-contact a:hover{color:#FFF}
-.cta-contact span{color:rgba(255,255,255,0.35);font-size:0.82rem}
+/* CTA / KAFFEE */
+.cta-section{background:var(--bg-dark);color:#FFF;padding:4.5rem var(--pad)}
+.cta-inner{max-width:var(--max-w);margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:start}
+.cta-text h2{color:#FFF;font-family:var(--font-display);font-size:2.2rem;font-weight:600;margin-bottom:1.25rem;line-height:1.15}
+.cta-text p{font-size:0.95rem;color:rgba(255,255,255,0.65);line-height:1.7;margin-bottom:1rem}
+.cta-bafa{margin-top:1.5rem;font-size:0.78rem;color:rgba(255,255,255,0.4)}
+.cta-form{background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.12);border-radius:8px;padding:2rem}
+.cta-form label{display:block;font-size:0.78rem;font-weight:500;color:rgba(255,255,255,0.6);margin-bottom:0.3rem;margin-top:1rem}
+.cta-form label:first-child{margin-top:0}
+.cta-form input,.cta-form textarea{width:100%;padding:0.65rem 0.85rem;background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.15);border-radius:4px;color:#FFF;font-family:var(--font-body);font-size:0.88rem;outline:none;transition:border-color 0.15s}
+.cta-form input:focus,.cta-form textarea:focus{border-color:var(--accent)}
+.cta-form input::placeholder,.cta-form textarea::placeholder{color:rgba(255,255,255,0.3)}
+.cta-form textarea{resize:vertical;min-height:80px}
+.cta-form .btn{width:100%;justify-content:center;margin-top:1.25rem;padding:0.9rem}
+.cta-form-privacy{font-size:0.72rem;color:rgba(255,255,255,0.35);margin-top:0.75rem;line-height:1.5}
+.cta-phone{margin-top:2rem;font-size:0.82rem;color:rgba(255,255,255,0.4);line-height:1.6}
 
 /* FOOTER */
 .footer{max-width:var(--max-w);margin:0 auto;padding:2rem var(--pad);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem}
@@ -190,6 +197,8 @@ h2{font-family:var(--font-display);font-size:2rem;font-weight:600;line-height:1.
   .itler-grid{grid-template-columns:1fr;gap:2rem}
   .ueber-grid{grid-template-columns:1fr;gap:2rem}
   .portrait{max-width:280px}
+  .cta-inner{grid-template-columns:1fr;gap:2.5rem}
+  .cta-text{text-align:center}
   .nav-menu{display:none}
   .nav-toggle{display:block}
   .nav.open .nav-menu{display:flex;flex-direction:column;position:absolute;top:100%;left:0;right:0;background:var(--bg);padding:1rem var(--pad) 1.5rem;border-bottom:1px solid var(--border);z-index:100;gap:1rem}
@@ -228,7 +237,7 @@ h2{font-family:var(--font-display);font-size:2rem;font-weight:600;line-height:1.
 <header class="hero" id="top">
   <div>
     <div class="eyebrow reveal">Firmengedächtnis</div>
-    <h1 class="reveal">Alle reden von KI. In Ihrer Firma ist es noch ruhig.</h1>
+    <h1 class="reveal">Alle reden von KI. In Ihrem Architekturbüro ist es noch ruhig.</h1>
     <p class="hero-body reveal">Einer hat ChatGPT entdeckt. Ein paar probieren ab und zu. Der Rest wartet ab. Gleichzeitig steckt Ihr bestes Wissen in den Köpfen von Leuten, die irgendwann gehen.<br><br>Ich baue Ihrem Unternehmen ein Gedächtnis: ein KI-System, das Ihr Firmenwissen speichert und auf jede Frage eine echte Antwort gibt. Und ich nehme Ihr ganzes Team mit auf den Weg. Von "KI? Kenne ich nicht" bis "Wie haben wir eigentlich ohne gearbeitet?"</p>
   </div>
   <div class="hero-visual reveal">
@@ -359,7 +368,7 @@ h2{font-family:var(--font-display);font-size:2rem;font-weight:600;line-height:1.
 <section class="zusammenarbeit" id="zusammenarbeit">
   <div class="wrap">
     <div class="eyebrow reveal">So läuft die Zusammenarbeit</div>
-    <h2 class="reveal">Was passiert, wenn Sie mich anrufen</h2>
+    <h2 class="reveal">Was passiert, wenn wir miteinander sprechen</h2>
     <p class="zusammenarbeit-intro reveal">Kein IT-Projekt. Ein Veränderungsprozess, der mit Zuhören beginnt und damit endet, dass Ihr Team KI selbstverständlich nutzt.</p>
     <div class="zusammenarbeit-grid">
       <div class="za-step reveal">
@@ -506,18 +515,35 @@ h2{font-family:var(--font-display);font-size:2rem;font-weight:600;line-height:1.
 </section>
 
 <section class="cta-section" id="kontakt">
-  <h2>Lassen Sie uns reden. Kostenlos und unverbindlich.</h2>
-  <p class="cta-body">30 Minuten, die Klarheit schaffen. Ob und wie ein Firmengedächtnis für Sie Sinn macht, finden wir gemeinsam heraus.</p>
-  <a href="mailto:kurt.koeniggbr@gmail.com?subject=Kaffee%20%26%20KI" class="btn">
-    Erstgespräch vereinbaren
-    <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7" stroke-linecap="round" stroke-linejoin="round"/></svg>
-  </a>
-  <p class="cta-bafa">BAFA-förderfähige Beratung · bis zu 80% Förderung möglich</p>
-  <div class="cta-contact">
-    <a href="tel:+4915254882183">+49 1525 4882 183</a>
-    <a href="mailto:kurt.koeniggbr@gmail.com">kurt.koeniggbr@gmail.com</a>
-    <span>Würzburg · remote &amp; vor Ort</span>
+  <div class="cta-inner">
+    <div class="cta-text">
+      <h2>Erst einmal einen Kaffee?</h2>
+      <p>Kein Pitch. Kein Verkaufsgespräch. Ein Kaffee und ein offenes Gespräch darüber, wo in Ihrem Unternehmen Wissen steckt, das nicht verloren gehen sollte.</p>
+      <p>Wenn danach klar ist, dass ein Firmengedächtnis für Sie Sinn macht, sprechen wir über den Weg dorthin. Wenn nicht, hatten Sie einen guten Kaffee.</p>
+      <p class="cta-bafa">BAFA-förderfähige Beratung · bis zu 80% Förderung möglich</p>
+    </div>
+    <form class="cta-form" action="https://formsubmit.co/kurt.koeniggbr@gmail.com" method="POST">
+      <input type="hidden" name="_subject" value="Kaffee-Anfrage über ki-kurt Website">
+      <input type="hidden" name="_captcha" value="false">
+      <input type="hidden" name="_next" value="https://kurtpunktkoenig.github.io/kurt-website/">
+      <label for="name">Name *</label>
+      <input type="text" id="name" name="name" placeholder="Ihr Name" required>
+      <label for="unternehmen">Unternehmen</label>
+      <input type="text" id="unternehmen" name="unternehmen" placeholder="Firma / Büro">
+      <label for="email">E-Mail *</label>
+      <input type="email" id="email" name="email" placeholder="ihre@email.de" required>
+      <label for="telefon">Telefon (optional)</label>
+      <input type="tel" id="telefon" name="telefon" placeholder="Für Rückruf">
+      <label for="nachricht">Was beschäftigt Sie?</label>
+      <textarea id="nachricht" name="nachricht" placeholder="Erzählen Sie kurz, worum es geht..."></textarea>
+      <button type="submit" class="btn">
+        Kaffee vereinbaren
+        <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </button>
+      <p class="cta-form-privacy">Ihre Daten werden nur für die Kontaktaufnahme verwendet. Kein Newsletter, keine Weitergabe. <a href="datenschutz.html" style="color:rgba(255,255,255,0.5)">Datenschutz</a></p>
+    </form>
   </div>
+  <p class="cta-phone" style="text-align:center;margin-top:2.5rem">Oder direkt: <a href="mailto:kurt.koeniggbr@gmail.com" style="color:rgba(255,255,255,0.6)">kurt.koeniggbr@gmail.com</a> · Würzburg · remote &amp; vor Ort</p>
 </section>
 
 <footer class="footer">
