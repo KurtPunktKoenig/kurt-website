@@ -6,98 +6,100 @@
 <title>Wissensverlust-Rechner | KI Kurt</title>
 <meta name="description" content="Was kostet es Ihr Unternehmen, wenn Wissen nur in wenigen Köpfen steckt? 6 Fragen, 3 Minuten, eine Zahl.">
 <style>
+@font-face{font-family:'Cormorant Garamond';font-style:normal;font-weight:300 700;font-display:swap;src:url("fonts/cormorant-garamond-latin.woff2") format("woff2")}
+
   :root {
-    --navy: #1a2744;
-    --navy-light: #2a3a5c;
-    --amber: #c4841d;
-    --amber-glow: #e09a2e;
-    --surface: #f3f4f7;
-    --surface-warm: #fdf6ec;
+    --navy: #14171F;
+    --navy-light: #1F232E;
+    --amber: #1A6B5A;
+    --amber-glow: #E0A840;
+    --surface: #F6F6F4;
+    --surface-warm: #F6F6F4;
     --card: #ffffff;
-    --text: #2c3345;
-    --text-secondary: #5e6678;
-    --text-muted: #8b92a1;
-    --border: #dde0e7;
+    --text: #1A1D26;
+    --text-secondary: #3D404A;
+    --text-muted: #5A5D64;
+    --border: #E2E3E0;
     --input-bg: #ffffff;
-    --input-border: #c8ccd4;
-    --input-focus: #c4841d;
-    --result-bg: #fdf6ec;
-    --result-border: #e8d5b8;
-    --breakdown-bg: #f8f9fb;
-    --page-bg: #f3f4f7;
-    --shadow: rgba(26, 39, 68, 0.08);
-    --shadow-strong: rgba(26, 39, 68, 0.14);
+    --input-border: #E2E3E0;
+    --input-focus: #1A6B5A;
+    --result-bg: #F6F6F4;
+    --result-border: #F6F6F4;
+    --breakdown-bg: #FFFFFF;
+    --page-bg: #F6F6F4;
+    --shadow: rgba(20,23,31, 0.08);
+    --shadow-strong: rgba(20,23,31, 0.14);
   }
 
   @media (prefers-color-scheme: dark) {
     :root {
-      --navy: #b8c4da;
-      --navy-light: #8a9bbd;
-      --amber: #e0a43a;
-      --amber-glow: #f0b84e;
-      --surface: #111820;
-      --surface-warm: #1c1a14;
-      --card: #1a2030;
-      --text: #d4d8e0;
-      --text-secondary: #9aa0b0;
-      --text-muted: #6b7186;
-      --border: #2a3244;
-      --input-bg: #141b28;
-      --input-border: #2e3a50;
-      --input-focus: #e0a43a;
-      --result-bg: #1e1c14;
-      --result-border: #3a3224;
-      --breakdown-bg: #161d2a;
-      --page-bg: #0e1218;
+      --navy: #8B8F98;
+      --navy-light: #8B8F98;
+      --amber: #3FA88E;
+      --amber-glow: #3FA88E;
+      --surface: #14171F;
+      --surface-warm: #1F232E;
+      --card: #1F232E;
+      --text: #E2E3E0;
+      --text-secondary: #8B8F98;
+      --text-muted: #5A5D64;
+      --border: #2E3542;
+      --input-bg: #1A1D26;
+      --input-border: #2E3542;
+      --input-focus: #3FA88E;
+      --result-bg: #1F232E;
+      --result-border: #2E3542;
+      --breakdown-bg: #1F232E;
+      --page-bg: #12151C;
       --shadow: rgba(0, 0, 0, 0.3);
       --shadow-strong: rgba(0, 0, 0, 0.5);
     }
   }
 
   :root[data-theme="dark"] {
-    --navy: #b8c4da;
-    --navy-light: #8a9bbd;
-    --amber: #e0a43a;
-    --amber-glow: #f0b84e;
-    --surface: #111820;
-    --surface-warm: #1c1a14;
-    --card: #1a2030;
-    --text: #d4d8e0;
-    --text-secondary: #9aa0b0;
-    --text-muted: #6b7186;
-    --border: #2a3244;
-    --input-bg: #141b28;
-    --input-border: #2e3a50;
-    --input-focus: #e0a43a;
-    --result-bg: #1e1c14;
-    --result-border: #3a3224;
-    --breakdown-bg: #161d2a;
-    --page-bg: #0e1218;
+    --navy: #8B8F98;
+    --navy-light: #8B8F98;
+    --amber: #3FA88E;
+    --amber-glow: #3FA88E;
+    --surface: #14171F;
+    --surface-warm: #1F232E;
+    --card: #1F232E;
+    --text: #E2E3E0;
+    --text-secondary: #8B8F98;
+    --text-muted: #5A5D64;
+    --border: #2E3542;
+    --input-bg: #1A1D26;
+    --input-border: #2E3542;
+    --input-focus: #3FA88E;
+    --result-bg: #1F232E;
+    --result-border: #2E3542;
+    --breakdown-bg: #1F232E;
+    --page-bg: #12151C;
     --shadow: rgba(0, 0, 0, 0.3);
     --shadow-strong: rgba(0, 0, 0, 0.5);
   }
 
   :root[data-theme="light"] {
-    --navy: #1a2744;
-    --navy-light: #2a3a5c;
-    --amber: #c4841d;
-    --amber-glow: #e09a2e;
-    --surface: #f3f4f7;
-    --surface-warm: #fdf6ec;
+    --navy: #14171F;
+    --navy-light: #1F232E;
+    --amber: #1A6B5A;
+    --amber-glow: #E0A840;
+    --surface: #F6F6F4;
+    --surface-warm: #F6F6F4;
     --card: #ffffff;
-    --text: #2c3345;
-    --text-secondary: #5e6678;
-    --text-muted: #8b92a1;
-    --border: #dde0e7;
+    --text: #1A1D26;
+    --text-secondary: #3D404A;
+    --text-muted: #5A5D64;
+    --border: #E2E3E0;
     --input-bg: #ffffff;
-    --input-border: #c8ccd4;
-    --input-focus: #c4841d;
-    --result-bg: #fdf6ec;
-    --result-border: #e8d5b8;
-    --breakdown-bg: #f8f9fb;
-    --page-bg: #f3f4f7;
-    --shadow: rgba(26, 39, 68, 0.08);
-    --shadow-strong: rgba(26, 39, 68, 0.14);
+    --input-border: #E2E3E0;
+    --input-focus: #1A6B5A;
+    --result-bg: #F6F6F4;
+    --result-border: #F6F6F4;
+    --breakdown-bg: #FFFFFF;
+    --page-bg: #F6F6F4;
+    --shadow: rgba(20,23,31, 0.08);
+    --shadow-strong: rgba(20,23,31, 0.14);
   }
 
   * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -133,7 +135,7 @@
   }
 
   h1 {
-    font-family: Georgia, 'Times New Roman', 'Noto Serif', serif;
+    font-family: 'Cormorant Garamond', Georgia, 'Times New Roman', serif;
     font-size: clamp(1.6rem, 4.5vw, 2.1rem);
     font-weight: 700;
     line-height: 1.25;
@@ -212,7 +214,7 @@
 
   input[type="number"]:focus {
     border-color: var(--input-focus);
-    box-shadow: 0 0 0 3px rgba(196, 132, 29, 0.12);
+    box-shadow: 0 0 0 3px rgba(26,107,90, 0.12);
   }
 
   .input-unit {
@@ -331,7 +333,7 @@
   }
 
   .result-number {
-    font-family: Georgia, 'Times New Roman', 'Noto Serif', serif;
+    font-family: 'Cormorant Garamond', Georgia, 'Times New Roman', serif;
     font-size: clamp(2.2rem, 7vw, 3rem);
     font-weight: 700;
     font-variant-numeric: tabular-nums;
@@ -407,7 +409,7 @@
   }
 
   .closing-text {
-    font-family: Georgia, 'Times New Roman', 'Noto Serif', serif;
+    font-family: 'Cormorant Garamond', Georgia, 'Times New Roman', serif;
     font-size: 0.95rem;
     font-style: italic;
     color: var(--text-secondary);
