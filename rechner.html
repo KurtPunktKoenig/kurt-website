@@ -5,6 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Wissensverlust-Rechner | KI Kurt</title>
 <meta name="description" content="Was kostet es Ihr Unternehmen, wenn Wissen nur in wenigen Köpfen steckt? 6 Fragen, 3 Minuten, eine Zahl.">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
 <style>
 @font-face{font-family:'Cormorant Garamond';font-style:normal;font-weight:300 700;font-display:swap;src:url("fonts/cormorant-garamond-latin.woff2") format("woff2")}
 
@@ -125,14 +126,21 @@
   }
 
   .brand {
-    font-family: -apple-system, 'Segoe UI', system-ui, sans-serif;
-    font-size: 0.8rem;
+    font-family: 'Cormorant Garamond', Georgia, 'Times New Roman', serif;
+    font-size: 1.5rem;
     font-weight: 600;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-    color: var(--amber);
+    letter-spacing: -0.02em;
+    color: var(--text);
     margin-bottom: 1rem;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.34em;
   }
+
+  .brand .wortmarke span { color: var(--amber); }
+  .brand .masz { height: 1.05em; width: auto; flex-shrink: 0; overflow: visible; }
+  .brand .masz path { fill: none; stroke: var(--amber); stroke-width: 1.5; stroke-linecap: square; stroke-linejoin: miter; vector-effect: non-scaling-stroke; }
+  .brand .masz-r { transform: scaleX(-1); }
 
   h1 {
     font-family: 'Cormorant Garamond', Georgia, 'Times New Roman', serif;
@@ -511,7 +519,7 @@
 
 <div class="container">
   <header class="header">
-    <div class="brand">KI Kurt</div>
+    <div class="brand"><svg class="masz" viewBox="0 0 13 30" aria-hidden="true"><path d="M1.25 1V29M1.25 15H13M7.5 11L2 15L7.5 19"/></svg><span class="wortmarke">KI <span>Kurt</span></span><svg class="masz masz-r" viewBox="0 0 13 30" aria-hidden="true"><path d="M1.25 1V29M1.25 15H13M7.5 11L2 15L7.5 19"/></svg></div>
     <h1>Was kostet es Ihre Firma, wenn Wissen in den falschen Köpfen steckt?</h1>
     <p class="subtitle">6 Fragen, 3 Minuten, zwei Zahlen. Kein Login, kein Kleingedrucktes.</p>
   </header>

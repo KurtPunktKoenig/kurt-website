@@ -1,0 +1,543 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Das Firmengedächtnis | KI Kurt</title>
+<meta name="description" content="Was das Firmengedächtnis ist, was es leistet und was es von Ihnen verlangt. Zugesagte Antwortzeiten, Aufbau in drei Monaten, Ihr Wissensbestand bleibt im Haus.">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<style>
+@font-face{font-family:'Cormorant Garamond';font-style:normal;font-weight:300 700;font-display:swap;src:url("fonts/cormorant-garamond-latin.woff2") format("woff2")}
+@font-face{font-family:'Cormorant Garamond';font-style:italic;font-weight:300 700;font-display:swap;src:url("fonts/cormorant-garamond-latin-italic.woff2") format("woff2")}
+@font-face{font-family:'Inter';font-style:normal;font-weight:100 900;font-display:swap;src:url("fonts/inter-latin.woff2") format("woff2")}
+:root {
+  --bg: #FFFFFF;
+  --bg-alt: #F6F6F4;
+  --bg-dark: #1A1D26;
+  --text: #1A1D26;
+  --text-mid: #3D404A;
+  --text-muted: #5A5D64;
+  --text-light: #848790;
+  --accent: #1A6B5A;
+  --accent-hover: #145849;
+  --accent-bg: #EEF5F3;
+  --accent-light: #5FB3A0;
+  --border: #E2E3E0;
+  --border-light: #EDEDEB;
+  --font-display: 'Cormorant Garamond', 'Georgia', serif;
+  --font-body: 'Inter', system-ui, -apple-system, sans-serif;
+  --max-w: 1100px;
+  --pad: 2rem;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--text);font-family:var(--font-body);font-size:16px;line-height:1.6;-webkit-font-smoothing:antialiased}
+
+.brand-line{height:3px;background:var(--accent)}
+.wrap{max-width:var(--max-w);margin:0 auto;padding-left:var(--pad);padding-right:var(--pad)}
+
+/* NAV */
+.nav{display:flex;justify-content:space-between;align-items:center;max-width:var(--max-w);margin:0 auto;padding:1.25rem var(--pad);position:relative}
+.nav-logo{font-family:var(--font-display);font-weight:600;font-size:1.5rem;color:var(--text);text-decoration:none;letter-spacing:-0.02em;display:inline-flex;align-items:center;gap:0.34em}
+.nav-logo .wortmarke span{color:var(--accent)}
+.nav-logo .masz{height:1.05em;width:auto;flex-shrink:0;overflow:visible}
+.nav-logo .masz path{fill:none;stroke:var(--accent);stroke-width:1.5;stroke-linecap:square;stroke-linejoin:miter;vector-effect:non-scaling-stroke}
+.nav-logo .masz-r{transform:scaleX(-1)}
+.nav-menu{display:flex;align-items:center;gap:2rem}
+.nav-links{display:flex;gap:2rem;list-style:none}
+.nav-links a{font-size:0.84rem;font-weight:500;color:var(--text-muted);text-decoration:none;transition:color 0.15s}
+.nav-links a:hover{color:var(--text)}
+.nav-links a.aktuell{color:var(--accent);font-weight:600}
+.nav-cta{font-size:0.82rem;font-weight:600;color:#FFF;background:var(--accent);text-decoration:none;padding:0.6rem 1.4rem;border-radius:4px;transition:background 0.15s;white-space:nowrap}
+.nav-cta:hover{background:var(--accent-hover)}
+.nav-toggle{display:none;background:none;border:none;cursor:pointer;padding:0.5rem}
+.nav-toggle svg{width:24px;height:24px;stroke:var(--text);stroke-width:2;fill:none}
+
+/* SHARED */
+.eyebrow{font-size:0.72rem;font-weight:600;text-transform:uppercase;letter-spacing:0.14em;color:var(--accent);margin-bottom:1rem}
+h2{font-family:var(--font-display);font-size:2rem;font-weight:600;line-height:1.15;letter-spacing:-0.015em;text-wrap:balance}
+.lead{font-size:1rem;color:var(--text-mid);line-height:1.75;max-width:640px;margin-top:0.75rem}
+.lead+.lead{margin-top:1rem}
+.btn{display:inline-flex;align-items:center;gap:0.5rem;background:var(--accent);color:#FFF;font-family:var(--font-body);font-size:0.88rem;font-weight:600;padding:0.85rem 2rem;border:none;border-radius:4px;cursor:pointer;text-decoration:none;transition:background 0.15s}
+.btn:hover{background:var(--accent-hover)}
+.btn svg{width:16px;height:16px;stroke:currentColor;fill:none;stroke-width:2}
+section{padding:5rem 0}
+.hell{background:var(--bg)}
+.grau{background:var(--bg-alt);border-top:1px solid var(--border);border-bottom:1px solid var(--border)}
+.dunkel{background:var(--bg-dark);color:#FFF}
+.dunkel h2,.dunkel h3{color:#FFF}
+.dunkel .eyebrow{color:var(--accent-light)}
+.dunkel .lead{color:rgba(255,255,255,0.7)}
+
+/* HERO */
+.hero{max-width:var(--max-w);margin:0 auto;padding:4.5rem var(--pad) 4rem;display:grid;grid-template-columns:1fr 380px;gap:4rem;align-items:start}
+.hero h1{font-family:var(--font-display);font-size:clamp(2.4rem,5vw,3.4rem);font-weight:600;line-height:1.08;letter-spacing:-0.02em;color:var(--text);margin-bottom:1.5rem;text-wrap:balance}
+.hero-body{font-size:1.05rem;line-height:1.75;color:var(--text-mid);margin-bottom:0;max-width:520px}
+.hero-visual{background:var(--bg-alt);border:1px solid var(--border);border-radius:8px;padding:2rem 1.75rem;position:relative}
+.hero-visual::before{content:'';position:absolute;top:0;left:1.5rem;right:1.5rem;height:2px;background:var(--accent);border-radius:0 0 2px 2px}
+.hv-label{font-size:0.68rem;font-weight:600;text-transform:uppercase;letter-spacing:0.12em;color:var(--accent);margin-bottom:1.25rem}
+.hv-liste{list-style:none;display:flex;flex-direction:column;gap:0.9rem}
+.hv-liste li{display:flex;gap:0.7rem;align-items:flex-start;font-size:0.88rem;line-height:1.55;color:var(--text-mid)}
+.hv-punkt{width:5px;height:5px;background:var(--accent);border-radius:50%;flex-shrink:0;margin-top:0.55rem}
+
+/* KACHELN */
+.kacheln{display:grid;grid-template-columns:repeat(3,1fr);gap:0;border:1px solid var(--border);border-radius:6px;overflow:hidden;margin-top:2.5rem;background:var(--bg)}
+.kachel{padding:1.75rem 1.5rem;border-right:1px solid var(--border)}
+.kachel:last-child{border-right:none}
+.kachel h3{font-family:var(--font-display);font-size:1.15rem;font-weight:600;color:var(--text);margin-bottom:0.5rem}
+.kachel p{font-size:0.85rem;color:var(--text-muted);line-height:1.6}
+
+/* TABELLEN */
+.tab{width:100%;border-collapse:collapse;margin-top:2.5rem;font-size:0.88rem}
+.tab th{text-align:left;font-size:0.66rem;font-weight:600;text-transform:uppercase;letter-spacing:0.1em;color:var(--accent);padding:0 1.25rem 0.8rem;border-bottom:1px solid var(--border);white-space:nowrap}
+.tab th:first-child{padding-left:0}
+.tab td{padding:1.1rem 1.25rem;border-bottom:1px solid var(--border-light);color:var(--text-mid);line-height:1.6;vertical-align:top}
+.tab td:first-child{padding-left:0;color:var(--text);font-weight:600}
+.tab tr:last-child td{border-bottom:none}
+.tab .zusage{color:var(--accent);font-weight:600;white-space:nowrap}
+
+/* HINWEIS */
+.hinweis{margin-top:2.5rem;padding:1.6rem 1.85rem;background:var(--accent-bg);border-left:3px solid var(--accent);border-radius:0 6px 6px 0;max-width:720px}
+.hinweis h3{font-family:var(--font-display);font-size:1.2rem;font-weight:600;color:var(--text);margin-bottom:0.6rem}
+.hinweis p{font-size:0.92rem;color:var(--text-mid);line-height:1.7}
+.hinweis ul{list-style:none;display:flex;flex-direction:column;gap:0.8rem}
+.hinweis li{font-size:0.92rem;color:var(--text-mid);line-height:1.65;padding-left:1.1rem;position:relative}
+.hinweis li::before{content:'';position:absolute;left:0;top:0.62rem;width:5px;height:5px;background:var(--accent);border-radius:50%}
+.dunkel .hinweis{background:rgba(255,255,255,0.06);border-left-color:var(--accent-light)}
+.dunkel .hinweis h3{color:#FFF}
+.dunkel .hinweis p,.dunkel .hinweis li{color:rgba(255,255,255,0.72)}
+.dunkel .hinweis li::before{background:var(--accent-light)}
+
+/* RANGLISTE */
+.rang{list-style:none;counter-reset:r;margin-top:2.5rem}
+.rang li{counter-increment:r;display:grid;grid-template-columns:2.75rem 1fr;gap:1rem;padding:1.05rem 0;border-bottom:1px solid rgba(255,255,255,0.12);align-items:baseline}
+.rang li:last-child{border-bottom:none}
+.rang li::before{content:counter(r);font-family:var(--font-display);font-size:1.5rem;font-weight:600;color:var(--accent-light);line-height:1}
+.rang b{color:#FFF;font-weight:600;display:block;font-size:0.95rem;margin-bottom:0.15rem}
+.rang span{font-size:0.88rem;color:rgba(255,255,255,0.65);line-height:1.6}
+
+/* AUSSAGENLISTE */
+.punkte{list-style:none;margin-top:2.5rem;display:grid;gap:1.4rem;max-width:760px}
+.punkte li{font-size:0.95rem;color:var(--text-mid);line-height:1.7;padding-left:1.4rem;position:relative}
+.punkte li::before{content:'';position:absolute;left:0;top:0.68rem;width:6px;height:6px;background:var(--accent);border-radius:50%}
+.punkte b{color:var(--text);font-weight:600}
+
+/* GRENZEN */
+.grenzen h3{font-family:var(--font-display);font-size:1.5rem;font-weight:600;color:var(--text);margin:3.5rem 0 1rem;letter-spacing:-0.01em}
+
+/* KOSTEN */
+.kosten{background:var(--accent-bg);border-top:1px solid var(--border);border-bottom:1px solid var(--border);padding:4.5rem 0}
+.kosten-inner{max-width:760px}
+.kosten .lead{max-width:none}
+.kosten-hinweis{margin-top:2rem;font-size:1.02rem;color:var(--text);line-height:1.7;font-weight:500}
+.kosten-rechner{margin-top:1.75rem;font-size:0.9rem;color:var(--text-mid)}
+.kosten-rechner a{color:var(--accent);font-weight:600;text-decoration:none;border-bottom:1px solid currentColor;padding-bottom:1px}
+.kosten-rechner a:hover{opacity:0.75}
+
+/* CTA / KAFFEE */
+.cta-section{background:var(--bg-dark);color:#FFF;padding:4.5rem var(--pad)}
+.cta-inner{max-width:var(--max-w);margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:start}
+.cta-text h2{color:#FFF;font-family:var(--font-display);font-size:2.2rem;font-weight:600;margin-bottom:1.25rem;line-height:1.15}
+.cta-text p{font-size:0.95rem;color:rgba(255,255,255,0.65);line-height:1.7;margin-bottom:1rem}
+.cta-bafa{margin-top:1.5rem;font-size:0.78rem;color:rgba(255,255,255,0.4)}
+.cta-form{background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.12);border-radius:8px;padding:2rem}
+.cta-form label{display:block;font-size:0.78rem;font-weight:500;color:rgba(255,255,255,0.6);margin-bottom:0.3rem;margin-top:1rem}
+.cta-form label:first-child{margin-top:0}
+.cta-form input,.cta-form textarea{width:100%;padding:0.65rem 0.85rem;background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.15);border-radius:4px;color:#FFF;font-family:var(--font-body);font-size:0.88rem;outline:none;transition:border-color 0.15s}
+.cta-form input:focus,.cta-form textarea:focus{border-color:var(--accent)}
+.cta-form input::placeholder,.cta-form textarea::placeholder{color:rgba(255,255,255,0.3)}
+.cta-form textarea{resize:vertical;min-height:80px}
+.cta-form .btn{width:100%;justify-content:center;margin-top:1.25rem;padding:0.9rem}
+.cta-form-privacy{font-size:0.72rem;color:rgba(255,255,255,0.35);margin-top:0.75rem;line-height:1.5}
+.cta-phone{margin-top:2rem;font-size:0.82rem;color:rgba(255,255,255,0.4);line-height:1.6}
+
+/* FOOTER */
+.footer{max-width:var(--max-w);margin:0 auto;padding:2rem var(--pad);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem}
+.footer-logo{font-family:var(--font-display);font-weight:600;font-size:1.1rem;color:var(--text-light)}
+.footer-meta{font-size:0.75rem;color:var(--text-light)}
+.footer-credit{font-size:0.75rem;color:var(--text-light);margin-top:0.6rem;line-height:1.5}
+.footer-meta a{color:var(--text-muted);text-decoration:none}
+.footer-meta a:hover{text-decoration:underline}
+
+/* ANIMATIONS */
+.reveal{opacity:0;transform:translateY(20px);transition:opacity 0.6s ease,transform 0.6s ease}
+.reveal.in{opacity:1;transform:none}
+
+/* RESPONSIVE */
+@media(max-width:900px){
+  :root{--pad:1.5rem}
+  section{padding:3.5rem 0}
+  .hero{grid-template-columns:1fr;gap:2.5rem;padding:3rem var(--pad) 2.5rem}
+  .kacheln{grid-template-columns:1fr}
+  .kachel{border-right:none;border-bottom:1px solid var(--border)}
+  .kachel:last-child{border-bottom:none}
+  .cta-inner{grid-template-columns:1fr;gap:2.5rem}
+  .cta-text{text-align:center}
+  .nav-menu{display:none}
+  .nav-toggle{display:block}
+  .nav.open .nav-menu{display:flex;flex-direction:column;position:absolute;top:100%;left:0;right:0;background:var(--bg);padding:1rem var(--pad) 1.5rem;border-bottom:1px solid var(--border);z-index:100;gap:1rem}
+  .nav.open .nav-links{flex-direction:column;gap:1rem}
+  .nav.open .nav-cta{align-self:flex-start}
+}
+@media(max-width:760px){
+  .tab,.tab tbody,.tab tr,.tab td{display:block;width:100%}
+  .tab thead{display:none}
+  .tab{margin-top:2rem}
+  .tab tr{border:1px solid var(--border);border-radius:6px;padding:1.25rem;margin-bottom:1rem;background:var(--bg)}
+  .tab tr:last-child{margin-bottom:0}
+  .tab td{border:none;padding:0.55rem 0}
+  .tab td:first-child{padding-top:0}
+  .tab tr:last-child td{border-bottom:none}
+  .tab td::before{content:attr(data-label);display:block;font-size:0.6rem;font-weight:600;text-transform:uppercase;letter-spacing:0.09em;color:var(--text-light);margin-bottom:0.25rem}
+  .tab td:first-child::before{color:var(--accent)}
+}
+@media(max-width:480px){
+  .hero h1{font-size:2rem}
+  .rang li{grid-template-columns:2rem 1fr;gap:0.75rem}
+}
+</style>
+<noscript><style>.reveal{opacity:1;transform:none}</style></noscript>
+</head>
+<body>
+
+<div class="brand-line"></div>
+
+<nav class="nav">
+  <a class="nav-logo" href="index.html"><svg class="masz" viewBox="0 0 13 30" aria-hidden="true"><path d="M1.25 1V29M1.25 15H13M7.5 11L2 15L7.5 19"/></svg><span class="wortmarke">KI <span>Kurt</span></span><svg class="masz masz-r" viewBox="0 0 13 30" aria-hidden="true"><path d="M1.25 1V29M1.25 15H13M7.5 11L2 15L7.5 19"/></svg></a>
+  <div class="nav-menu">
+    <ul class="nav-links">
+      <li><a href="index.html">Startseite</a></li>
+      <li><a href="firmengedaechtnis.html" class="aktuell">Das Produkt</a></li>
+      <li><a href="rechner.html">Rechner</a></li>
+      <li><a href="index.html#ueber">Über mich</a></li>
+    </ul>
+    <a class="nav-cta" href="#kontakt">Gespräch vereinbaren</a>
+  </div>
+  <button class="nav-toggle" aria-label="Menü" onclick="this.closest('.nav').classList.toggle('open')">
+    <svg viewBox="0 0 24 24"><path d="M4 6h16M4 12h16M4 18h16" stroke-linecap="round"/></svg>
+  </button>
+</nav>
+
+<header class="hero" id="top">
+  <div>
+    <div class="eyebrow reveal">Das Produkt</div>
+    <h1 class="reveal">Ihr Büro vergisst nichts mehr.</h1>
+    <p class="hero-body reveal">Das Firmengedächtnis ist kein weiteres Programm, das Ihre Leute bedienen müssen. Es ist Ihr eigenes Wissen, aufbereitet und befragbar: Ihre Projekte, Ihre Prozesse, Ihre Kunden, und die Gründe hinter Ihren Entscheidungen.<br><br>Aufgebaut in drei Monaten. Gepflegt in jeder Nacht. Und es bleibt in Ihrem Haus.</p>
+  </div>
+  <div class="hero-visual reveal">
+    <div class="hv-label">Auf einen Blick</div>
+    <ul class="hv-liste">
+      <li><span class="hv-punkt"></span>Aufbau in drei Monaten, danach läuft es</li>
+      <li><span class="hv-punkt"></span>Ihre Daten bleiben auf Ihren Rechnern</li>
+      <li><span class="hv-punkt"></span>Jeder im Büro darf fragen, auch ohne eigene KI-Lizenz</li>
+      <li><span class="hv-punkt"></span>Aufbau und Begleitung sind BAFA-förderfähig</li>
+    </ul>
+  </div>
+</header>
+
+<section class="grau" id="was">
+  <div class="wrap">
+    <div class="eyebrow reveal">Was es ist</div>
+    <h2 class="reveal">ChatGPT kennt die Welt. Es kennt nur nicht Ihr Büro.</h2>
+    <p class="lead reveal">Eine allgemeine KI weiß, wie man einen Brandschutznachweis grundsätzlich führt. Sie weiß nicht, wie Sie ihn führen, welche Prüfstelle beim letzten Mal Ärger gemacht hat und warum Sie sich 2024 gegen die dezentrale Lösung entschieden haben.</p>
+    <p class="lead reveal">Ein Dokumentenmanagement findet die Datei. Es beantwortet keine Frage. Sie bekommen achtzehn Treffer und dürfen selbst lesen.</p>
+    <p class="lead reveal">Das Firmengedächtnis liegt dazwischen und ist beides nicht. Es ist Ihr Wissen, so aufbereitet, dass eine KI daraus antworten kann. Mit der Quelle daneben, damit Sie nachsehen können, woher die Antwort kommt.</p>
+    <div class="kacheln reveal">
+      <div class="kachel">
+        <h3>Ihre Ordner bleiben</h3>
+        <p>Nichts wird verschoben, nichts weggeworfen. Das System wird über Ihre Struktur gelegt, nicht an ihre Stelle.</p>
+      </div>
+      <div class="kachel">
+        <h3>Antwort statt Trefferliste</h3>
+        <p>Sie fragen in ganzen Sätzen und bekommen eine Antwort in ganzen Sätzen. Darunter steht, aus welcher Notiz sie stammt.</p>
+      </div>
+      <div class="kachel">
+        <h3>Es weiß, was Sie entschieden haben</h3>
+        <p>Nicht nur das Ergebnis, sondern den Grund. "Warum haben wir das damals so gemacht" ist die Frage, an der jedes Ablagesystem scheitert.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="hell" id="antwortzeiten">
+  <div class="wrap">
+    <div class="eyebrow reveal">Was Sie bekommen</div>
+    <h2 class="reveal">Wir sagen zu, wie schnell geantwortet wird.</h2>
+    <p class="lead reveal">Nicht Ihre Position im Büro bestimmt, wie schnell eine Antwort da sein muss, sondern Ihre Situation. Derselbe Projektleiter braucht im Telefonat fünf Sekunden und darf beim Angebotschreiben zehn Minuten warten.</p>
+    <p class="lead reveal">Deshalb hat das Firmengedächtnis vier Antwortklassen. Jede mit einer Zusage.</p>
+    <table class="tab reveal">
+      <thead>
+        <tr><th>Klasse</th><th>Zusage</th><th>Wann</th><th>Beispiel</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td data-label="Klasse">Sofort</td>
+          <td data-label="Zusage" class="zusage">unter 10 Sekunden</td>
+          <td data-label="Wann">Im Gespräch, am Telefon, auf der Baustelle</td>
+          <td data-label="Beispiel">"Welche Betongüte bei der Bodenplatte?"</td>
+        </tr>
+        <tr>
+          <td data-label="Klasse">Kurz</td>
+          <td data-label="Zusage" class="zusage">unter 5 Minuten</td>
+          <td data-label="Wann">Am Schreibtisch, die Arbeit läuft weiter</td>
+          <td data-label="Beispiel">"Was wissen wir über Kunde Weber?"</td>
+        </tr>
+        <tr>
+          <td data-label="Klasse">Arbeitsstand</td>
+          <td data-label="Zusage" class="zusage">unter 1 Stunde</td>
+          <td data-label="Wann">Vorbereitung, Angebot, Konzept</td>
+          <td data-label="Beispiel">"Stell zusammen, was wir zu Kitas haben."</td>
+        </tr>
+        <tr>
+          <td data-label="Klasse">Auswertung</td>
+          <td data-label="Zusage" class="zusage">bis zum nächsten Werktag</td>
+          <td data-label="Wann">Bericht, Analyse, Vergleich</td>
+          <td data-label="Beispiel">"Wie war unsere Nachtragsquote 2025?"</td>
+        </tr>
+      </tbody>
+    </table>
+    <div class="hinweis reveal">
+      <p>Diese Zeiten sind Zusagen, keine Schätzungen. Sie stehen im Angebot, sie werden gemessen, und das Ergebnis steht in Ihrem Monatsbericht.</p>
+    </div>
+  </div>
+</section>
+
+<section class="grau" id="karten">
+  <div class="wrap">
+    <div class="eyebrow reveal">Die Mechanik</div>
+    <h2 class="reveal">Die schnellste Antwort ist die, die niemand mehr berechnen muss.</h2>
+    <p class="lead reveal">Die häufigsten Fragen in einem Büro sind nicht die schwierigsten. Es sind dieselben zwanzig, jeden Monat neu gestellt. Für die legt das System Antwortkarten an: eine fertige Antwort auf eine Frage, die oft kommt.</p>
+    <p class="lead reveal">Eine Antwortkarte ist sofort da, weil nichts berechnet wird. Sie kostet nichts pro Abruf, weil keine KI beteiligt ist. Sie funktioniert auf dem Handy, auf der Baustelle, mit einer Hand. Und die Quelle steht daneben.</p>
+    <div class="grenzen">
+      <h3 class="reveal">Woher das System weiß, welche Karten es braucht</h3>
+      <p class="lead reveal">Es rät nicht. Jede gestellte Frage wird protokolliert, ohne den Fragesteller. Daraus entstehen drei Listen, und jede löst etwas aus.</p>
+    </div>
+    <table class="tab reveal">
+      <thead>
+        <tr><th>Liste</th><th>Was drinsteht</th><th>Was passiert</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td data-label="Liste">Häufig</td>
+          <td data-label="Was drinsteht">Dreimal oder öfter gefragt</td>
+          <td data-label="Was passiert">Bekommt eine Antwortkarte</td>
+        </tr>
+        <tr>
+          <td data-label="Liste">Unbeantwortet</td>
+          <td data-label="Was drinsteht">Gefragt, keine gute Antwort gefunden</td>
+          <td data-label="Was passiert">Das ist eine Wissenslücke. Sie kommt auf die Liste für den nächsten Aufbauschritt</td>
+        </tr>
+        <tr>
+          <td data-label="Liste">Langsam</td>
+          <td data-label="Was drinsteht">Hat länger gedauert als zugesagt</td>
+          <td data-label="Was passiert">Das Wissen liegt zu verteilt. Es wird umsortiert</td>
+        </tr>
+      </tbody>
+    </table>
+    <div class="hinweis reveal">
+      <p>Ein System, das nur speichert, wird mit der Zeit voller. Ein System, das mitliest, welche Fragen ankommen, wird mit der Zeit besser.</p>
+    </div>
+  </div>
+</section>
+
+<section class="hell" id="zugaenge">
+  <div class="wrap">
+    <div class="eyebrow reveal">Wer fragen darf</div>
+    <h2 class="reveal">Jeder darf fragen. Nicht jeder braucht eine Lizenz.</h2>
+    <p class="lead reveal">Die naheliegende Rechnung wäre: zwanzig Mitarbeiter, zwanzig KI-Zugänge. Die ist falsch, und sie ist teuer. Sie würde mehr kosten als das ganze System bringt.</p>
+    <p class="lead reveal">Das Firmengedächtnis löst das über die Kanäle. Wer im Dialog mit der KI arbeitet, bekommt einen eigenen Zugang. Das sind erfahrungsgemäß drei Personen. Alle anderen fragen auf einem Weg, den sie längst können.</p>
+    <table class="tab reveal">
+      <thead>
+        <tr><th>Weg</th><th>Für wen</th><th>Braucht eine Lizenz</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td data-label="Weg">Antwortkarten lesen</td>
+          <td data-label="Für wen">Alle, auch mobil und offline</td>
+          <td data-label="Lizenz">Nein</td>
+        </tr>
+        <tr>
+          <td data-label="Weg">E-Mail an eine Sammeladresse</td>
+          <td data-label="Für wen">Alle</td>
+          <td data-label="Lizenz">Nein, eine geteilte reicht</td>
+        </tr>
+        <tr>
+          <td data-label="Weg">Chat, wenn Sie Teams oder Slack haben</td>
+          <td data-label="Für wen">Alle</td>
+          <td data-label="Lizenz">Nein, dieselbe</td>
+        </tr>
+        <tr>
+          <td data-label="Weg">Direktzugang für den Dialog</td>
+          <td data-label="Für wen">Geschäftsführung, eine Projektleitung, Büroleitung</td>
+          <td data-label="Lizenz">Ja, je Person</td>
+        </tr>
+      </tbody>
+    </table>
+    <div class="hinweis reveal">
+      <p>E-Mail ist der stärkste Kanal, weil ihn jeder schon kann. Kein Login, keine Schulung, funktioniert vom Handy und mit dreckigen Händen. Und dieselbe Adresse ist der Einwurfkanal: wer eine Frage schicken kann, kann auch eine Information schicken. Damit fällt die Hürde, Wissen einzupflegen, auf null.</p>
+    </div>
+  </div>
+</section>
+
+<section class="dunkel" id="nacht">
+  <div class="wrap">
+    <div class="eyebrow reveal">Wofür das Abo da ist</div>
+    <h2 class="reveal">Montagmorgen ist das System besser als Freitagabend.<br>Ohne dass jemand etwas getan hat.</h2>
+    <p class="lead reveal">Alles, worauf niemand wartet, läuft nachts. Zwischen Mitternacht und sieben Uhr arbeitet ein Rechner in Ihrem Büro die Liste ab, die der Tag hinterlassen hat. In dieser Reihenfolge.</p>
+    <ol class="rang reveal">
+      <li><b>Pflicht</b><span>Eingang leeren, neue Dokumente erfassen</span></li>
+      <li><b>Schmerz</b><span>Antworten überarbeiten, die eine Rückfrage ausgelöst haben</span></li>
+      <li><b>Häufigkeit</b><span>Neue Antwortkarten für das, was oft gefragt wurde</span></li>
+      <li><b>Hygiene</b><span>Veraltetes, Widersprüche, tote Verweise</span></li>
+      <li><b>Kür</b><span>Verknüpfungen und Suchhilfen, wenn Zeit übrig ist</span></li>
+    </ol>
+    <p class="lead reveal">Um sieben Uhr ist Schluss, auch mitten in einer Aufgabe. Was liegen bleibt, steht am nächsten Abend wieder oben. Und um sieben Uhr liegt ein Bericht vor, fünf Zeilen lang: was gelaufen ist, was gefunden wurde, was liegen blieb, was Sie entscheiden müssen.</p>
+    <div class="hinweis reveal">
+      <h3>Was nachts nicht passiert</h3>
+      <p>Das System entscheidet nichts über Menschen. Widersprüche zwischen zwei Quellen, Löschungen und alles, was Personen betrifft, kommt auf einen Stapel für den Morgen. Ein System, das nachts unbeaufsichtigt über Ihre Leute urteilt, verliert das Vertrauen der Belegschaft an genau einem Tag.</p>
+    </div>
+    <p class="lead reveal">Dafür ist das monatliche Abo da. Nicht für Support, den Sie hoffentlich selten brauchen. Für die Nachtarbeit, die das System besser macht statt älter.</p>
+  </div>
+</section>
+
+<section class="hell" id="aufbau">
+  <div class="wrap">
+    <div class="eyebrow reveal">Der Lieferumfang</div>
+    <h2 class="reveal">Was in drei Monaten passiert, und was Sie dabei tun.</h2>
+    <p class="lead reveal">Der Aufbau ist kein IT-Projekt, das im Hintergrund läuft und irgendwann fertig gemeldet wird. Er kostet Sie Zeit. Nicht viel, aber die Zeit der richtigen Leute, und die ist bei Ihnen am knappsten.</p>
+    <table class="tab reveal">
+      <thead>
+        <tr><th>Wann</th><th>Was ich mache</th><th>Was Sie beisteuern</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td data-label="Wann">Klarheitstag</td>
+          <td data-label="Was ich mache">Ich komme zu Ihnen. Wo liegt heute welches Wissen, was geht verloren, wenn Person X morgen nicht mehr da ist, wer im Team zieht mit und wer nicht</td>
+          <td data-label="Was Sie beisteuern">Einen Tag Ihrer Zeit und einen Raum. Die Belegschaft für den Nachmittag</td>
+        </tr>
+        <tr>
+          <td data-label="Wann">Monat 1</td>
+          <td data-label="Was ich mache">System aufsetzen, Datenschutzpaket abschließen, die zehn wichtigsten Prozesse dokumentieren, mit jedem Mitarbeiter ein Kennenlerngespräch</td>
+          <td data-label="Was Sie beisteuern">Zugang zu Ihren Unterlagen. Eine Ansprechperson bei Ihnen</td>
+        </tr>
+        <tr>
+          <td data-label="Wann">Monat 2</td>
+          <td data-label="Was ich mache">Schulungstag für alle. Wissens-Interviews mit den Schlüsselpersonen. Fachwissen und Projekthistorie einpflegen</td>
+          <td data-label="Was Sie beisteuern">Einen Tag für die Schulung. Zwei bis drei Stunden je Schlüsselperson</td>
+        </tr>
+        <tr>
+          <td data-label="Wann">Monat 3</td>
+          <td data-label="Was ich mache">Antwortkarten für die häufigsten Fragen, Feinschliff, Übergabe. Der Nachtbetrieb geht an</td>
+          <td data-label="Was Sie beisteuern">Zwei bis drei Freiwillige als interne Ansprechpartner</td>
+        </tr>
+      </tbody>
+    </table>
+    <div class="hinweis reveal">
+      <h3>Was Sie mitbringen müssen</h3>
+      <ul>
+        <li><b>Einen Büro-PC, der nachts anbleibt.</b> Er macht die Nachtarbeit und beantwortet tagsüber die Fragen. Deshalb bleiben Ihre Daten im Haus</li>
+        <li><b>Die Zeit Ihrer Schlüsselpersonen.</b> Das Wissen, das nur in Köpfen steckt, kommt nur über Gespräche heraus</li>
+        <li><b>Eine Entscheidung, was vertraulich bleibt.</b> Die treffen Sie, nicht ich</li>
+        <li><b>Geduld für drei Monate.</b> Nach Monat 1 kann das System wenig. Das ist normal und kein Fehler</li>
+      </ul>
+    </div>
+    <p class="lead reveal">Am ersten Tag stehen zwanzig bis fünfzig Antwortkarten bereit. Das ist Absicht. Ein System, das am ersten Tag nichts weiß, wird kein zweites Mal gefragt.</p>
+  </div>
+</section>
+
+<section class="grau" id="daten">
+  <div class="wrap">
+    <div class="eyebrow reveal">Datenschutz</div>
+    <h2 class="reveal">Ihr Wissensbestand bleibt in Ihrem Haus.</h2>
+    <p class="lead reveal">Der Rechner, der nachts arbeitet und tagsüber antwortet, steht bei Ihnen im Büro. Nicht bei mir, nicht in einer Cloud, die ich betreibe. Das ist keine Nebensache, sondern die Entscheidung, an der die ganze Konstruktion hängt: Ihr Wissensbestand liegt als Dateien bei Ihnen, und es gibt keinen zusätzlichen Auftragsverarbeiter, der ihn hält.</p>
+    <ul class="punkte reveal">
+      <li><b>Bevor das erste Dokument erfasst wird</b>, liegt das Datenschutzpaket vor: Auftragsverarbeitungsvertrag, technische und organisatorische Maßnahmen, Datenschutzhinweise für Ihre Mitarbeiter. Nicht danach.</li>
+      <li><b>Keine Leistungs- und keine Verhaltenskontrolle.</b> Das ist eine Zusage im Vertrag, keine Absichtserklärung. Wer Wissen einwirft, erfährt selbst, wie oft es Kollegen geholfen hat. Die Geschäftsführung sieht nur Summen, nie Namen.</li>
+      <li><b>Ihre E-Mails werden nicht mitgeschnitten.</b> Was ins System soll, leitet der Mitarbeiter selbst weiter. Ein Klick, und er entscheidet.</li>
+      <li><b>Ihr Betriebsrat bekommt eine ehrliche Antwort</b>, weil die Zusagen technisch gedeckt sind und nicht nur gut klingen.</li>
+    </ul>
+    <div class="grenzen">
+      <h3 class="reveal">Und was das System nicht kann</h3>
+      <p class="lead reveal">Ein Punkt, den ich lieber vorher sage als hinterher: <b>die Ordnerbeschriftung ist kein Zugriffsschutz.</b> Wer das System geöffnet hat, kann jede Datei darin lesen, auch die, auf der "Nur Geschäftsführung" steht. Es gibt keine Rechteverwaltung auf Ordnerebene.</p>
+      <p class="lead reveal">Deshalb liegt Vertrauliches gar nicht erst im gemeinsamen System, sondern in einer getrennten Instanz für die Geschäftsführung. Das ist die einzige Lösung, die einer Nachfrage standhält.</p>
+      <p class="lead reveal">Und der Punkt, den Sie sonst irgendwann selbst herausfinden: <b>wenn Sie eine Frage stellen, geht der Text dieser Frage an die KI, zusammen mit den zwei bis vier Notizen, die zur Beantwortung gelesen werden.</b> Die Verarbeitung läuft bei Anthropic in den USA, abgesichert über das EU-US Data Privacy Framework und Standardvertragsklauseln, ohne dass Ihre Daten in ein Training fließen. Ihr Bestand bleibt bei Ihnen, die einzelne Frage nicht. Wer Ihnen etwas anderes erzählt, hat entweder nicht nachgesehen oder verkauft Ihnen ein anderes Produkt.</p>
+      <p class="lead reveal">Eine Ausnahme davon ist wichtig: <b>Eintritt, Austritt, Abwesenheit und Vertretung sind keine vertraulichen Informationen.</b> Wenn das gemeinsame System nicht weiß, dass ein Projektleiter gegangen ist, nennt es monatelang seinen Namen als zuständig. Vertraulich sind die Gründe, nicht die Tatsache.</p>
+    </div>
+  </div>
+</section>
+
+<section class="hell" id="ausstieg">
+  <div class="wrap">
+    <div class="eyebrow reveal">Der Ausstieg</div>
+    <h2 class="reveal">Das Wissen gehört Ihnen. Auch danach.</h2>
+    <p class="lead reveal">Ihr Firmengedächtnis besteht aus Textdateien in Ordnern. Kein Datenbankformat, kein Export nötig, kein Anbieter, der die Tür zumacht. Sie können jede einzelne Datei mit dem Editor öffnen, der auf Ihrem Rechner ohnehin installiert ist.</p>
+    <p class="lead reveal">Das Abo ist monatlich kündbar. Wenn Sie kündigen, wird nichts abgeschaltet und nichts verschlechtert. Das System antwortet weiter auf alles, was drinsteht.</p>
+    <div class="hinweis reveal">
+      <h3>Was ohne Abo aufhört</h3>
+      <p>Der Nachtbetrieb. Keine neuen Antwortkarten, keine Quellenabholung, kein Aufräumen, keine Berichte. Das System wird nicht schlechter, aber es wird auch nicht mehr besser. Ihr Wissen altert dann in dem Tempo, in dem Ihr Geschäft sich ändert, und niemand meldet es Ihnen.</p>
+    </div>
+  </div>
+</section>
+
+<section class="kosten" id="kosten">
+  <div class="wrap">
+    <div class="kosten-inner">
+      <div class="eyebrow reveal">Der Preis</div>
+      <h2 class="reveal">Zwei Positionen, und beide sage ich Ihnen im Gespräch.</h2>
+      <p class="lead reveal">Der Preis besteht aus einem einmaligen Aufbau und einem monatlichen Abo. Dazu kommen Ihre eigenen Lizenzkosten für die KI-Zugänge und die Synchronisierung, die zahlen Sie direkt an die Anbieter und nicht an mich.</p>
+      <p class="lead reveal">Warum hier keine Zahl steht: der Aufwand hängt davon ab, wie viele Sie sind und in welchem Zustand Ihre Unterlagen sind. Eine Zahl auf einer Webseite wäre für die Hälfte der Leser zu hoch und für die andere Hälfte zu niedrig.</p>
+      <p class="kosten-hinweis reveal">Was ich hier sagen kann: Aufbau und Begleitung sind über die BAFA förderfähig, für kleine und mittlere Unternehmen mit bis zu 50 Prozent Zuschuss. Und Sie bekommen die Zahl im ersten Gespräch, nicht nach drei Terminen.</p>
+      <p class="kosten-rechner reveal">Was Sie der jetzige Zustand kostet, können Sie vorher selbst ausrechnen: <a href="rechner.html">zum Wissensverlust-Rechner</a></p>
+    </div>
+  </div>
+</section>
+
+<section class="cta-section" id="kontakt">
+  <div class="cta-inner">
+    <div class="cta-text">
+      <h2>Reden wir über Ihr Büro.</h2>
+      <p>Sie wissen jetzt, was das Firmengedächtnis ist und was es von Ihnen verlangt. Was Sie noch nicht wissen, ist, ob es für Ihr Büro das Richtige ist.</p>
+      <p>Das finden wir in einem Gespräch heraus. Und wenn die Antwort nein lautet, sage ich Ihnen das.</p>
+      <p class="cta-bafa">BAFA-Registrierung läuft · 50% Förderung für KMU möglich</p>
+    </div>
+    <form class="cta-form" action="https://formsubmit.co/kurt@ki-kurt.de" method="POST">
+      <input type="hidden" name="_subject" value="Anfrage über die Produktseite Firmengedächtnis">
+      <input type="hidden" name="_captcha" value="false">
+      <input type="hidden" name="_next" value="https://ki-kurt.de/">
+      <label for="name">Name *</label>
+      <input type="text" id="name" name="name" placeholder="Ihr Name" required>
+      <label for="unternehmen">Unternehmen</label>
+      <input type="text" id="unternehmen" name="unternehmen" placeholder="Firma / Büro">
+      <label for="email">E-Mail *</label>
+      <input type="email" id="email" name="email" placeholder="ihre@email.de" required>
+      <label for="telefon">Telefon (optional)</label>
+      <input type="tel" id="telefon" name="telefon" placeholder="Für Rückruf">
+      <label for="nachricht">Was beschäftigt Sie?</label>
+      <textarea id="nachricht" name="nachricht" placeholder="Erzählen Sie kurz, worum es geht..."></textarea>
+      <button type="submit" class="btn">
+        Kaffee vereinbaren
+        <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </button>
+      <p class="cta-form-privacy">Ihre Daten werden nur für die Kontaktaufnahme verwendet. Kein Newsletter, keine Weitergabe. <a href="datenschutz.html" style="color:rgba(255,255,255,0.5)">Datenschutz</a></p>
+    </form>
+  </div>
+  <p class="cta-phone" style="text-align:center;margin-top:2.5rem">Oder direkt: <a href="mailto:kurt@ki-kurt.de" style="color:rgba(255,255,255,0.6)">kurt@ki-kurt.de</a> · <a href="tel:+4993145321005" style="color:rgba(255,255,255,0.6)">0931 45321005</a> · Würzburg · remote &amp; vor Ort</p>
+</section>
+
+<footer class="footer">
+  <div class="footer-logo">KI Kurt</div>
+  <div class="footer-meta">
+    © 2026 Kurt König · Wittelsbacher Str. 2 · 97074 Würzburg ·
+    <a href="impressum.html">Impressum</a> · <a href="datenschutz.html">Datenschutz</a>
+  </div>
+  <div class="footer-credit">Gebaut und gepflegt von derselben KI, die hier beschrieben wird. Richtung und Freigabe: Kurt König. Letzte Änderung: 05.09.2026.</div>
+</footer>
+
+<script>
+const io=new IntersectionObserver(es=>{es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.12});
+document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+document.querySelectorAll('.nav-links a, .nav-cta').forEach(a=>{a.addEventListener('click',()=>{document.querySelector('.nav').classList.remove('open')})});
+</script>
+
+</body>
+</html>
