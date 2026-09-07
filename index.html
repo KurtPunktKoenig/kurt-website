@@ -81,6 +81,19 @@ h2{font-family:var(--font-display);font-size:2rem;font-weight:600;line-height:1.
 .trust-item{font-size:0.78rem;font-weight:500;color:var(--text-light);display:flex;align-items:center;gap:0.5rem}
 .trust-dot{width:5px;height:5px;background:var(--accent);border-radius:50%;flex-shrink:0}
 
+/* HINWEIS (Online-Impuls) */
+.hinweis{background:var(--accent-bg);border-bottom:1px solid var(--border)}
+.hinweis-inner{max-width:var(--max-w);margin:0 auto;padding:0.85rem var(--pad);font-size:0.85rem;color:var(--text-mid);line-height:1.6}
+.hinweis-inner strong{color:var(--text);font-weight:600}
+.hinweis-inner a{color:var(--accent);font-weight:600;text-decoration:none;border-bottom:1px solid currentColor;padding-bottom:1px;white-space:nowrap}
+.hinweis-inner a:hover{opacity:0.75}
+
+/* ABGRENZUNG */
+.abgrenzung{padding:4.5rem 0;border-bottom:1px solid var(--border)}
+.abgrenzung-grid{display:grid;grid-template-columns:1fr 1fr;gap:2.25rem 3.5rem;margin-top:2rem}
+.abgrenzung-item h3{font-family:var(--font-display);font-size:1.3rem;font-weight:600;color:var(--text);margin-bottom:0.5rem;letter-spacing:-0.01em}
+.abgrenzung-item p{font-size:0.95rem;color:var(--text-mid);line-height:1.7}
+
 /* PROBLEM */
 .problem{padding:5rem 0}
 .problem-grid{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:start}
@@ -165,6 +178,9 @@ h2{font-family:var(--font-display);font-size:2rem;font-weight:600;line-height:1.
 .setup-mehr{margin-top:2.5rem;font-size:0.95rem;color:rgba(255,255,255,0.7);line-height:1.7}
 .setup-mehr a{color:#5FB3A0;font-weight:600;text-decoration:none;border-bottom:1px solid currentColor;padding-bottom:1px}
 .setup-mehr a:hover{opacity:0.8}
+.setup-beweis{margin-top:2.5rem;padding:1.5rem 1.75rem;border-left:2px solid #5FB3A0;background:rgba(255,255,255,0.04);max-width:720px}
+.setup-beweis h3{font-family:var(--font-display);font-size:1.3rem;font-weight:600;color:#FFF;margin-bottom:0.5rem;letter-spacing:-0.01em}
+.setup-beweis p{margin-bottom:0}
 
 /* ITLER */
 .itler-demo{background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.12);border-radius:8px;padding:1.75rem}
@@ -229,6 +245,7 @@ h2{font-family:var(--font-display);font-size:2rem;font-weight:600;line-height:1.
   :root{--pad:1.5rem}
   .hero{grid-template-columns:1fr;gap:2.5rem;padding:3rem var(--pad) 2.5rem}
   .problem-grid{grid-template-columns:1fr;gap:2.5rem}
+  .abgrenzung-grid{grid-template-columns:1fr;gap:1.75rem}
   .alltag-grid{grid-template-columns:1fr}
   .rechner-inner{grid-template-columns:1fr;gap:1.75rem}
   .weg-stages{grid-template-columns:repeat(2,1fr)}
@@ -311,6 +328,35 @@ h2{font-family:var(--font-display);font-size:2rem;font-weight:600;line-height:1.
     <div class="trust-item"><span class="trust-dot"></span>50% Förderung für KMU möglich</div>
   </div>
 </div>
+
+<div class="hinweis">
+  <div class="hinweis-inner"><strong>Online-Impuls am 24. September 2026, 17 Uhr:</strong> Und wenn Peter in Rente geht? Drei Schritte, mit denen kleine Firmen sein Wissen behalten. Kostenlos, 60 Minuten, online. <a href="impuls.html">Zur Anmeldung</a></div>
+</div>
+
+<section class="abgrenzung" id="abgrenzung">
+  <div class="wrap">
+    <div class="eyebrow reveal">Warum ausgerechnet so</div>
+    <h2 class="reveal">Vier Fragen, die Sie sich gerade stellen.</h2>
+    <div class="abgrenzung-grid">
+      <div class="abgrenzung-item reveal">
+        <h3>Warum nicht einfach ChatGPT?</h3>
+        <p>ChatGPT kennt die Welt. Es kennt nicht Projekt Werkstatt 7, nicht Ihre Kunden, nicht die Entscheidung von damals und den Grund dafür. Das Firmengedächtnis kennt nur das.</p>
+      </div>
+      <div class="abgrenzung-item reveal">
+        <h3>Warum kein Systemhaus?</h3>
+        <p>Ein Systemhaus installiert und geht. Danach steht Software da, die keiner benutzt. Der schwierige Teil ist nicht die Technik. Es ist, dass ein Team seine Gewohnheiten ändert.</p>
+      </div>
+      <div class="abgrenzung-item reveal">
+        <h3>Warum einer statt einer Beratung mit fünfzig Leuten?</h3>
+        <p>Weil Sie mit dem sprechen, der es auch baut. Kein Vertrieb, der etwas verspricht, und kein Junior, der es dann macht.</p>
+      </div>
+      <div class="abgrenzung-item reveal">
+        <h3>Warum nicht selbst bauen?</h3>
+        <p>Können Sie. Fragen Sie mich vorher, woran es meistens scheitert. Diese Antwort kostet Sie nichts.</p>
+      </div>
+    </div>
+  </div>
+</section>
 
 <section class="problem" id="problem">
   <div class="wrap">
@@ -507,6 +553,7 @@ h2{font-family:var(--font-display);font-size:2rem;font-weight:600;line-height:1.
     <h2 class="reveal">In jedem Büro sitzt einer,<br>der beweisen will, dass es nicht funktioniert.</h2>
     <p class="pruefung-sub reveal">Bei uns arbeitet er mit.</p>
 
+    <p class="pruefung-lead reveal"><strong>Die meisten zeigen Ihnen, was ihr System kann. Hier steht, woran es scheitern könnte, und was dagegen getan wird.</strong></p>
     <p class="pruefung-lead reveal">Ein Wissenssystem fällt selten mit Getöse durch. Es wird einfach nicht benutzt. Und meistens liegt das an einer Stelle, die bei der Vorführung nie drankommt.</p>
     <p class="pruefung-lead reveal">Diese Stellen suchen wir, bevor Sie darauf stoßen. Dafür gibt es ein erfundenes Architekturbüro mit erfundenen Projekten und sechs Mitarbeitern, die jeden Tag dasselbe wollen wie Ihre.</p>
 
@@ -667,6 +714,10 @@ h2{font-family:var(--font-display);font-size:2rem;font-weight:600;line-height:1.
       </div>
     </div>
     <p class="setup-mehr reveal">Sie wollen es genauer wissen? Zugesagte Antwortzeiten, was der Aufbau von Ihnen verlangt, was mit Ihren Daten passiert und was das System nicht kann: <a href="firmengedaechtnis.html">alles über das Firmengedächtnis</a></p>
+    <div class="setup-beweis reveal">
+      <h3>Ein Beweis, den Sie schon gesehen haben</h3>
+      <p>Diese Seite kommt nicht von einer Agentur. Gebaut und gepflegt hat sie dieselbe KI, die auch Ihr Firmengedächtnis betreiben würde. Die Richtung gebe ich vor, die Arbeit macht sie. Wenn Sie wissen wollen, ob das trägt: Sie lesen gerade das Ergebnis.</p>
+    </div>
     <picture><source srcset="img/itler-pulse.webp" type="image/webp"><img src="img/itler-dateien und wissens-pulse.png" alt="Ihre Dateien bleiben: Ordnerstruktur wird schlau gemacht. Der Wissens-Pulse: Monatlicher Report mit 78% dokumentiert, Top 3 Wissenslücken und Empfehlung." class="reveal" style="width:100%;border-radius:6px;margin-top:2.5rem;border:1px solid rgba(255,255,255,0.12)" loading="lazy"></picture>
   </div>
 </section>
@@ -684,7 +735,8 @@ h2{font-family:var(--font-display);font-size:2rem;font-weight:600;line-height:1.
         <div class="eyebrow reveal">Über mich</div>
         <h2 class="reveal">Kurt König</h2>
         <p class="lead reveal">Berater für KI, Veränderung und Zusammenarbeit aus Würzburg.</p>
-        <p class="reveal">Ich begleite seit vielen Jahren Unternehmen durch Veränderungsprozesse: agile Transformation, Teamarbeit, Führung. KI ist für mich die konsequente Fortsetzung dieser Arbeit. Ein Werkzeug, das Entscheidungen verbessert und Freiräume schafft, wenn man es richtig einführt.</p>
+        <p class="reveal">Diplom-Informatiker, seit 35 Jahren in der IT. Achtzehn Jahre bei der DB Systel, dem IT-Dienstleister der Deutschen Bahn, davon sieben als Agility Master: Teams durch die agile Transformation begleiten, Konflikte moderieren, Führungskräfte coachen. Dazu zertifizierter Projektmanager nach GPM-Standard und eine Ausbildung in lösungsfokussiertem Coaching.</p>
+        <p class="reveal">KI ist für mich die konsequente Fortsetzung dieser Arbeit. Ein Werkzeug, das Entscheidungen verbessert und Freiräume schafft, wenn man es richtig einführt.</p>
         <p class="reveal">Meine Arbeitsweise: direkt, pragmatisch, kritisch. Keine Technikshow. Sichtbare Ergebnisse.</p>
         <p class="zitat reveal">„Nicht alles selbst wissen. Aber die richtigen <span>Fragen</span> stellen."</p>
       </div>
@@ -730,7 +782,7 @@ h2{font-family:var(--font-display);font-size:2rem;font-weight:600;line-height:1.
     © 2026 Kurt König · Wittelsbacher Str. 2 · 97074 Würzburg ·
     <a href="impressum.html">Impressum</a> · <a href="datenschutz.html">Datenschutz</a>
   </div>
-  <div class="footer-credit">Gebaut und gepflegt von derselben KI, die hier beschrieben wird. Richtung und Freigabe: Kurt König. Letzte Änderung: 05.09.2026.</div>
+  <div class="footer-credit">Gebaut und gepflegt von derselben KI, die hier beschrieben wird. Richtung und Freigabe: Kurt König. Letzte Änderung: 07.09.2026.</div>
 </footer>
 
 <script>

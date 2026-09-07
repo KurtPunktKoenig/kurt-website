@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Und wenn Peter in Rente geht? Online-Impuls am 24.09.2026 | KI Kurt</title>
+<meta name="description" content="Kostenloser Online-Impuls am 24. September 2026, 17 Uhr: Drei Schritte, mit denen kleine Firmen das Wissen ihrer besten Leute behalten, mit KI und ohne IT-Projekt. Anmeldung per E-Mail.">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<style>
+@font-face{font-family:'Cormorant Garamond';font-style:normal;font-weight:300 700;font-display:swap;src:url("fonts/cormorant-garamond-latin.woff2") format("woff2")}
+@font-face{font-family:'Cormorant Garamond';font-style:italic;font-weight:300 700;font-display:swap;src:url("fonts/cormorant-garamond-latin-italic.woff2") format("woff2")}
+@font-face{font-family:'Inter';font-style:normal;font-weight:100 900;font-display:swap;src:url("fonts/inter-latin.woff2") format("woff2")}
+:root {
+  --bg: #FFFFFF;
+  --bg-alt: #F6F6F4;
+  --bg-dark: #1A1D26;
+  --text: #1A1D26;
+  --text-mid: #3D404A;
+  --text-muted: #5A5D64;
+  --text-light: #848790;
+  --accent: #1A6B5A;
+  --accent-hover: #145849;
+  --accent-bg: #EEF5F3;
+  --border: #E2E3E0;
+  --border-light: #EDEDEB;
+  --font-display: 'Cormorant Garamond', 'Georgia', serif;
+  --font-body: 'Inter', system-ui, -apple-system, sans-serif;
+  --max-w: 1100px;
+  --pad: 2rem;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--text);font-family:var(--font-body);font-size:16px;line-height:1.6;-webkit-font-smoothing:antialiased;overflow-wrap:break-word}
+
+.brand-line{height:3px;background:var(--accent)}
+.wrap{max-width:var(--max-w);margin:0 auto;padding-left:var(--pad);padding-right:var(--pad)}
+
+/* NAV */
+.nav{display:flex;justify-content:space-between;align-items:center;max-width:var(--max-w);margin:0 auto;padding:1.25rem var(--pad);position:relative}
+.nav-logo{font-family:var(--font-display);font-weight:600;font-size:1.5rem;color:var(--text);text-decoration:none;letter-spacing:-0.02em;display:inline-flex;align-items:center;gap:0.34em}
+.nav-logo .wortmarke span{color:var(--accent)}
+.nav-logo .masz{height:1.05em;width:auto;flex-shrink:0;overflow:visible}
+.nav-logo .masz path{fill:none;stroke:var(--accent);stroke-width:1.5;stroke-linecap:square;stroke-linejoin:miter;vector-effect:non-scaling-stroke}
+.nav-logo .masz-r{transform:scaleX(-1)}
+.nav-menu{display:flex;align-items:center;gap:2rem}
+.nav-links{display:flex;gap:2rem;list-style:none}
+.nav-links a{font-size:0.84rem;font-weight:500;color:var(--text-muted);text-decoration:none;transition:color 0.15s}
+.nav-links a:hover{color:var(--text)}
+.nav-cta{font-size:0.82rem;font-weight:600;color:#FFF;background:var(--accent);text-decoration:none;padding:0.6rem 1.4rem;border-radius:4px;transition:background 0.15s;white-space:nowrap}
+.nav-cta:hover{background:var(--accent-hover)}
+.nav-toggle{display:none;background:none;border:none;cursor:pointer;padding:0.5rem}
+.nav-toggle svg{width:24px;height:24px;stroke:var(--text);stroke-width:2;fill:none}
+
+/* SHARED */
+.eyebrow{font-size:0.72rem;font-weight:600;text-transform:uppercase;letter-spacing:0.14em;color:var(--accent);margin-bottom:1rem}
+h2{font-family:var(--font-display);font-size:2rem;font-weight:600;line-height:1.15;letter-spacing:-0.015em;text-wrap:balance}
+.btn{display:inline-flex;align-items:center;gap:0.5rem;background:var(--accent);color:#FFF;font-family:var(--font-body);font-size:0.88rem;font-weight:600;padding:0.85rem 2rem;border:none;border-radius:4px;cursor:pointer;text-decoration:none;transition:background 0.15s}
+.btn:hover{background:var(--accent-hover)}
+.btn svg{width:16px;height:16px;stroke:currentColor;fill:none;stroke-width:2}
+
+/* HERO */
+.hero{max-width:var(--max-w);margin:0 auto;padding:4.5rem var(--pad) 4rem;display:grid;grid-template-columns:1fr 360px;gap:4rem;align-items:start}
+.hero h1{font-family:var(--font-display);font-size:clamp(2.2rem,4.6vw,3.3rem);font-weight:600;line-height:1.08;letter-spacing:-0.02em;color:var(--text);margin-bottom:1.5rem;text-wrap:balance}
+.hero h1 span{display:block;font-size:0.62em;font-weight:400;color:var(--text-mid);margin-top:0.6em;line-height:1.25;letter-spacing:-0.01em}
+.hero-body{font-size:1.05rem;line-height:1.75;color:var(--text-mid);margin-bottom:2rem;max-width:560px}
+.hero-body p+p{margin-top:1rem}
+.fakten{background:var(--bg-alt);border:1px solid var(--border);border-radius:8px;padding:1.75rem;position:relative}
+.fakten::before{content:'';position:absolute;top:0;left:1.5rem;right:1.5rem;height:2px;background:var(--accent);border-radius:0 0 2px 2px}
+.fakten-label{font-size:0.68rem;font-weight:600;text-transform:uppercase;letter-spacing:0.12em;color:var(--accent);margin-bottom:1rem}
+.fakten dl{display:grid;grid-template-columns:auto 1fr;gap:0.55rem 1rem;font-size:0.88rem}
+.fakten dt{color:var(--text-light);font-weight:500}
+.fakten dd{color:var(--text);font-weight:500}
+.fakten .btn{width:100%;justify-content:center;margin-top:1.5rem}
+.fakten-note{font-size:0.72rem;color:var(--text-light);margin-top:0.75rem;line-height:1.5}
+
+/* INHALT */
+.inhalt{background:var(--bg-alt);border-top:1px solid var(--border);border-bottom:1px solid var(--border);padding:5rem 0}
+.inhalt-intro{font-size:1rem;color:var(--text-mid);line-height:1.7;max-width:600px;margin-top:0.75rem}
+.schritte{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;margin-top:2.5rem}
+.schritt{background:var(--bg);border:1px solid var(--border);border-radius:6px;padding:2rem 1.75rem}
+.schritt-num{font-family:var(--font-display);font-size:2.4rem;font-weight:700;color:var(--accent);line-height:1}
+.schritt h3{font-family:var(--font-display);font-size:1.25rem;font-weight:600;color:var(--text);margin:0.6rem 0 0.75rem;letter-spacing:-0.01em}
+.schritt p{font-size:0.88rem;color:var(--text-mid);line-height:1.6}
+.inhalt-callout{margin-top:2.5rem;padding:2rem;background:var(--bg);border:1px solid var(--border);border-radius:6px;text-align:center}
+.inhalt-callout p{font-family:var(--font-display);font-size:1.3rem;color:var(--text);line-height:1.5}
+
+/* ABLAUF */
+.ablauf{padding:5rem 0}
+.ablauf-grid{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:start}
+.ablauf-liste{list-style:none;margin-top:2rem;border-top:1px solid var(--border)}
+.ablauf-liste li{display:grid;grid-template-columns:4.5rem 1fr;gap:1rem;padding:0.85rem 0;border-bottom:1px solid var(--border);font-size:0.92rem;line-height:1.55}
+.ablauf-liste .zeit{font-variant-numeric:tabular-nums;color:var(--accent);font-weight:600}
+.ablauf-liste .was{color:var(--text-mid)}
+.ablauf-liste .was strong{color:var(--text);font-weight:600}
+.wer{display:grid;grid-template-columns:120px 1fr;gap:1.5rem;align-items:start;margin-top:2rem}
+.wer img{width:100%;height:auto;border-radius:8px;display:block}
+.wer p{font-size:0.92rem;color:var(--text-mid);line-height:1.65}
+.wer p+p{margin-top:0.75rem}
+.wer .lead{font-size:1rem;color:var(--text);font-weight:500}
+
+/* ANMELDUNG */
+.anmeldung{background:var(--bg-dark);color:#FFF;padding:4.5rem var(--pad)}
+.anmeldung-inner{max-width:var(--max-w);margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:start}
+.anmeldung h2{color:#FFF;font-size:2.2rem;margin-bottom:1.25rem}
+.anmeldung p{font-size:0.95rem;color:rgba(255,255,255,0.65);line-height:1.7;margin-bottom:1rem}
+.anmeldung-box{background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.12);border-radius:8px;padding:2rem}
+.anmeldung-box .btn{width:100%;justify-content:center;padding:0.95rem}
+.anmeldung-box ol{margin:0 0 1.5rem 1.1rem;font-size:0.9rem;color:rgba(255,255,255,0.75);line-height:1.7}
+.anmeldung-box ol li+li{margin-top:0.35rem}
+.anmeldung-privacy{font-size:0.72rem;color:rgba(255,255,255,0.35);margin-top:0.75rem;line-height:1.5}
+.anmeldung-privacy a{color:rgba(255,255,255,0.5)}
+.anmeldung-direkt{margin-top:2rem;font-size:0.82rem;color:rgba(255,255,255,0.4);line-height:1.6;text-align:center}
+.anmeldung-direkt a{color:rgba(255,255,255,0.6)}
+
+/* FOOTER */
+.footer{max-width:var(--max-w);margin:0 auto;padding:2rem var(--pad);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem}
+.footer-logo{font-family:var(--font-display);font-weight:600;font-size:1.1rem;color:var(--text-light)}
+.footer-meta{font-size:0.75rem;color:var(--text-light)}
+.footer-credit{font-size:0.75rem;color:var(--text-light);margin-top:0.6rem;line-height:1.5}
+.footer-meta a{color:var(--text-muted);text-decoration:none}
+.footer-meta a:hover{text-decoration:underline}
+
+/* RESPONSIVE */
+@media(max-width:900px){
+  :root{--pad:1.5rem}
+  .hero{grid-template-columns:1fr;gap:2.5rem;padding:3rem var(--pad) 2.5rem}
+  .schritte{grid-template-columns:1fr}
+  .ablauf-grid{grid-template-columns:1fr;gap:2.5rem}
+  .anmeldung-inner{grid-template-columns:1fr;gap:2.5rem}
+  .nav-menu{display:none}
+  .nav-toggle{display:block}
+  .nav.open .nav-menu{display:flex;flex-direction:column;position:absolute;top:100%;left:0;right:0;background:var(--bg);padding:1rem var(--pad) 1.5rem;border-bottom:1px solid var(--border);z-index:100;gap:1rem}
+  .nav.open .nav-links{flex-direction:column;gap:1rem}
+  .nav.open .nav-cta{align-self:flex-start}
+}
+@media(max-width:480px){
+  .hero h1{font-size:2rem}
+  .wer{grid-template-columns:1fr}
+  .wer img{max-width:160px}
+  .ablauf-liste li{grid-template-columns:3.6rem 1fr}
+  .fakten dl{grid-template-columns:1fr;gap:0.2rem 0}
+  .fakten dt{margin-top:0.5rem}
+}
+</style>
+</head>
+<body>
+
+<div class="brand-line"></div>
+
+<nav class="nav">
+  <a class="nav-logo" href="index.html"><svg class="masz" viewBox="0 0 13 30" aria-hidden="true"><path d="M1.25 1V29M1.25 15H13M7.5 11L2 15L7.5 19"/></svg><span class="wortmarke">KI <span>Kurt</span></span><svg class="masz masz-r" viewBox="0 0 13 30" aria-hidden="true"><path d="M1.25 1V29M1.25 15H13M7.5 11L2 15L7.5 19"/></svg></a>
+  <div class="nav-menu">
+    <ul class="nav-links">
+      <li><a href="index.html">Startseite</a></li>
+      <li><a href="firmengedaechtnis.html">Das Produkt</a></li>
+      <li><a href="rechner.html">Rechner</a></li>
+      <li><a href="index.html#ueber">Über mich</a></li>
+    </ul>
+    <a class="nav-cta" href="#anmeldung">Anmelden</a>
+  </div>
+  <button class="nav-toggle" aria-label="Menü" onclick="this.closest('.nav').classList.toggle('open')">
+    <svg viewBox="0 0 24 24"><path d="M4 6h16M4 12h16M4 18h16" stroke-linecap="round"/></svg>
+  </button>
+</nav>
+
+<header class="hero" id="top">
+  <div>
+    <div class="eyebrow">Online-Impuls · Donnerstag, 24. September 2026 · 17 bis 18 Uhr</div>
+    <h1>Und wenn Peter in Rente geht?<span>Drei Schritte, mit denen kleine Firmen sein Wissen behalten. Mit KI und ohne IT-Projekt.</span></h1>
+    <div class="hero-body">
+      <p>"Frag den Peter. Der weiß das." Jede kleine Firma hat einen Peter: den Kollegen, der seit 25 Jahren da ist und jede Norm, jeden Kunden, jeden Trick kennt. Und wenn Peter in Rente geht, heißt es: "Das müsste irgendwo stehen." Es steht nirgendwo.</p>
+      <p>In einer Stunde zeige ich, was das kostet, warum Software allein daran nichts ändert, und die drei Schritte, mit denen eine Firma von fünf bis zwanzig Leuten das Wissen ihrer besten Leute behält. Mit einer Vorführung an einem erfundenen Architekturbüro, und mit Zeit für Ihre Fragen.</p>
+    </div>
+    <a class="btn" href="#anmeldung">Platz sichern<svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+  </div>
+  <div class="fakten">
+    <div class="fakten-label">Auf einen Blick</div>
+    <dl>
+      <dt>Wann</dt><dd>Donnerstag, 24.09.2026, 17:00 bis 18:00 Uhr</dd>
+      <dt>Wo</dt><dd>Online, über Microsoft Teams. Ein Browser genügt, kein Konto nötig</dd>
+      <dt>Für wen</dt><dd>Geschäftsführung und Teams kleiner Firmen: Architektur- und Ingenieurbüros, Handwerksbetriebe, Kanzleien</dd>
+      <dt>Kosten</dt><dd>Keine</dd>
+      <dt>Aufzeichnung</dt><dd>Keine. Wer nicht dabei sein kann, bekommt die drei Schritte als Einseiter</dd>
+    </dl>
+    <a class="btn" href="mailto:kurt@ki-kurt.de?subject=Anmeldung%20Online-Impuls%2024.09.2026&amp;body=Hallo%20Herr%20K%C3%B6nig%2C%0A%0Aich%20melde%20mich%20f%C3%BCr%20den%20Online-Impuls%20am%2024.09.2026%20um%2017%20Uhr%20an.%0A%0AName%3A%0AFirma%3A%0A">Per E-Mail anmelden</a>
+    <p class="fakten-note">Sie bekommen den Teams-Link per E-Mail zurück, spätestens am Vortag. Kein Newsletter, keine Weitergabe.</p>
+  </div>
+</header>
+
+<section class="inhalt" id="inhalt">
+  <div class="wrap">
+    <div class="eyebrow">Was Sie mitnehmen</div>
+    <h2>Drei Schritte, die eine kleine Firma selbst gehen kann</h2>
+    <p class="inhalt-intro">Kein IT-Projekt. Eine Veränderung, wie ein Team mit seinem Wissen umgeht. Die KI kommt am Ende dazu, nicht am Anfang.</p>
+    <div class="schritte">
+      <div class="schritt">
+        <div class="schritt-num">1</div>
+        <h3>Benennen</h3>
+        <p>Die zehn Fragen, die bei Ihnen immer an dieselbe Person gehen. Eine Stunde, das ganze Team, ein Flipchart. Danach wissen Sie, wo Ihr Peter sitzt.</p>
+      </div>
+      <div class="schritt">
+        <div class="schritt-num">2</div>
+        <h3>Erzählen lassen</h3>
+        <p>Peter redet, jemand anderes schreibt. Das Wie und das Warum, nicht nur das Was. Niemand weiß, was er weiß, bis ihn jemand danach fragt.</p>
+      </div>
+      <div class="schritt">
+        <div class="schritt-num">3</div>
+        <h3>Befragbar machen</h3>
+        <p>Antwort statt Trefferliste, mit der Quelle daneben. Jeder darf fragen, per E-Mail, vom Handy, ohne Schulung. Und das Wissen bleibt im Haus.</p>
+      </div>
+    </div>
+    <div class="inhalt-callout">
+      <p>Was Wissensverlust kostet, rechnen wir live aus. Für Ihr Büro können Sie das vorher selbst tun: <a href="rechner.html" style="color:var(--accent);font-weight:600;text-decoration:none;border-bottom:1px solid currentColor">Wissensverlust-Rechner</a>, drei Minuten, ohne E-Mail-Adresse.</p>
+    </div>
+  </div>
+</section>
+
+<section class="ablauf" id="ablauf">
+  <div class="wrap">
+    <div class="ablauf-grid">
+      <div>
+        <div class="eyebrow">So läuft die Stunde</div>
+        <h2>Wenig Folien, eine Vorführung, Zeit für Fragen.</h2>
+        <ul class="ablauf-liste">
+          <li><span class="zeit">17:00</span><span class="was"><strong>Peter.</strong> Jeder hat einen. Wie lange ist Ihrer schon im Haus?</span></li>
+          <li><span class="zeit">17:05</span><span class="was"><strong>Die Zahl.</strong> Was ein Abgang kostet und was Suchen im Jahr kostet, live gerechnet.</span></li>
+          <li><span class="zeit">17:15</span><span class="was"><strong>Warum Technik allein scheitert.</strong> Drei Beobachtungen aus sieben Jahren Teamarbeit.</span></li>
+          <li><span class="zeit">17:23</span><span class="was"><strong>Die drei Schritte.</strong> Benennen, erzählen lassen, befragbar machen.</span></li>
+          <li><span class="zeit">17:35</span><span class="was"><strong>So sieht das aus.</strong> Ein erfundenes Architekturbüro fragt sein Firmengedächtnis. Danach ein Blick in meines.</span></li>
+          <li><span class="zeit">17:45</span><span class="was"><strong>Ihre Fragen.</strong></span></li>
+          <li><span class="zeit">17:55</span><span class="was"><strong>Morgen früh.</strong> Was Sie mit einer Stunde und einem Flipchart anfangen können.</span></li>
+        </ul>
+      </div>
+      <div>
+        <div class="eyebrow">Wer da spricht</div>
+        <h2>Kurt König</h2>
+        <div class="wer">
+          <picture><source srcset="img/kurt-portrait.webp" type="image/webp"><img src="img/kurt-portrait.jpg" alt="Kurt König" loading="lazy"></picture>
+          <div>
+            <p class="lead">Berater für KI, Veränderung und Zusammenarbeit aus Würzburg.</p>
+            <p>Informatiker, seit 35 Jahren in der IT. Sieben Jahre lang habe ich bei einem großen IT-Dienstleister Teams durch Veränderungen begleitet. Was ich dabei gelernt habe, hat mit Software wenig zu tun: Wissen bleibt nur, wenn die Leute mitmachen.</p>
+            <p>Heute baue ich kleinen Firmen ein Firmengedächtnis: ihr eigenes Wissen, mit KI befragbar, und es bleibt im Haus. Diese Website hat dieselbe KI gebaut, die auch das Firmengedächtnis betreibt.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="anmeldung" id="anmeldung">
+  <div class="anmeldung-inner">
+    <div>
+      <h2>Platz sichern.</h2>
+      <p>Eine E-Mail genügt. Sie bekommen den Teams-Link zurück, spätestens am Vortag. Am 24. September um 17 Uhr klicken Sie darauf, ein Browser reicht.</p>
+      <p>Keine Aufzeichnung, kein Newsletter, keine Weitergabe Ihrer Daten. Wer nicht dabei sein kann, bekommt auf Wunsch die drei Schritte als Einseiter.</p>
+    </div>
+    <div class="anmeldung-box">
+      <ol>
+        <li>Auf den Knopf klicken, es öffnet sich eine E-Mail an kurt@ki-kurt.de</li>
+        <li>Name und Firma eintragen, absenden</li>
+        <li>Teams-Link kommt per Antwort</li>
+      </ol>
+      <a class="btn" href="mailto:kurt@ki-kurt.de?subject=Anmeldung%20Online-Impuls%2024.09.2026&amp;body=Hallo%20Herr%20K%C3%B6nig%2C%0A%0Aich%20melde%20mich%20f%C3%BCr%20den%20Online-Impuls%20am%2024.09.2026%20um%2017%20Uhr%20an.%0A%0AName%3A%0AFirma%3A%0A">Per E-Mail anmelden<svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+      <p class="anmeldung-privacy">Ihre Daten werden nur für die Einladung verwendet. <a href="datenschutz.html">Datenschutz</a></p>
+    </div>
+  </div>
+  <p class="anmeldung-direkt">Oder direkt: <a href="mailto:kurt@ki-kurt.de">kurt@ki-kurt.de</a> · <a href="tel:+4993145321005">0931 45321005</a> · Würzburg</p>
+</section>
+
+<footer class="footer">
+  <div class="footer-logo">KI Kurt</div>
+  <div class="footer-meta">
+    © 2026 Kurt König · Wittelsbacher Str. 2 · 97074 Würzburg ·
+    <a href="impressum.html">Impressum</a> · <a href="datenschutz.html">Datenschutz</a>
+  </div>
+  <div class="footer-credit">Gebaut und gepflegt von derselben KI, die hier beschrieben wird. Richtung und Freigabe: Kurt König. Letzte Änderung: 07.09.2026.</div>
+</footer>
+
+<script>
+document.querySelectorAll('.nav-links a, .nav-cta').forEach(function(a){a.addEventListener('click',function(){document.querySelector('.nav').classList.remove('open')})});
+</script>
+</body>
+</html>
