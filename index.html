@@ -26,6 +26,27 @@
   --font-display: 'Cormorant Garamond', 'Georgia', serif;
   --font-body: 'Inter', system-ui, -apple-system, sans-serif;
   --max-w: 1100px;
+  /* Rechner-Variablen, gleiche Werte, andere Namen */
+  --navy: #14171F
+  --navy-light: #1F232E
+  --amber: #1A6B5A
+  --amber-glow: #E0A840
+  --surface: #F6F6F4
+  --surface-warm: #F6F6F4
+  --card: #ffffff
+  --text: #1A1D26
+  --text-secondary: #3D404A
+  --text-muted: #5A5D64
+  --border: #E2E3E0
+  --input-bg: #ffffff
+  --input-border: #E2E3E0
+  --input-focus: #1A6B5A
+  --result-bg: #F6F6F4
+  --result-border: #F6F6F4
+  --breakdown-bg: #FFFFFF
+  --page-bg: #F6F6F4
+  --shadow: rgba(20,23,31, 0.08)
+  --shadow-strong: rgba(20,23,31, 0.14);
   --pad: 2rem;
 }
 *{margin:0;padding:0;box-sizing:border-box}
@@ -278,6 +299,185 @@ h2{font-family:var(--font-display);font-size:2rem;font-weight:600;line-height:1.
   .weg-stage{border-right:none}
   .trust-inner{gap:1.5rem}
 }
+
+/* ===== Rechner, uebernommen aus rechner.html ===== */
+/* --- Form --- */
+  .calc-form{background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 2rem 1.75rem;
+    box-shadow: 0 2px 12px var(--shadow);}
+.field{margin-bottom: 1.75rem;}
+.field:last-of-type{margin-bottom: 0;}
+.field-label{display: block;
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--text);
+    margin-bottom: 0.3rem;
+    line-height: 1.4;}
+.field-hint{display: block;
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    margin-bottom: 0.6rem;
+    font-style: italic;}
+.input-row{display: flex;
+    align-items: center;
+    gap: 0.5rem;}
+.input-unit{font-size: 0.85rem;
+    color: var(--text-muted);
+    white-space: nowrap;
+    min-width: fit-content;}
+.input-narrow{max-width: 140px;}
+/* --- Button --- */
+  .btn-calc{display: block;
+    width: 100%;
+    margin-top: 2rem;
+    padding: 0.85rem 1.5rem;
+    font-size: 1rem;
+    font-weight: 600;
+    font-family: inherit;
+    color: #fff;
+    background: var(--amber);
+    border: none;
+    border-radius: 7px;
+    cursor: pointer;
+    transition: background 0.2s, transform 0.1s;}
+.btn-calc:hover{background: var(--amber-glow);}
+.btn-calc:active{transform: scale(0.985);}
+.btn-calc:focus-visible{outline: 2px solid var(--amber);
+    outline-offset: 2px;}
+/* --- Result --- */
+  .result{display: none;
+    margin-top: 2rem;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 20px var(--shadow-strong);}
+.result.visible{display: block;
+    animation: slideIn 0.4s ease-out;}
+.result-hero{background: var(--result-bg);
+    border: 1px solid var(--result-border);
+    border-bottom: none;
+    border-radius: 10px 10px 0 0;
+    padding: 2rem 1.75rem 1.5rem;
+    text-align: center;
+    display: grid;
+    gap: 1.5rem;}
+.result-hero{grid-template-columns: 1fr 1fr;
+      gap: 1.25rem;}
+.scenario{background: var(--card);
+    border: 1px solid var(--border);
+    border-top: none;
+    border-radius: 0 0 10px 10px;
+    padding: 1.1rem 1.5rem 1.3rem;
+    text-align: center;
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    line-height: 1.6;}
+.scenario strong{color: var(--text-primary);
+    font-variant-numeric: tabular-nums;}
+.result-label{font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    margin-bottom: 0.4rem;}
+.result-number{font-family: 'Cormorant Garamond', Georgia, 'Times New Roman', serif;
+    font-size: clamp(2.2rem, 7vw, 3rem);
+    font-weight: 700;
+    font-variant-numeric: tabular-nums;
+    color: var(--amber);
+    line-height: 1.15;
+    margin-bottom: 0.3rem;}
+.result-suffix{font-size: 0.9rem;
+    color: var(--text-secondary);}
+.breakdown{background: var(--card);
+    border: 1px solid var(--border);
+    border-top: none;
+    border-radius: 0;
+    padding: 1.5rem 1.75rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;}
+.breakdown-row{display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 1rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid var(--border);}
+.breakdown-row:last-child{border-bottom: none;
+    padding-bottom: 0;}
+.breakdown-info{flex: 1;}
+.breakdown-title{font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--text);
+    margin-bottom: 0.15rem;}
+.breakdown-desc{font-size: 0.78rem;
+    color: var(--text-muted);
+    line-height: 1.45;}
+.breakdown-amount{font-size: 1.05rem;
+    font-weight: 700;
+    font-variant-numeric: tabular-nums;
+    color: var(--navy);
+    white-space: nowrap;
+    padding-top: 0.1rem;}
+/* --- Closing --- */
+  .closing{margin-top: 1.5rem;
+    padding: 1.25rem 1.75rem;
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    text-align: center;}
+.closing-text{font-family: 'Cormorant Garamond', Georgia, 'Times New Roman', serif;
+    font-size: 0.95rem;
+    font-style: italic;
+    color: var(--text-secondary);
+    line-height: 1.5;
+    margin-bottom: 1rem;}
+.closing-cta{font-size: 0.85rem;
+    color: var(--text-muted);}
+.closing-frage{font-family: 'Cormorant Garamond', Georgia, 'Times New Roman', serif;
+    font-size: 1.45rem;
+    line-height: 1.25;
+    color: var(--text);
+    margin-bottom: 0.6rem;}
+.closing-sub{font-size: 0.92rem;
+    line-height: 1.6;
+    color: var(--text-secondary);
+    max-width: 46ch;
+    margin: 0 auto 1.4rem;}
+.closing-alt{font-size: 0.82rem;
+    color: var(--text-muted);
+    margin-top: 1.1rem;}
+.closing-alt a{color: var(--text-secondary); text-decoration: underline; text-underline-offset: 2px;}
+.closing-alt a:hover{color: var(--amber);}
+.closing-cta a{color: var(--amber);
+    text-decoration: none;
+    font-weight: 600;}
+.closing-cta a:hover{text-decoration: underline;}
+/* --- Error --- */
+  .field-error{border-color: #c44 !important;}
+.error-msg{display: none;
+    font-size: 0.8rem;
+    color: #c44;
+    margin-top: 0.5rem;
+    text-align: center;}
+.error-msg.visible{display: block;}
+.result.visible{animation: none;}
+.btn-calc{transition: none;}
+
+/* ===== SCHAUFENSTER: eigener Farbrhythmus und Rechner ===== */
+/* Reihenfolge: Hero weiss . Problem GRAU . Rechner weiss . Alltag GRAU .
+   Comic weiss . Ueber GRAU . Kaffee DUNKEL */
+.problem{background:var(--bg-alt);border-top:1px solid var(--border)}
+.alltag{background:var(--bg-alt)}
+.comic-teaser{background:var(--bg)}
+.ueber{background:var(--bg-alt)}
+.rechner-inline{background:var(--bg);border-top:1px solid var(--border);border-bottom:1px solid var(--border);padding:4.5rem 0}
+.rechner-inline .lead{max-width:40rem;color:var(--text-mid);margin-bottom:2.5rem}
+.rechner-inline .calc-form{max-width:46rem}
+.beweis{margin-top:2.5rem;padding:1.5rem 1.75rem;background:var(--bg);border-left:3px solid var(--accent);border-radius:0 6px 6px 0}
+.beweis h3{font-family:var(--font-display);font-size:1.35rem;margin-bottom:0.6rem;color:var(--text)}
+.beweis p{font-size:0.95rem;color:var(--text-mid);line-height:1.75}
 </style>
 <noscript><style>.reveal{opacity:1;transform:none}</style></noscript>
 </head>
@@ -288,12 +488,11 @@ h2{font-family:var(--font-display);font-size:2rem;font-weight:600;line-height:1.
 <nav class="nav">
   <a class="nav-logo" href="#top"><svg class="masz" viewBox="0 0 13 30" aria-hidden="true"><path d="M1.25 1V29M1.25 15H13M7.5 11L2 15L7.5 19"/></svg><span class="wortmarke">KI <span>Kurt</span></span><svg class="masz masz-r" viewBox="0 0 13 30" aria-hidden="true"><path d="M1.25 1V29M1.25 15H13M7.5 11L2 15L7.5 19"/></svg></a>
   <div class="nav-menu">
-    <ul class="nav-links">
+            <ul class="nav-links">
       <li><a href="firmengedaechtnis.html">Das Produkt</a></li>
-      <li><a href="#alltag">So funktioniert's</a></li>
-      <li><a href="#weg">Der Weg</a></li>
-      <li><a href="rechner.html">Rechner</a></li>
-      <li><a href="#ueber">Über mich</a></li>
+      <li><a href="#rechner">Ihre Zahl</a></li>
+      <li><a href="comic.html">Der Comic</a></li>
+      <li><a href="#ueber">&Uuml;ber mich</a></li>
     </ul>
     <a class="nav-cta" href="#kontakt">Gespräch vereinbaren</a>
   </div>
@@ -337,30 +536,7 @@ h2{font-family:var(--font-display);font-size:2rem;font-weight:600;line-height:1.
 </div>
 
 
-<section class="abgrenzung" id="abgrenzung">
-  <div class="wrap">
-    <div class="eyebrow reveal">Warum ausgerechnet so</div>
-    <h2 class="reveal">Warum nicht ChatGPT, ein Systemhaus oder einfach selbst bauen?</h2>
-    <div class="abgrenzung-grid">
-      <div class="abgrenzung-item reveal">
-        <h3>Warum nicht einfach ChatGPT?</h3>
-        <p>ChatGPT kennt die Welt. Es kennt nicht Projekt Werkstatt 7, nicht Ihre Kunden, nicht die Entscheidung von damals und den Grund dafür. Das Firmengedächtnis kennt nur das.</p>
-      </div>
-      <div class="abgrenzung-item reveal">
-        <h3>Warum kein Systemhaus?</h3>
-        <p>Ein Systemhaus installiert und geht. Danach steht Software da, die keiner benutzt. Der schwierige Teil ist nicht die Technik. Es ist, dass ein Team seine Gewohnheiten ändert.</p>
-      </div>
-      <div class="abgrenzung-item reveal">
-        <h3>Warum einer statt einer Beratung mit fünfzig Leuten?</h3>
-        <p>Weil Sie mit dem sprechen, der es auch baut. Kein Vertrieb, der etwas verspricht, und kein Junior, der es dann macht.</p>
-      </div>
-      <div class="abgrenzung-item reveal">
-        <h3>Warum nicht selbst bauen?</h3>
-        <p>Können Sie. Fragen Sie mich vorher, woran es meistens scheitert. Diese Antwort kostet Sie nichts.</p>
-      </div>
-    </div>
-  </div>
-</section>
+
 
 <section class="problem" id="problem">
   <div class="wrap">
@@ -398,21 +574,114 @@ h2{font-family:var(--font-display);font-size:2rem;font-weight:600;line-height:1.
   </div>
 </section>
 
-<section class="rechner-cta" id="rechner">
+<section class="rechner-inline" id="rechner">
   <div class="wrap">
-    <div class="rechner-inner">
-      <div>
-        <div class="eyebrow reveal">Ihre Zahl</div>
-        <h2 class="reveal">Was kostet Sie das? Rechnen Sie es aus.</h2>
-        <p class="rechner-text reveal">Sechs Fragen, drei Minuten. Keine E-Mail-Adresse, kein Login, kein Newsletter. Am Ende steht eine Zahl für Ihr Büro, nicht für die Branche.</p>
-      </div>
-      <div class="rechner-aktion reveal">
-        <a href="rechner.html" class="btn">
-          Zum Rechner
-          <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7" stroke-linecap="round" stroke-linejoin="round"/></svg>
-        </a>
+    <div class="eyebrow reveal">Ihre Zahl</div>
+    <h2 class="reveal">Was kostet Sie das? Rechnen Sie es aus.</h2>
+    <p class="lead reveal">Sechs Fragen, drei Minuten. Keine E-Mail-Adresse, kein Login, kein Newsletter. Am Ende steht eine Zahl f&uuml;r Ihr B&uuml;ro, nicht f&uuml;r die Branche.</p>
+<div class="calc-form">
+    <div class="field">
+      <label class="field-label" for="persons">Wie viele Schlüsselpersonen gibt es bei Ihnen, ohne die der Laden nicht rund läuft?</label>
+      <span class="field-hint">"Die Leute, bei denen alle sagen: Frag den Müller."</span>
+      <div class="input-row">
+        <input type="number" id="persons" min="1" max="50" value="3" class="input-narrow">
+        <span class="input-unit">Personen</span>
       </div>
     </div>
+
+    <div class="field">
+      <label class="field-label" for="salary">Was verdient so eine Person im Schnitt brutto pro Monat?</label>
+      <span class="field-hint">Grobe Schätzung reicht.</span>
+      <div class="input-row">
+        <input type="number" id="salary" min="1000" max="50000" step="100" value="4500" class="input-narrow">
+        <span class="input-unit">€ / Monat</span>
+      </div>
+    </div>
+
+    <div class="field">
+      <label class="field-label" for="replacement">Wie lange dauert es realistisch, so eine Position nachzubesetzen?</label>
+      <span class="field-hint">Denken Sie an den Fachkräftemangel.</span>
+      <div class="input-row">
+        <input type="number" id="replacement" min="1" max="36" value="6" class="input-narrow">
+        <span class="input-unit">Monate</span>
+      </div>
+    </div>
+
+    <div class="field">
+      <label class="field-label" for="rampup">Wie viele Monate braucht ein Nachfolger, bis er wirklich produktiv ist?</label>
+      <span class="field-hint">Nicht bis er da sitzt, sondern bis er wirklich weiß, wie Sie arbeiten.</span>
+      <div class="input-row">
+        <input type="number" id="rampup" min="1" max="36" value="6" class="input-narrow">
+        <span class="input-unit">Monate</span>
+      </div>
+    </div>
+
+    <div class="field">
+      <label class="field-label" for="searchhours">Wie viele Stunden pro Woche verbringt Ihr Team damit, Informationen zu suchen, die irgendwo sein müssten?</label>
+      <span class="field-hint">E-Mails durchsuchen, Kollegen fragen, Ablage durchwühlen.</span>
+      <div class="input-row">
+        <input type="number" id="searchhours" min="0" max="80" value="5" class="input-narrow">
+        <span class="input-unit">Stunden / Woche</span>
+      </div>
+    </div>
+
+    <div class="field">
+      <label class="field-label" for="hourlyrate">Was ist der durchschnittliche Stundensatz Ihres Teams?</label>
+      <span class="field-hint">Gehalt geteilt durch Monatsstunden. 30-50 € ist bei KMU typisch.</span>
+      <div class="input-row">
+        <input type="number" id="hourlyrate" min="10" max="300" value="40" class="input-narrow">
+        <span class="input-unit">€ / Stunde</span>
+      </div>
+    </div>
+
+    <p class="error-msg" id="errorMsg">Bitte füllen Sie alle Felder aus.</p>
+    <button class="btn-calc" id="calcBtn" type="button">Berechnen</button>
+  </div>
+<div class="result" id="result">
+    <div class="result-hero">
+      <div class="hero-item">
+        <div class="result-label">Jeder Abgang kostet Sie</div>
+        <div class="result-number" id="perExitAmount">--</div>
+        <div class="result-suffix">einmalig, je Schlüsselperson</div>
+      </div>
+      <div class="hero-item">
+        <div class="result-label">Suchen statt arbeiten kostet</div>
+        <div class="result-number" id="searchAmount">--</div>
+        <div class="result-suffix">jedes Jahr, auch ohne Abgang</div>
+      </div>
+    </div>
+    <div class="breakdown">
+      <div class="breakdown-row">
+        <div class="breakdown-info">
+          <div class="breakdown-title">Ausfall während der Vakanz</div>
+          <div class="breakdown-desc">Die Leistung fällt weg, das Gehalt sparen Sie, einen Teil fängt das Team auf. Was bleibt, ist echter Verlust.</div>
+        </div>
+        <div class="breakdown-amount" id="vacancyAmount">--</div>
+      </div>
+      <div class="breakdown-row">
+        <div class="breakdown-info">
+          <div class="breakdown-title">Wiederbesetzung</div>
+          <div class="breakdown-desc">Ausschreibung, Auswahl, Vertragsanbahnung und die Zeit, die Ihre Leute dafür aufwenden.</div>
+        </div>
+        <div class="breakdown-amount" id="hiringAmount">--</div>
+      </div>
+      <div class="breakdown-row">
+        <div class="breakdown-info">
+          <div class="breakdown-title">Einarbeitung</div>
+          <div class="breakdown-desc">Der Nachfolger wird voll bezahlt, bevor er die Leistung seines Vorgängers bringt.</div>
+        </div>
+        <div class="breakdown-amount" id="rampAmount">--</div>
+      </div>
+      <div class="breakdown-row">
+        <div class="breakdown-info">
+          <div class="breakdown-title">Suchzeit im Team</div>
+          <div class="breakdown-desc">Läuft jedes Jahr, unabhängig davon, ob jemand geht.</div>
+        </div>
+        <div class="breakdown-amount" id="searchAmount2">--</div>
+      </div>
+    </div>
+    <div class="scenario" id="scenario">--</div>
+  </div>
   </div>
 </section>
 
@@ -479,252 +748,11 @@ h2{font-family:var(--font-display);font-size:2rem;font-weight:600;line-height:1.
   </div>
 </section>
 
-<section class="weg" id="weg">
-  <div class="wrap">
-    <div class="eyebrow reveal">Der Weg, drei Monate</div>
-    <h2 class="reveal">Vom Basislager zum Gipfel: was in drei Monaten passiert</h2>
-    <p class="weg-intro reveal">Kein IT-Projekt, sondern ein Veränderungsprozess. Und kein Sprung ins Unbekannte, sondern ein Weg mit klaren Etappen, auf dem jeder Schritt schon etwas bringt.</p>
-    <div class="weg-stages reveal">
-      <div class="weg-stage">
-        <div class="weg-stage-label">Basislager</div>
-        <h3>Klarheit</h3>
-        <div class="weg-rolle weg-ich">
-          <span class="weg-wer">Was ich tue</span>
-          <p><b>Zuhören.</b> Ich komme zu Ihnen. Einen Tag lang. Ich höre zu, stelle Fragen, verstehe wie Ihr Wissen fließt und wo es hängenbleibt.</p>
-        </div>
-        <div class="weg-rolle">
-          <span class="weg-wer">Was Sie merken</span>
-          <p>Am Ende wissen Sie zum ersten Mal, wo Ihr Unternehmen verwundbar ist. Wo steckt welches Wissen, und was geht verloren, wenn Person X morgen nicht mehr da ist.</p>
-        </div>
-      </div>
-      <div class="weg-stage">
-        <div class="weg-stage-label">Etappe 1</div>
-        <h3>Erste Schritte</h3>
-        <div class="weg-rolle weg-ich">
-          <span class="weg-wer">Was ich tue</span>
-          <p><b>Aufbauen.</b> Ihr Wissen wird Teil des Systems. Schritt für Schritt, ohne etwas umzuwerfen. Ihre Dateien bleiben wo sie sind.</p>
-        </div>
-        <div class="weg-rolle">
-          <span class="weg-wer">Was Sie merken</span>
-          <p>Die wichtigsten Prozesse sind dokumentiert. Jeder hat sein erstes Gespräch mit der KI geführt. Die Hemmschwelle sinkt.</p>
-        </div>
-      </div>
-      <div class="weg-stage">
-        <div class="weg-stage-label">Etappe 2</div>
-        <h3>Es wird leichter</h3>
-        <div class="weg-rolle weg-ich">
-          <span class="weg-wer">Was ich tue</span>
-          <p><b>Mitnehmen.</b> Ihr Team lernt, mit dem System zu arbeiten. Nicht im Schulungsraum, sondern am echten Arbeitsplatz, mit echten Fragen. Die Skeptiker zuerst.</p>
-        </div>
-        <div class="weg-rolle">
-          <span class="weg-wer">Was Sie merken</span>
-          <p>„Frag das System“ wird zur echten Alternative. Die Neugierigen sind begeistert, die Skeptiker geben zu: „OK, das ist anders.“</p>
-        </div>
-      </div>
-      <div class="weg-stage">
-        <div class="weg-stage-label">Etappe 3</div>
-        <h3>Neue Normalität</h3>
-        <div class="weg-rolle weg-ich">
-          <span class="weg-wer">Was ich tue</span>
-          <p><b>Loslassen.</b> Ich trete zurück. Nach ein paar Monaten brauchen Sie mich nicht mehr.</p>
-        </div>
-        <div class="weg-rolle">
-          <span class="weg-wer">Was Sie merken</span>
-          <p>Das System gehört zum Alltag. Der Geschäftsführer sieht monatlich, wo das Unternehmen steht.</p>
-        </div>
-      </div>
-      <div class="weg-stage">
-        <div class="weg-stage-label">Gipfel</div>
-        <h3>Firmengedächtnis</h3>
-        <div class="weg-rolle weg-ich">
-          <span class="weg-wer">Was ich tue</span>
-          <p><b>Ab hier ohne mich.</b></p>
-        </div>
-        <div class="weg-rolle">
-          <span class="weg-wer">Was Sie merken</span>
-          <p>Wissen bleibt, egal wer kommt oder geht. Einarbeitung in Wochen statt Monaten. Das Team arbeitet aus einer gemeinsamen Basis.</p>
-        </div>
-      </div>
-    </div>
-    <picture><source srcset="img/berg-roadmap.webp" type="image/webp"><img src="img/berg-roadmap und vorher-nachher.png" alt="Der Weg zum Gipfel: 5 Etappen vom Basislager zum Firmengedächtnis. Vorher/Nachher Arbeitstag: Von 47 E-Mails zu 3 klaren Aufgaben." class="reveal" style="width:100%;border-radius:6px;margin-top:2.5rem;border:1px solid var(--border)" loading="lazy"></picture>
-    <p class="weg-bottom reveal">Am Anfang sagen die meisten: "KI ist nichts für uns." Am Ende fragen sie: "Warum haben wir das nicht früher gemacht?"</p>
-  </div>
-</section>
 
-<section class="pruefung" id="pruefung">
-  <div class="wrap">
-    <div class="eyebrow reveal">Qualitätsprüfung mit sechs Rollen</div>
-    <h2 class="reveal">In jedem Büro sitzt einer,<br>der beweisen will, dass es nicht funktioniert.</h2>
-    <p class="pruefung-sub reveal">Bei uns arbeitet er mit.</p>
 
-    <p class="pruefung-lead reveal"><strong>Die meisten zeigen Ihnen, was ihr System kann. Hier steht, woran es scheitern könnte, und was dagegen getan wird.</strong></p>
-    <p class="pruefung-lead reveal">Ein Wissenssystem fällt selten mit Getöse durch. Es wird einfach nicht benutzt. Und meistens liegt das an einer Stelle, die bei der Vorführung nie drankommt.</p>
-    <p class="pruefung-lead reveal">Diese Stellen suchen wir, bevor Sie darauf stoßen. Dafür gibt es ein erfundenes Architekturbüro mit erfundenen Projekten und sechs Mitarbeitern, die jeden Tag dasselbe wollen wie Ihre.</p>
 
-    <div class="lineup reveal">
-      <svg viewBox="0 0 1100 245" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Sechs Prüfrollen: Geschäftsführung, Projektleitung, die Neue am dritten Tag, Bauleitung, Büroleitung und der Skeptiker, der einen halben Schritt abseits steht.">
-      <defs>
-      <g id="torso">
-      <path d="M-30,150 C-30,96 -25,76 0,76 C25,76 30,96 30,150" fill="none" stroke="#1A6B5A" stroke-width="2.4" stroke-linecap="round"/>
-      </g>
-      </defs>
 
-      <!-- ============ 1. Geschäftsführung ============ -->
-      <g transform="translate(95,0)">
-      <circle cx="0" cy="46" r="21" fill="none" stroke="#1A6B5A" stroke-width="2.4"/>
-      <use href="#torso"/>
-      <!-- Blatt Papier in der Hand -->
-      <rect x="-26" y="104" width="46" height="32" rx="2" fill="#EEF5F3" stroke="#1A6B5A" stroke-width="2"/>
-      <line x1="-18" y1="113" x2="10" y2="113" stroke="#1A6B5A" stroke-width="1.6" opacity=".55"/>
-      <line x1="-18" y1="121" x2="12" y2="121" stroke="#1A6B5A" stroke-width="1.6" opacity=".55"/>
-      <line x1="-18" y1="129" x2="2" y2="129" stroke="#1A6B5A" stroke-width="1.6" opacity=".55"/>
-      <!-- Arm zum Blatt -->
-      <path d="M26,100 C34,112 32,128 22,134" fill="none" stroke="#1A6B5A" stroke-width="2.4" stroke-linecap="round"/>
-      <text x="0" y="196" text-anchor="middle" font-family="Inter,sans-serif" font-size="15" font-weight="600" fill="#1A1D26">Geschäftsführung</text>
-      <text x="0" y="219" text-anchor="middle" font-family="Inter,sans-serif" font-size="13" fill="#5A5D64">Überblick, sofort</text>
-      </g>
 
-      <!-- ============ 2. Projektleitung ============ -->
-      <g transform="translate(265,0)">
-      <circle cx="0" cy="46" r="21" fill="none" stroke="#1A6B5A" stroke-width="2.4"/>
-      <use href="#torso"/>
-      <!-- Arm hoch ans Ohr -->
-      <path d="M24,104 C36,96 34,68 26,56" fill="none" stroke="#1A6B5A" stroke-width="2.4" stroke-linecap="round"/>
-      <!-- Telefon -->
-      <rect x="19" y="36" width="14" height="24" rx="3.5" fill="#EEF5F3" stroke="#1A6B5A" stroke-width="2"/>
-      <!-- Hörsignal -->
-      <path d="M40,40 C46,45 46,53 40,58" fill="none" stroke="#1A6B5A" stroke-width="1.8" stroke-linecap="round" opacity=".5"/>
-      <text x="0" y="196" text-anchor="middle" font-family="Inter,sans-serif" font-size="15" font-weight="600" fill="#1A1D26">Projektleitung</text>
-      <text x="0" y="219" text-anchor="middle" font-family="Inter,sans-serif" font-size="13" fill="#5A5D64">Noch im Telefonat</text>
-      </g>
-
-      <!-- ============ 3. Die Neue, Tag 3 ============ -->
-      <g transform="translate(435,0)">
-      <circle cx="0" cy="46" r="21" fill="none" stroke="#1A6B5A" stroke-width="2.4"/>
-      <use href="#torso"/>
-      <!-- Fragezeichen über dem Kopf -->
-      <text x="30" y="30" font-family="Inter,sans-serif" font-size="27" font-weight="600" fill="#1A6B5A" opacity=".55">?</text>
-      <!-- Zusammengerollter Plan unterm Arm -->
-      <rect x="-38" y="108" width="52" height="13" rx="6.5" fill="#EEF5F3" stroke="#1A6B5A" stroke-width="2" transform="rotate(-12 -12 114)"/>
-      <path d="M-26,102 C-34,112 -33,124 -24,128" fill="none" stroke="#1A6B5A" stroke-width="2.4" stroke-linecap="round"/>
-      <text x="0" y="196" text-anchor="middle" font-family="Inter,sans-serif" font-size="15" font-weight="600" fill="#1A1D26">Die Neue, Tag 3</text>
-      <text x="0" y="219" text-anchor="middle" font-family="Inter,sans-serif" font-size="13" fill="#5A5D64">Nicht wieder fragen</text>
-      </g>
-
-      <!-- ============ 4. Bauleitung ============ -->
-      <g transform="translate(605,0)">
-      <circle cx="0" cy="48" r="21" fill="none" stroke="#1A6B5A" stroke-width="2.4"/>
-      <!-- Helm -->
-      <path d="M-25,42 C-25,20 25,20 25,42 Z" fill="#EEF5F3" stroke="#1A6B5A" stroke-width="2.4" stroke-linejoin="round"/>
-      <line x1="-29" y1="42" x2="29" y2="42" stroke="#1A6B5A" stroke-width="2.4" stroke-linecap="round"/>
-      <use href="#torso"/>
-      <!-- eine Hand hält das Handy hoch -->
-      <path d="M-24,104 C-36,98 -38,84 -32,76" fill="none" stroke="#1A6B5A" stroke-width="2.4" stroke-linecap="round"/>
-      <rect x="-40" y="58" width="15" height="25" rx="3.5" fill="#EEF5F3" stroke="#1A6B5A" stroke-width="2"/>
-      <text x="0" y="196" text-anchor="middle" font-family="Inter,sans-serif" font-size="15" font-weight="600" fill="#1A1D26">Bauleitung</text>
-      <text x="0" y="219" text-anchor="middle" font-family="Inter,sans-serif" font-size="13" fill="#5A5D64">Eine Hand frei</text>
-      </g>
-
-      <!-- ============ 5. Büroleitung ============ -->
-      <g transform="translate(775,0)">
-      <circle cx="0" cy="46" r="21" fill="none" stroke="#1A6B5A" stroke-width="2.4"/>
-      <use href="#torso"/>
-      <!-- Stapel -->
-      <rect x="-25" y="126" width="50" height="9" rx="2" fill="#EEF5F3" stroke="#1A6B5A" stroke-width="1.9"/>
-      <rect x="-22" y="115" width="44" height="9" rx="2" fill="#EEF5F3" stroke="#1A6B5A" stroke-width="1.9"/>
-      <rect x="-19" y="104" width="38" height="9" rx="2" fill="#EEF5F3" stroke="#1A6B5A" stroke-width="1.9"/>
-      <text x="0" y="196" text-anchor="middle" font-family="Inter,sans-serif" font-size="15" font-weight="600" fill="#1A1D26">Büroleitung</text>
-      <text x="0" y="219" text-anchor="middle" font-family="Inter,sans-serif" font-size="13" fill="#5A5D64">Nichts doppelt</text>
-      </g>
-
-      <!-- ============ Trennung: ein halber Schritt ============ -->
-      <line x1="875" y1="30" x2="875" y2="230" stroke="#E2E3E0" stroke-width="1.5" stroke-dasharray="3 7"/>
-
-      <!-- ============ 6. Der Skeptiker ============ -->
-      <g transform="translate(985,0)">
-      <circle cx="0" cy="46" r="21" fill="none" stroke="#1A6B5A" stroke-width="2.4"/>
-      <use href="#torso"/>
-      <!-- verschränkte Arme -->
-      <path d="M-30,100 C-22,116 6,120 26,112" fill="none" stroke="#1A6B5A" stroke-width="2.6" stroke-linecap="round"/>
-      <path d="M30,100 C22,116 -6,120 -26,112" fill="none" stroke="#1A6B5A" stroke-width="2.6" stroke-linecap="round"/>
-      <!-- hochgezogene Augenbraue -->
-      <line x1="-11" y1="38" x2="-3" y2="35" stroke="#1A6B5A" stroke-width="2" stroke-linecap="round"/>
-      <line x1="4" y1="36" x2="12" y2="36" stroke="#1A6B5A" stroke-width="2" stroke-linecap="round"/>
-      <text x="0" y="196" text-anchor="middle" font-family="Inter,sans-serif" font-size="15" font-weight="600" fill="#1A6B5A">Der Skeptiker</text>
-      <text x="0" y="219" text-anchor="middle" font-family="Inter,sans-serif" font-size="13" fill="#5A5D64">Dass es nicht geht</text>
-      </g>
-      </svg>
-    </div>
-
-    <ul class="lineup-liste reveal">
-      <li><span class="rolle">Geschäftsführung</span><span class="motiv">Überblick in fünf Minuten, ohne eine Mail zu öffnen</span></li>
-      <li><span class="rolle">Projektleitung</span><span class="motiv">Die Antwort noch im Telefonat, nicht danach</span></li>
-      <li><span class="rolle">Die Neue, Tag 3</span><span class="motiv">Nicht schon wieder jemanden fragen müssen</span></li>
-      <li><span class="rolle">Bauleitung</span><span class="motiv">Eine Zahl, auf der Baustelle, mit einer Hand am Handy</span></li>
-      <li><span class="rolle">Büroleitung</span><span class="motiv">Ordnung halten, ohne zweimal zu arbeiten</span></li>
-      <li><span class="rolle">Der Skeptiker</span><span class="motiv">Beweisen, dass es nicht funktioniert</span></li>
-    </ul>
-
-    <div class="pruefung-kacheln reveal">
-      <div class="pruefung-kachel">
-        <h3>Sechs Rollen</h3>
-        <p>Jede mit eigenem Motiv, eigener Ungeduld und einem eigenen Grund, das System liegen zu lassen.</p>
-      </div>
-      <div class="pruefung-kachel">
-        <h3>Echte Aufgaben</h3>
-        <p>Keine Erkundung. Aufgaben aus dem Alltag, formuliert mit dem Zeitdruck, den der Alltag hat.</p>
-      </div>
-      <div class="pruefung-kachel">
-        <h3>Unabhängige Gegenprüfung</h3>
-        <p>Wer sich selbst bewertet, bewertet großzügig. Jedes "gelöst" wird gegengeprüft, bevor es zählt.</p>
-      </div>
-    </div>
-
-    <div class="pruefung-warum reveal">
-      <p><strong>Warum wir das machen:</strong> Solche Systeme scheitern selten daran, dass etwas fehlt. Sie scheitern daran, dass zwei Stellen etwas Verschiedenes sagen und keine dazuschreibt, welche gilt. Genau danach suchen wir. Mit Absicht, immer wieder.</p>
-    </div>
-  </div>
-</section>
-
-<section class="setup" id="setup">
-  <div class="wrap">
-    <div class="setup-grid">
-      <div>
-        <div class="eyebrow reveal">Aufbau und Technik</div>
-        <h2 class="reveal">Ihre Dateistruktur bleibt. Wir machen sie schlau.</h2>
-        <p class="reveal">Nichts wird weggeworfen. Sie haben zehn Jahre an Ihrer Ordnerstruktur gebaut, und die funktioniert. Ihre Dateien, Ihre Ordner, Ihre Tools bleiben. Das Firmengedächtnis wird darüber gelegt. Nicht daneben, nicht stattdessen.</p>
-        <p class="reveal">Das System liest Ihre bestehenden Dateien, erstellt schlanke Index-Dateien und weiß danach, was in jedem Dokument steht. Ohne es zu verschieben. Die Dateien bleiben, wo sie sind.</p>
-        <p class="reveal">Und es wächst mit Ihrem Team. Erst die wichtigsten Prozesse, dann Schritt für Schritt mehr. Jeder hat Zeit, reinzuwachsen. Kein Big Bang, kein "ab Montag alles anders".</p>
-      </div>
-      <div class="itler-visual reveal">
-        <div class="itler-demo">
-          <div class="itler-q">Was wissen wir über Firma Ziegler?</div>
-          <div class="itler-a">3 Projekte seit 2021. Ansprechpartner: Herr Nowak. Letzte Abnahme: Sept 2025. Sonderkonstruktionen über Nowak direkt.<br><br>→ PROJEKTE/2024-Sonnenhof/Abnahme/</div>
-        </div>
-      </div>
-    </div>
-    <div class="setup-details">
-      <div class="setup-item reveal">
-        <h3>Wissen rein? Einfach erzählen.</h3>
-        <p>Eintippen, diktieren, Foto machen, Datei reinwerfen. Die KI sortiert alles in die richtige Kategorie. Kein Formularsystem, keine Schulung nötig.</p>
-      </div>
-      <div class="setup-item reveal">
-        <h3>Wissen raus? Einfach fragen.</h3>
-        <p>Frage schreiben, Antwort bekommen. Aus Ihrem echten Firmenwissen, nicht aus dem Internet. Funktioniert auch vom Handy.</p>
-      </div>
-      <div class="setup-item reveal">
-        <h3>Qualität? Läuft automatisch.</h3>
-        <p>Täglicher Check auf neue Inhalte. Wöchentliche Aufräumrunde. Monatlicher Report an den Geschäftsführer. Das System pflegt sich selbst.</p>
-      </div>
-    </div>
-    <p class="setup-mehr reveal">Sie wollen es genauer wissen? Zugesagte Antwortzeiten, was der Aufbau von Ihnen verlangt, was mit Ihren Daten passiert und was das System nicht kann: <a href="firmengedaechtnis.html">alles über das Firmengedächtnis</a></p>
-    <div class="setup-beweis reveal">
-      <h3>Ein Beweis, den Sie schon gesehen haben</h3>
-      <p>Diese Seite kommt nicht von einer Agentur. Gebaut hat sie dieselbe KI, mit der ich auch Ihr Firmengedächtnis aufbaue. Nicht das Firmengedächtnis selbst, das ist ein Wissenssystem und kein Webbaukasten. Aber dieselbe Maschine und dieselbe Arbeitsweise. Die Richtung gebe ich vor, die Arbeit macht sie. Wenn Sie wissen wollen, ob das trägt: Sie lesen gerade das Ergebnis.</p>
-    </div>
-    <picture><source srcset="img/itler-pulse.webp" type="image/webp"><img src="img/itler-dateien und wissens-pulse.png" alt="Ihre Dateien bleiben: Ordnerstruktur wird schlau gemacht. Der Wissens-Pulse: Monatlicher Report mit 78% dokumentiert, Top 3 Wissenslücken und Empfehlung." class="reveal" style="width:100%;border-radius:6px;margin-top:2.5rem;border:1px solid rgba(255,255,255,0.12)" loading="lazy"></picture>
-  </div>
-</section>
 
 <section class="ueber" id="ueber">
   <div class="wrap">
@@ -746,6 +774,10 @@ h2{font-family:var(--font-display);font-size:2rem;font-weight:600;line-height:1.
       </div>
     </div>
   </div>
+    <div class="beweis reveal">
+      <h3>Ein Beweis, den Sie schon gesehen haben</h3>
+      <p>Gebaut hat diese Seite dieselbe KI, mit der ich auch Ihr Firmenged&auml;chtnis aufbaue. Nicht das Firmenged&auml;chtnis selbst, das ist ein Wissenssystem und kein Webbaukasten. Aber dieselbe Maschine und dieselbe Arbeitsweise. Die Richtung gebe ich vor, die Arbeit macht sie. Wenn Sie wissen wollen, ob das tr&auml;gt: Sie lesen gerade das Ergebnis.</p>
+    </div>
 </section>
 
 <section class="cta-section" id="kontakt">
@@ -793,6 +825,99 @@ h2{font-family:var(--font-display);font-size:2rem;font-weight:600;line-height:1.
 const io=new IntersectionObserver(es=>{es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.12});
 document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
 document.querySelectorAll('.nav-links a, .nav-cta').forEach(a=>{a.addEventListener('click',()=>{document.querySelector('.nav').classList.remove('open')})});
+</script>
+
+<script>
+
+  function formatEuro(n) {
+    return n.toLocaleString('de-DE', { maximumFractionDigits: 0 }) + ' €';
+  }
+
+  function getVal(id) {
+    const el = document.getElementById(id);
+    const v = parseFloat(el.value);
+    return isNaN(v) ? null : v;
+  }
+
+  document.getElementById('calcBtn').addEventListener('click', function() {
+    const fields = ['persons','salary','replacement','rampup','searchhours','hourlyrate'];
+    let allValid = true;
+
+    fields.forEach(function(id) {
+      const el = document.getElementById(id);
+      const v = getVal(id);
+      if (v === null || v < 0) {
+        el.classList.add('field-error');
+        allValid = false;
+      } else {
+        el.classList.remove('field-error');
+      }
+    });
+
+    const errEl = document.getElementById('errorMsg');
+    if (!allValid) {
+      errEl.classList.add('visible');
+      return;
+    }
+    errEl.classList.remove('visible');
+
+    const persons = getVal('persons');
+    const salary = getVal('salary');
+    const replacement = getVal('replacement');
+    const rampup = getVal('rampup');
+    const searchhours = getVal('searchhours');
+    const hourlyrate = getVal('hourlyrate');
+
+    // Je Abgang einer Schluesselperson, einmalig.
+    // Vakanz: Leistung faellt weg, Gehalt wird gespart, ein Teil wird vom Team aufgefangen.
+    const vacancy = replacement * salary * 0.65;
+    // Wiederbesetzung: Ausschreibung, Auswahl, Aufwand der Kollegen. Rund 20 % eines Jahresgehalts.
+    const hiring = salary * 12 * 0.20;
+    // Einarbeitung: volles Gehalt bei etwa halber Leistung.
+    const ramp = rampup * salary * 0.5;
+    const perExit = vacancy + hiring + ramp;
+
+    // Laeuft jedes Jahr, unabhaengig von Abgaengen.
+    const search = searchhours * hourlyrate * 52;
+
+    document.getElementById('perExitAmount').textContent = formatEuro(perExit);
+    document.getElementById('searchAmount').textContent = formatEuro(search);
+    document.getElementById('vacancyAmount').textContent = formatEuro(vacancy);
+    document.getElementById('hiringAmount').textContent = formatEuro(hiring);
+    document.getElementById('rampAmount').textContent = formatEuro(ramp);
+    document.getElementById('searchAmount2').textContent = formatEuro(search);
+
+    const personWort = persons === 1 ? 'Schlüsselperson' : 'Schlüsselpersonen';
+    document.getElementById('scenario').innerHTML =
+      'Bei ' + persons + ' ' + personWort + ' summiert sich das auf <strong>' +
+      formatEuro(perExit * persons) + '</strong>, sobald alle ausscheiden. Dazu <strong>' +
+      formatEuro(search) + '</strong> Suchzeit in jedem einzelnen Jahr.';
+
+    const resultEl = document.getElementById('result');
+    resultEl.classList.remove('visible');
+    void resultEl.offsetWidth;
+    resultEl.classList.add('visible');
+
+    document.getElementById('closing').style.display = 'block';
+
+    setTimeout(function() {
+      resultEl.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    }, 100);
+  });
+
+  document.querySelectorAll('input[type="number"]').forEach(function(input) {
+    input.addEventListener('keydown', function(e) {
+      if (e.key === 'Enter') {
+        e.preventDefault();
+        document.getElementById('calcBtn').click();
+      }
+    });
+    input.addEventListener('input', function() {
+      this.classList.remove('field-error');
+      document.getElementById('errorMsg').classList.remove('visible');
+    });
+  });
+
 </script>
 
 </body>

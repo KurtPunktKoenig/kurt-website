@@ -512,10 +512,41 @@
     .result.visible { animation: none; }
     .btn-calc { transition: none; }
   }
+  /* Kopfleiste, damit der Rechner nicht in einer Sackgasse liegt. Bewusst ohne
+     Klappmenue: diese Seite hat ein eigenes Variablenschema und einen Dunkelmodus,
+     die volle Navigation zu portieren waere mehr Risiko als Nutzen. Die Links
+     umbrechen auf schmalen Bildschirmen einfach. */
+  .kopfleiste{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;
+    gap:0.75rem 1.5rem;max-width:920px;margin:0 auto;padding:1.1rem 1.5rem;
+    border-bottom:1px solid var(--border)}
+  .kopfleiste-logo{display:inline-flex;align-items:center;gap:0.3rem;
+    font-family:'Cormorant Garamond',Georgia,serif;font-weight:600;font-size:1.4rem;
+    color:var(--text);text-decoration:none;letter-spacing:-0.02em}
+  .kopfleiste-logo span span{color:var(--amber)}
+  .kopfleiste-logo .masz{height:1.05em;width:auto;flex-shrink:0;overflow:visible}
+  .kopfleiste-logo .masz path{fill:none;stroke:var(--amber);stroke-width:1.5;
+    stroke-linecap:square;stroke-linejoin:miter;vector-effect:non-scaling-stroke}
+  .kopfleiste-logo .masz-r{transform:scaleX(-1)}
+  .kopfleiste-links{display:flex;flex-wrap:wrap;gap:1.4rem;list-style:none;margin:0;padding:0}
+  .kopfleiste-links a{font-size:0.84rem;font-weight:500;color:var(--text-muted);text-decoration:none}
+  .kopfleiste-links a:hover{color:var(--text)}
+  .kopfleiste-links a.aktuell{color:var(--amber);font-weight:600}
+
 .footer-credit{font-size:0.75rem;color:var(--text-muted);margin-top:0.6rem;line-height:1.5}
 </style>
 </head>
 <body>
+
+<nav class="kopfleiste">
+  <a class="kopfleiste-logo" href="index.html"><svg class="masz" viewBox="0 0 13 30" aria-hidden="true"><path d="M1.25 1V29M1.25 15H13M7.5 11L2 15L7.5 19"/></svg><span>KI <span>Kurt</span></span><svg class="masz masz-r" viewBox="0 0 13 30" aria-hidden="true"><path d="M1.25 1V29M1.25 15H13M7.5 11L2 15L7.5 19"/></svg></a>
+  <ul class="kopfleiste-links">
+    <li><a href="firmengedaechtnis.html">Das Produkt</a></li>
+    <li><a href="rechner.html" class="aktuell">Ihre Zahl</a></li>
+    <li><a href="comic.html">Der Comic</a></li>
+    <li><a href="index.html#ueber">&Uuml;ber mich</a></li>
+    <li><a href="index.html#kontakt">Gespr&auml;ch vereinbaren</a></li>
+  </ul>
+</nav>
 
 <div class="container">
   <header class="header">
