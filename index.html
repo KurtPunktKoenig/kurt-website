@@ -27,25 +27,22 @@
   --font-body: 'Inter', system-ui, -apple-system, sans-serif;
   --max-w: 1100px;
   /* Rechner-Variablen, gleiche Werte, andere Namen */
-  --navy: #14171F
-  --navy-light: #1F232E
-  --amber: #1A6B5A
-  --amber-glow: #E0A840
-  --surface: #F6F6F4
-  --surface-warm: #F6F6F4
-  --card: #ffffff
-  --text: #1A1D26
-  --text-secondary: #3D404A
-  --text-muted: #5A5D64
-  --border: #E2E3E0
-  --input-bg: #ffffff
-  --input-border: #E2E3E0
-  --input-focus: #1A6B5A
-  --result-bg: #F6F6F4
-  --result-border: #F6F6F4
-  --breakdown-bg: #FFFFFF
-  --page-bg: #F6F6F4
-  --shadow: rgba(20,23,31, 0.08)
+  --navy: #14171F;
+  --navy-light: #1F232E;
+  --amber: #1A6B5A;
+  --amber-glow: #E0A840;
+  --surface: #F6F6F4;
+  --surface-warm: #F6F6F4;
+  --card: #ffffff;
+  --text-secondary: #3D404A;
+  --input-bg: #ffffff;
+  --input-border: #E2E3E0;
+  --input-focus: #1A6B5A;
+  --result-bg: #F6F6F4;
+  --result-border: #F6F6F4;
+  --breakdown-bg: #FFFFFF;
+  --page-bg: #F6F6F4;
+  --shadow: rgba(20,23,31, 0.08);
   --shadow-strong: rgba(20,23,31, 0.14);
   --pad: 2rem;
 }
@@ -477,6 +474,18 @@ h2{font-family:var(--font-display);font-size:2rem;font-weight:600;line-height:1.
 .rechner-inline{background:var(--bg);border-top:1px solid var(--border);border-bottom:1px solid var(--border);padding:4.5rem 0}
 .rechner-inline .lead{max-width:40rem;color:var(--text-mid);margin-bottom:2.5rem}
 .rechner-inline .calc-form{max-width:46rem}
+/* Eingabefelder des Rechners. Beim Einbetten uebersehen, weil der Selektor
+   keinen Klassennamen enthaelt und der Filter nach Klassen suchte. Auf
+   .rechner-inline begrenzt, damit das Kontaktformular unberuehrt bleibt. */
+.rechner-inline input[type="number"]{width:100%;padding:0.65rem 0.85rem;font-size:1rem;
+  font-family:inherit;font-variant-numeric:tabular-nums;color:var(--text);
+  background:var(--input-bg);border:1.5px solid var(--input-border);border-radius:6px;
+  outline:none;transition:border-color 0.2s;-moz-appearance:textfield}
+.rechner-inline input[type="number"]::-webkit-inner-spin-button,
+.rechner-inline input[type="number"]::-webkit-outer-spin-button{-webkit-appearance:none;margin:0}
+.rechner-inline input[type="number"]:focus{border-color:var(--input-focus);
+  box-shadow:0 0 0 3px rgba(26,107,90,0.12)}
+
 .beweis{margin-top:2.5rem;padding:1.5rem 1.75rem;background:var(--bg);border-left:3px solid var(--accent);border-radius:0 6px 6px 0}
 .beweis h3{font-family:var(--font-display);font-size:1.35rem;margin-bottom:0.6rem;color:var(--text)}
 .beweis p{font-size:0.95rem;color:var(--text-mid);line-height:1.75}
