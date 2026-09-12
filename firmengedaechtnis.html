@@ -162,6 +162,25 @@ section{padding:5rem 0}
 /* ANIMATIONS */
 .reveal{opacity:0;transform:translateY(20px);transition:opacity 0.6s ease,transform 0.6s ease}
 .reveal.in{opacity:1;transform:none}
+/* PRUEFUNG (Rollentest), am 12.09.2026 von index.html hierher umgezogen */
+.pruefung{padding:5rem 0;background:var(--accent-bg);border-top:1px solid var(--border);border-bottom:1px solid var(--border)}
+.pruefung-sub{font-family:var(--font-display);font-size:1.35rem;color:var(--accent);font-style:italic;margin:0.4rem 0 1.75rem}
+.pruefung-lead{font-size:1rem;color:var(--text-mid);line-height:1.7;max-width:600px;margin-bottom:1rem}
+.lineup{margin:2.5rem 0 0}
+.lineup svg{width:100%;height:auto;display:block}
+.lineup-liste{display:none;margin:2rem 0 0;padding:0;list-style:none;border-top:1px solid var(--border)}
+.lineup-liste li{display:flex;flex-wrap:wrap;gap:0.25rem 1rem;align-items:baseline;padding:0.85rem 0;border-bottom:1px solid var(--border)}
+.lineup-liste .rolle{font-weight:600;font-size:0.92rem;color:var(--text)}
+.lineup-liste .motiv{font-size:0.85rem;color:var(--text-muted)}
+.lineup-liste li:last-child .rolle{color:var(--accent)}
+.pruefung-kacheln{display:grid;grid-template-columns:repeat(3,1fr);gap:0;border:1px solid var(--border);border-radius:6px;overflow:hidden;margin-top:2.5rem}
+.pruefung-kachel{padding:1.75rem 1.5rem;border-right:1px solid var(--border)}
+.pruefung-kachel:last-child{border-right:none}
+.pruefung-kachel h3{font-family:var(--font-display);font-size:1.15rem;font-weight:600;color:var(--text);margin-bottom:0.4rem}
+.pruefung-kachel p{font-size:0.8rem;color:var(--text-muted);line-height:1.55}
+.pruefung-warum{margin-top:2.5rem;padding-left:1.25rem;border-left:2px solid var(--accent);max-width:640px}
+.pruefung-warum p{font-size:0.95rem;color:var(--text-mid);line-height:1.7}
+
 @media (prefers-reduced-motion: reduce){
   .reveal{opacity:1;transform:none;transition:none}
   *{animation-duration:0.01ms!important;transition-duration:0.01ms!important;scroll-behavior:auto!important}
@@ -169,6 +188,11 @@ section{padding:5rem 0}
 
 /* RESPONSIVE */
 @media(max-width:900px){
+  .lineup{display:none}
+  .lineup-liste{display:block}
+  .pruefung-kacheln{grid-template-columns:1fr}
+  .pruefung-kachel{border-right:none;border-bottom:1px solid var(--border)}
+  .pruefung-kachel:last-child{border-bottom:none}
   :root{--pad:1.5rem}
   section{padding:3.5rem 0}
   .hero{grid-template-columns:1fr;gap:2.5rem;padding:3rem var(--pad) 2.5rem}
@@ -446,6 +470,141 @@ section{padding:5rem 0}
       </ul>
     </div>
     <p class="lead reveal">Am ersten Tag stehen zwanzig bis fünfzig Antwortkarten bereit. Das ist Absicht. Ein System, das am ersten Tag nichts weiß, wird kein zweites Mal gefragt.</p>
+  </div>
+</section>
+
+<section class="pruefung" id="pruefung">
+  <div class="wrap">
+    <div class="eyebrow reveal">Qualitätsprüfung mit sechs Rollen</div>
+    <h2 class="reveal">In jedem Büro sitzt einer,<br>der beweisen will, dass es nicht funktioniert.</h2>
+    <p class="pruefung-sub reveal">Bei uns arbeitet er mit.</p>
+
+    <p class="pruefung-lead reveal"><strong>Die meisten zeigen Ihnen, was ihr System kann. Hier steht, woran es scheitern könnte, und was dagegen getan wird.</strong></p>
+    <p class="pruefung-lead reveal">Ein Wissenssystem fällt selten mit Getöse durch. Es wird einfach nicht benutzt. Und meistens liegt das an einer Stelle, die bei der Vorführung nie drankommt.</p>
+    <p class="pruefung-lead reveal">Diese Stellen suchen wir, bevor Sie darauf stoßen. Dafür gibt es ein erfundenes Architekturbüro mit erfundenen Projekten und sechs Mitarbeitern, die jeden Tag dasselbe wollen wie Ihre.</p>
+
+    <div class="lineup reveal">
+      <svg viewBox="0 0 1100 245" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Sechs Prüfrollen: Geschäftsführung, Projektleitung, die Neue am dritten Tag, Bauleitung, Büroleitung und der Skeptiker, der einen halben Schritt abseits steht.">
+      <defs>
+      <g id="torso">
+      <path d="M-30,150 C-30,96 -25,76 0,76 C25,76 30,96 30,150" fill="none" stroke="#1A6B5A" stroke-width="2.4" stroke-linecap="round"/>
+      </g>
+      </defs>
+
+      <!-- ============ 1. Geschäftsführung ============ -->
+      <g transform="translate(95,0)">
+      <circle cx="0" cy="46" r="21" fill="none" stroke="#1A6B5A" stroke-width="2.4"/>
+      <use href="#torso"/>
+      <!-- Blatt Papier in der Hand -->
+      <rect x="-26" y="104" width="46" height="32" rx="2" fill="#EEF5F3" stroke="#1A6B5A" stroke-width="2"/>
+      <line x1="-18" y1="113" x2="10" y2="113" stroke="#1A6B5A" stroke-width="1.6" opacity=".55"/>
+      <line x1="-18" y1="121" x2="12" y2="121" stroke="#1A6B5A" stroke-width="1.6" opacity=".55"/>
+      <line x1="-18" y1="129" x2="2" y2="129" stroke="#1A6B5A" stroke-width="1.6" opacity=".55"/>
+      <!-- Arm zum Blatt -->
+      <path d="M26,100 C34,112 32,128 22,134" fill="none" stroke="#1A6B5A" stroke-width="2.4" stroke-linecap="round"/>
+      <text x="0" y="196" text-anchor="middle" font-family="Inter,sans-serif" font-size="15" font-weight="600" fill="#1A1D26">Geschäftsführung</text>
+      <text x="0" y="219" text-anchor="middle" font-family="Inter,sans-serif" font-size="13" fill="#5A5D64">Überblick, sofort</text>
+      </g>
+
+      <!-- ============ 2. Projektleitung ============ -->
+      <g transform="translate(265,0)">
+      <circle cx="0" cy="46" r="21" fill="none" stroke="#1A6B5A" stroke-width="2.4"/>
+      <use href="#torso"/>
+      <!-- Arm hoch ans Ohr -->
+      <path d="M24,104 C36,96 34,68 26,56" fill="none" stroke="#1A6B5A" stroke-width="2.4" stroke-linecap="round"/>
+      <!-- Telefon -->
+      <rect x="19" y="36" width="14" height="24" rx="3.5" fill="#EEF5F3" stroke="#1A6B5A" stroke-width="2"/>
+      <!-- Hörsignal -->
+      <path d="M40,40 C46,45 46,53 40,58" fill="none" stroke="#1A6B5A" stroke-width="1.8" stroke-linecap="round" opacity=".5"/>
+      <text x="0" y="196" text-anchor="middle" font-family="Inter,sans-serif" font-size="15" font-weight="600" fill="#1A1D26">Projektleitung</text>
+      <text x="0" y="219" text-anchor="middle" font-family="Inter,sans-serif" font-size="13" fill="#5A5D64">Noch im Telefonat</text>
+      </g>
+
+      <!-- ============ 3. Die Neue, Tag 3 ============ -->
+      <g transform="translate(435,0)">
+      <circle cx="0" cy="46" r="21" fill="none" stroke="#1A6B5A" stroke-width="2.4"/>
+      <use href="#torso"/>
+      <!-- Fragezeichen über dem Kopf -->
+      <text x="30" y="30" font-family="Inter,sans-serif" font-size="27" font-weight="600" fill="#1A6B5A" opacity=".55">?</text>
+      <!-- Zusammengerollter Plan unterm Arm -->
+      <rect x="-38" y="108" width="52" height="13" rx="6.5" fill="#EEF5F3" stroke="#1A6B5A" stroke-width="2" transform="rotate(-12 -12 114)"/>
+      <path d="M-26,102 C-34,112 -33,124 -24,128" fill="none" stroke="#1A6B5A" stroke-width="2.4" stroke-linecap="round"/>
+      <text x="0" y="196" text-anchor="middle" font-family="Inter,sans-serif" font-size="15" font-weight="600" fill="#1A1D26">Die Neue, Tag 3</text>
+      <text x="0" y="219" text-anchor="middle" font-family="Inter,sans-serif" font-size="13" fill="#5A5D64">Nicht wieder fragen</text>
+      </g>
+
+      <!-- ============ 4. Bauleitung ============ -->
+      <g transform="translate(605,0)">
+      <circle cx="0" cy="48" r="21" fill="none" stroke="#1A6B5A" stroke-width="2.4"/>
+      <!-- Helm -->
+      <path d="M-25,42 C-25,20 25,20 25,42 Z" fill="#EEF5F3" stroke="#1A6B5A" stroke-width="2.4" stroke-linejoin="round"/>
+      <line x1="-29" y1="42" x2="29" y2="42" stroke="#1A6B5A" stroke-width="2.4" stroke-linecap="round"/>
+      <use href="#torso"/>
+      <!-- eine Hand hält das Handy hoch -->
+      <path d="M-24,104 C-36,98 -38,84 -32,76" fill="none" stroke="#1A6B5A" stroke-width="2.4" stroke-linecap="round"/>
+      <rect x="-40" y="58" width="15" height="25" rx="3.5" fill="#EEF5F3" stroke="#1A6B5A" stroke-width="2"/>
+      <text x="0" y="196" text-anchor="middle" font-family="Inter,sans-serif" font-size="15" font-weight="600" fill="#1A1D26">Bauleitung</text>
+      <text x="0" y="219" text-anchor="middle" font-family="Inter,sans-serif" font-size="13" fill="#5A5D64">Eine Hand frei</text>
+      </g>
+
+      <!-- ============ 5. Büroleitung ============ -->
+      <g transform="translate(775,0)">
+      <circle cx="0" cy="46" r="21" fill="none" stroke="#1A6B5A" stroke-width="2.4"/>
+      <use href="#torso"/>
+      <!-- Stapel -->
+      <rect x="-25" y="126" width="50" height="9" rx="2" fill="#EEF5F3" stroke="#1A6B5A" stroke-width="1.9"/>
+      <rect x="-22" y="115" width="44" height="9" rx="2" fill="#EEF5F3" stroke="#1A6B5A" stroke-width="1.9"/>
+      <rect x="-19" y="104" width="38" height="9" rx="2" fill="#EEF5F3" stroke="#1A6B5A" stroke-width="1.9"/>
+      <text x="0" y="196" text-anchor="middle" font-family="Inter,sans-serif" font-size="15" font-weight="600" fill="#1A1D26">Büroleitung</text>
+      <text x="0" y="219" text-anchor="middle" font-family="Inter,sans-serif" font-size="13" fill="#5A5D64">Nichts doppelt</text>
+      </g>
+
+      <!-- ============ Trennung: ein halber Schritt ============ -->
+      <line x1="875" y1="30" x2="875" y2="230" stroke="#E2E3E0" stroke-width="1.5" stroke-dasharray="3 7"/>
+
+      <!-- ============ 6. Der Skeptiker ============ -->
+      <g transform="translate(985,0)">
+      <circle cx="0" cy="46" r="21" fill="none" stroke="#1A6B5A" stroke-width="2.4"/>
+      <use href="#torso"/>
+      <!-- verschränkte Arme -->
+      <path d="M-30,100 C-22,116 6,120 26,112" fill="none" stroke="#1A6B5A" stroke-width="2.6" stroke-linecap="round"/>
+      <path d="M30,100 C22,116 -6,120 -26,112" fill="none" stroke="#1A6B5A" stroke-width="2.6" stroke-linecap="round"/>
+      <!-- hochgezogene Augenbraue -->
+      <line x1="-11" y1="38" x2="-3" y2="35" stroke="#1A6B5A" stroke-width="2" stroke-linecap="round"/>
+      <line x1="4" y1="36" x2="12" y2="36" stroke="#1A6B5A" stroke-width="2" stroke-linecap="round"/>
+      <text x="0" y="196" text-anchor="middle" font-family="Inter,sans-serif" font-size="15" font-weight="600" fill="#1A6B5A">Der Skeptiker</text>
+      <text x="0" y="219" text-anchor="middle" font-family="Inter,sans-serif" font-size="13" fill="#5A5D64">Dass es nicht geht</text>
+      </g>
+      </svg>
+    </div>
+
+    <ul class="lineup-liste reveal">
+      <li><span class="rolle">Geschäftsführung</span><span class="motiv">Überblick in fünf Minuten, ohne eine Mail zu öffnen</span></li>
+      <li><span class="rolle">Projektleitung</span><span class="motiv">Die Antwort noch im Telefonat, nicht danach</span></li>
+      <li><span class="rolle">Die Neue, Tag 3</span><span class="motiv">Nicht schon wieder jemanden fragen müssen</span></li>
+      <li><span class="rolle">Bauleitung</span><span class="motiv">Eine Zahl, auf der Baustelle, mit einer Hand am Handy</span></li>
+      <li><span class="rolle">Büroleitung</span><span class="motiv">Ordnung halten, ohne zweimal zu arbeiten</span></li>
+      <li><span class="rolle">Der Skeptiker</span><span class="motiv">Beweisen, dass es nicht funktioniert</span></li>
+    </ul>
+
+    <div class="pruefung-kacheln reveal">
+      <div class="pruefung-kachel">
+        <h3>Sechs Rollen</h3>
+        <p>Jede mit eigenem Motiv, eigener Ungeduld und einem eigenen Grund, das System liegen zu lassen.</p>
+      </div>
+      <div class="pruefung-kachel">
+        <h3>Echte Aufgaben</h3>
+        <p>Keine Erkundung. Aufgaben aus dem Alltag, formuliert mit dem Zeitdruck, den der Alltag hat.</p>
+      </div>
+      <div class="pruefung-kachel">
+        <h3>Unabhängige Gegenprüfung</h3>
+        <p>Wer sich selbst bewertet, bewertet großzügig. Jedes "gelöst" wird gegengeprüft, bevor es zählt.</p>
+      </div>
+    </div>
+
+    <div class="pruefung-warum reveal">
+      <p><strong>Warum wir das machen:</strong> Solche Systeme scheitern selten daran, dass etwas fehlt. Sie scheitern daran, dass zwei Stellen etwas Verschiedenes sagen und keine dazuschreibt, welche gilt. Genau danach suchen wir. Mit Absicht, immer wieder.</p>
+    </div>
   </div>
 </section>
 
