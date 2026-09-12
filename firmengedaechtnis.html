@@ -162,6 +162,10 @@ section{padding:5rem 0}
 /* ANIMATIONS */
 .reveal{opacity:0;transform:translateY(20px);transition:opacity 0.6s ease,transform 0.6s ease}
 .reveal.in{opacity:1;transform:none}
+@media (prefers-reduced-motion: reduce){
+  .reveal{opacity:1;transform:none;transition:none}
+  *{animation-duration:0.01ms!important;transition-duration:0.01ms!important;scroll-behavior:auto!important}
+}
 
 /* RESPONSIVE */
 @media(max-width:900px){
@@ -230,7 +234,7 @@ section{padding:5rem 0}
       <li><span class="hv-punkt"></span>Aufbau in drei Monaten, danach läuft es</li>
       <li><span class="hv-punkt"></span>Ihre Daten bleiben auf Ihren Rechnern</li>
       <li><span class="hv-punkt"></span>Jeder im Büro darf fragen, auch ohne eigene KI-Lizenz</li>
-      <li><span class="hv-punkt"></span>Aufbau und Begleitung sind BAFA-förderfähig</li>
+      <li><span class="hv-punkt"></span>Der Klarheitstag ist BAFA-förderfähig, 50 Prozent bis 1.750 EUR</li>
     </ul>
   </div>
 </header>
@@ -486,7 +490,7 @@ section{padding:5rem 0}
       <h2 class="reveal">Zwei Positionen, und beide sage ich Ihnen im Gespräch.</h2>
       <p class="lead reveal">Der Preis besteht aus einem einmaligen Aufbau und einem monatlichen Abo. Dazu kommen Ihre eigenen Lizenzkosten für die KI-Zugänge und die Synchronisierung, die zahlen Sie direkt an die Anbieter und nicht an mich.</p>
       <p class="lead reveal">Warum hier keine Zahl steht: der Aufwand hängt davon ab, wie viele Sie sind und in welchem Zustand Ihre Unterlagen sind. Eine Zahl auf einer Webseite wäre für die Hälfte der Leser zu hoch und für die andere Hälfte zu niedrig.</p>
-      <p class="kosten-hinweis reveal">Was ich hier sagen kann: Aufbau und Begleitung sind über die BAFA förderfähig, für kleine und mittlere Unternehmen mit bis zu 50 Prozent Zuschuss. Und Sie bekommen die Zahl im ersten Gespräch, nicht nach drei Terminen.</p>
+      <p class="kosten-hinweis reveal">Was ich hier sagen kann: Der Klarheitstag ist über die BAFA förderfähig, mit 50 Prozent Zuschuss, höchstens 1.750 EUR. Die Förderrichtlinie begrenzt eine geförderte Beratung auf fünf Tage, deshalb wird der Klarheitstag beantragt und nicht der ganze Aufbau. Eine zweite Beratung im selben Jahr ist möglich. Und Sie bekommen die Zahl im ersten Gespräch, nicht nach drei Terminen.</p>
       <p class="kosten-rechner reveal">Was Sie der jetzige Zustand kostet, können Sie vorher selbst ausrechnen: <a href="rechner.html">zum Wissensverlust-Rechner</a></p>
     </div>
   </div>
