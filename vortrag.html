@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex">
+<title>Und wenn Peter in Rente geht? | KI Kurt</title>
+<meta name="description" content="Folien zum Online-Impuls am 24.09.2026: Drei Schritte, mit denen kleine Firmen das Wissen ihrer besten Leute behalten, mit KI und ohne IT-Projekt.">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<style>
+@font-face{font-family:'Cormorant Garamond';font-style:normal;font-weight:300 700;font-display:swap;src:url("fonts/cormorant-garamond-latin.woff2") format("woff2")}
+@font-face{font-family:'Cormorant Garamond';font-style:italic;font-weight:300 700;font-display:swap;src:url("fonts/cormorant-garamond-latin-italic.woff2") format("woff2")}
+@font-face{font-family:'Inter';font-style:normal;font-weight:100 900;font-display:swap;src:url("fonts/inter-latin.woff2") format("woff2")}
+:root{
+  --bg:#FFFFFF;--bg-alt:#F6F6F4;--bg-dark:#1A1D26;
+  --text:#1A1D26;--text-mid:#3D404A;--text-muted:#5A5D64;--text-light:#848790;
+  --accent:#1A6B5A;--accent-bg:#EEF5F3;--border:#E2E3E0;
+  --font-display:'Cormorant Garamond','Georgia',serif;
+  --font-body:'Inter',system-ui,-apple-system,sans-serif;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html,body{height:100%;overflow:hidden}
+body{background:var(--bg);color:var(--text);font-family:var(--font-body);line-height:1.5;-webkit-font-smoothing:antialiased}
+
+.slide{position:absolute;inset:0;display:none;padding:6vh 7vw;flex-direction:column;justify-content:center}
+.slide.active{display:flex}
+.slide-inner{width:100%;max-width:1400px;margin:0 auto}
+
+.eyebrow{font-family:var(--font-body);font-size:clamp(0.75rem,1.1vw,1rem);font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:var(--accent);margin-bottom:1.2em}
+.big{font-family:var(--font-display);font-weight:600;line-height:1.05;letter-spacing:-0.02em;text-wrap:balance}
+h1.big{font-size:clamp(2.4rem,6.2vw,5.6rem)}
+h2.big{font-size:clamp(2rem,4.8vw,4.4rem)}
+.sub{font-family:var(--font-display);font-size:clamp(1.3rem,2.4vw,2.2rem);font-weight:400;line-height:1.3;color:var(--text-mid);margin-top:0.8em;text-wrap:balance}
+.meta{font-size:clamp(0.9rem,1.3vw,1.2rem);color:var(--text-muted);margin-top:2.2em}
+.meta strong{color:var(--text);font-weight:600}
+
+/* Folie 1 */
+.s1 .slide-inner{display:grid;grid-template-columns:1.15fr 1fr;gap:5vw;align-items:center}
+.comic{height:min(78vh,44vw);aspect-ratio:1/2;width:auto;justify-self:end;border:1px solid var(--border);border-radius:6px;background-image:url("comics/seite-1-3.webp");background-size:300% 100%;background-position:left center;background-repeat:no-repeat;box-shadow:0 20px 50px rgba(26,29,38,0.12)}
+
+/* Folie 2 */
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:2.5vw;margin-top:4vh}
+.stat-value{font-family:var(--font-display);font-size:clamp(2.6rem,6vw,5.4rem);font-weight:700;color:var(--accent);line-height:1;letter-spacing:-0.02em;font-variant-numeric:tabular-nums}
+.stat-label{font-size:clamp(0.9rem,1.35vw,1.25rem);color:var(--text-mid);margin-top:0.6em;line-height:1.35}
+.sources{font-size:clamp(0.7rem,0.95vw,0.9rem);color:var(--text-light);margin-top:5vh;line-height:1.5}
+.montag{font-family:var(--font-display);font-size:clamp(1.3rem,2.4vw,2.2rem);color:var(--text);margin-top:4vh}
+
+/* Folie 3 */
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:3vw;margin-top:5vh}
+.step{background:var(--bg-alt);border-radius:8px;padding:clamp(1.2rem,2.4vw,2.4rem)}
+.step-num{font-family:var(--font-display);font-size:clamp(2.4rem,5vw,4.6rem);font-weight:700;color:var(--accent);line-height:1}
+.step h3{font-family:var(--font-display);font-size:clamp(1.4rem,2.5vw,2.3rem);font-weight:600;line-height:1.15;margin-top:0.5em;letter-spacing:-0.01em}
+.step p{font-size:clamp(0.95rem,1.35vw,1.25rem);color:var(--text-mid);margin-top:0.8em;line-height:1.45}
+
+/* Folie 4 */
+.chat{max-width:1000px;margin-top:4vh;display:flex;flex-direction:column;gap:1.6vh}
+.msg{display:flex;gap:1.2vw;align-items:flex-start}
+.avatar{flex:0 0 auto;width:clamp(2.4rem,3.6vw,3.4rem);height:clamp(2.4rem,3.6vw,3.4rem);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:clamp(0.75rem,1vw,0.95rem);font-weight:700;letter-spacing:0.04em}
+.msg.pm .avatar{background:var(--bg-alt);color:var(--text-mid);border:1px solid var(--border)}
+.msg.ki .avatar{background:var(--accent);color:#FFF}
+.bubble{background:var(--bg-alt);border-radius:10px;padding:clamp(0.9rem,1.6vw,1.5rem) clamp(1.1rem,2vw,1.9rem);font-size:clamp(1rem,1.6vw,1.5rem);line-height:1.45;color:var(--text)}
+.msg.ki .bubble{background:var(--accent-bg);border-left:3px solid var(--accent)}
+.bubble .path{display:block;margin-top:0.6em;font-size:0.8em;color:var(--text-muted);font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace}
+.caption{font-family:var(--font-display);font-size:clamp(1.2rem,2.2vw,2rem);color:var(--text);margin-top:4vh}
+
+/* Folie 5 */
+.morgen{display:grid;grid-template-columns:1fr 1fr;gap:4vw;margin-top:5vh;align-items:start}
+.morgen-block h3{font-family:var(--font-display);font-size:clamp(1.5rem,2.8vw,2.6rem);font-weight:600;line-height:1.15;letter-spacing:-0.01em}
+.morgen-block p{font-size:clamp(1rem,1.5vw,1.4rem);color:var(--text-mid);margin-top:0.7em;line-height:1.45}
+.morgen-block a{color:var(--accent);text-decoration:none;font-weight:600}
+.kontakt{font-size:clamp(1.05rem,1.7vw,1.6rem);margin-top:0.9em;line-height:1.6}
+.kontakt strong{font-weight:600}
+.doppel{font-family:var(--font-display);font-size:clamp(1.5rem,3vw,2.8rem);font-weight:600;line-height:1.2;letter-spacing:-0.015em;margin-top:5vh;text-wrap:balance}
+.doppel span{color:var(--accent)}
+.bafa{display:inline-block;margin-top:3vh;font-size:clamp(0.8rem,1.05vw,1rem);color:var(--text-muted);background:var(--bg-alt);border-radius:999px;padding:0.5em 1.1em}
+
+/* Rahmen */
+.brand{position:fixed;top:2.4vh;left:3vw;display:inline-flex;align-items:center;gap:0.34em;text-decoration:none;font-family:var(--font-display);font-weight:600;font-size:clamp(1rem,1.5vw,1.4rem);color:var(--text);letter-spacing:-0.02em;z-index:5}
+.brand .masz{width:0.55em;height:auto;stroke:currentColor;stroke-width:1.6;fill:none;stroke-linecap:round;stroke-linejoin:round}
+.brand .masz-r{transform:scaleX(-1)}
+.brand .wortmarke span{color:var(--accent)}
+.counter{position:fixed;bottom:2.4vh;right:3vw;font-size:clamp(0.75rem,1vw,0.95rem);color:var(--text-light);font-variant-numeric:tabular-nums;z-index:5}
+.credit{position:fixed;bottom:2.4vh;left:3vw;font-size:clamp(0.65rem,0.85vw,0.8rem);color:var(--text-light);z-index:5;max-width:60vw}
+.hint{position:fixed;bottom:2.4vh;left:50%;transform:translateX(-50%);font-size:clamp(0.7rem,0.9vw,0.85rem);color:var(--text-light);z-index:5;transition:opacity 0.4s}
+.hint.hidden{opacity:0}
+
+@media (max-width:900px){
+  .s1 .slide-inner{grid-template-columns:1fr}
+  .comic{display:none}
+  .stats{grid-template-columns:1fr 1fr}
+  .steps{grid-template-columns:1fr}
+  .morgen{grid-template-columns:1fr}
+  .credit{display:none}
+  html,body{overflow:auto}
+  .slide{position:relative;inset:auto;min-height:100vh}
+}
+
+@media print{
+  @page{size:A4 landscape;margin:14mm}
+  html,body{height:auto;overflow:visible}
+  body{print-color-adjust:exact;-webkit-print-color-adjust:exact}
+  .brand,.counter,.credit,.hint{display:none}
+  .slide{position:relative;inset:auto;display:flex;height:auto;min-height:0;padding:0;break-inside:avoid;page-break-inside:avoid;break-after:page;page-break-after:always}
+  .slide:last-of-type{break-after:auto;page-break-after:auto}
+  .s1 .slide-inner{grid-template-columns:1.15fr 1fr}
+  .comic{display:block;height:min(70vh,40vw)}
+  .stats{grid-template-columns:repeat(4,1fr)}
+  .steps{grid-template-columns:repeat(3,1fr)}
+  .morgen{grid-template-columns:1fr 1fr}
+}
+</style>
+</head>
+<body>
+
+<a class="brand" href="index.html" aria-label="KI Kurt, zur Startseite"><svg class="masz" viewBox="0 0 13 30" aria-hidden="true"><path d="M1.25 1V29M1.25 15H13M7.5 11L2 15L7.5 19"/></svg><span class="wortmarke">KI <span>Kurt</span></span><svg class="masz masz-r" viewBox="0 0 13 30" aria-hidden="true"><path d="M1.25 1V29M1.25 15H13M7.5 11L2 15L7.5 19"/></svg></a>
+
+<!-- Folie 1 -->
+<section class="slide s1 active" id="f1">
+  <div class="slide-inner">
+    <div>
+      <div class="eyebrow">Online-Impuls · 24. September 2026</div>
+      <h1 class="big">Und wenn Peter in Rente geht?</h1>
+      <p class="sub">Drei Schritte, mit denen kleine Firmen sein Wissen behalten. Mit KI und ohne IT-Projekt.</p>
+      <p class="meta"><strong>Kurt König</strong> · KI Kurt, Würzburg · ki-kurt.de</p>
+    </div>
+    <div class="comic" role="img" aria-label="Comicseite: Dieses Büro hat ein ausgezeichnetes Gedächtnis. Es heißt Peter."></div>
+  </div>
+</section>
+
+<!-- Folie 2 -->
+<section class="slide" id="f2">
+  <div class="slide-inner">
+    <div class="eyebrow">Das kennen Sie</div>
+    <h2 class="big">"Frag den Peter. Der weiß das."</h2>
+    <div class="stats">
+      <div class="stat"><div class="stat-value">80%</div><div class="stat-label">des Firmenwissens lebt nur in den Köpfen der Mitarbeiter</div></div>
+      <div class="stat"><div class="stat-value">6-12</div><div class="stat-label">Monate braucht ein neuer Mitarbeiter, bis er produktiv arbeitet</div></div>
+      <div class="stat"><div class="stat-value">31%</div><div class="stat-label">aller Erwerbspersonen erreichen in den nächsten 15 Jahren das Rentenalter</div></div>
+      <div class="stat"><div class="stat-value">1,8</div><div class="stat-label">Stunden sucht ein Mitarbeiter täglich nach Informationen</div></div>
+    </div>
+    <p class="montag">Das ist keine Statistik. Das ist Montag.</p>
+    <p class="sources">Quellen: Fraunhofer-Untersuchungen zum Wissensmanagement (Anteil impliziten Wissens, 80 bis 90 Prozent). Harvard Business Review (Einarbeitungsdauer). Statistisches Bundesamt, Pressemitteilung 2025: 13,4 Millionen Erwerbspersonen erreichen in den nächsten 15 Jahren das gesetzliche Rentenalter. McKinsey Global Institute (Suchzeit von Wissensarbeitern).</p>
+  </div>
+</section>
+
+<!-- Folie 3 -->
+<section class="slide" id="f3">
+  <div class="slide-inner">
+    <div class="eyebrow">Kein IT-Projekt</div>
+    <h2 class="big">Drei Schritte, die eine kleine Firma selbst gehen kann</h2>
+    <div class="steps">
+      <div class="step"><div class="step-num">1</div><h3>Benennen</h3><p>Die zehn Fragen, die bei Ihnen immer an dieselbe Person gehen. Eine Stunde, das ganze Team, ein Flipchart.</p></div>
+      <div class="step"><div class="step-num">2</div><h3>Erzählen lassen</h3><p>Peter redet, jemand anderes schreibt. Das Wie und das Warum, nicht nur das Was.</p></div>
+      <div class="step"><div class="step-num">3</div><h3>Befragbar machen</h3><p>Antwort statt Trefferliste, mit der Quelle daneben. Jeder darf fragen, per E-Mail, vom Handy, ohne Schulung.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- Folie 4 -->
+<section class="slide" id="f4">
+  <div class="slide-inner">
+    <div class="eyebrow">So sieht das aus</div>
+    <h2 class="big">Echtes Firmenwissen. Keine generische KI-Antwort.</h2>
+    <div class="chat">
+      <div class="msg pm"><div class="avatar">PM</div><div class="bubble">Wie haben wir die Lüftung im Projekt Werkstatt 7 gelöst? Der Kunde fragt nach dem gleichen Problem.</div></div>
+      <div class="msg ki"><div class="avatar">KI</div><div class="bubble">Projekt Werkstatt 7 (März 2024): Dezentrale Lüftung mit Wärmerückgewinnung, Typ Helios KWL EC 500. Entscheidung wegen Denkmalschutzauflagen. Planungsdetails im Projektordner.<span class="path">PROJEKTE/2024-Werkstatt-7/Planung/</span></div></div>
+    </div>
+    <p class="caption">Das Was. Das Warum. Und die Quelle, in der es steht.</p>
+  </div>
+</section>
+
+<!-- Folie 5 -->
+<section class="slide" id="f5">
+  <div class="slide-inner">
+    <div class="eyebrow">Morgen früh</div>
+    <h2 class="big">Schritt 1 dauert eine Stunde.</h2>
+    <div class="morgen">
+      <div class="morgen-block">
+        <h3>Nehmen Sie ein Flipchart.</h3>
+        <p>Fragen Sie Ihr Team: Welche Fragen gehen bei uns immer an dieselbe Person? Dann wissen Sie, wo Ihr Peter sitzt.</p>
+        <p>Ihre Zahl, in drei Minuten, ohne E-Mail-Adresse: <a href="rechner.html">ki-kurt.de/rechner.html</a></p>
+      </div>
+      <div class="morgen-block">
+        <h3>Erst einmal einen Kaffee?</h3>
+        <p>Kein Pitch. Ein Gespräch darüber, wo in Ihrer Firma Wissen steckt, das nicht verloren gehen sollte.</p>
+        <p class="kontakt"><strong>kurt@ki-kurt.de</strong><br>0931 45321005<br>Würzburg · remote und vor Ort</p>
+      </div>
+    </div>
+    <p class="doppel">"Frag den Peter." Und wenn Peter weg ist? <span>"Frag KI Kurt."</span></p>
+    <span class="bafa">BAFA-gelisteter Berater · 50 Prozent Förderung, 1.750 EUR je Beratung</span>
+  </div>
+</section>
+
+<div class="credit">Gebaut und gepflegt mit derselben KI, mit der ich Firmengedächtnisse baue. Nicht vom Firmengedächtnis selbst. Richtung und Freigabe: Kurt König. Letzte Änderung: 17.09.2026.</div>
+<div class="hint" id="hint">Pfeiltasten oder Klick zum Blättern</div>
+<div class="counter" id="counter">1 / 5</div>
+
+<script>
+(function(){
+  var slides = Array.prototype.slice.call(document.querySelectorAll('.slide'));
+  var i = 0, hint = document.getElementById('hint'), counter = document.getElementById('counter');
+  function show(n){
+    n = Math.max(0, Math.min(slides.length - 1, n));
+    slides[i].classList.remove('active');
+    i = n;
+    slides[i].classList.add('active');
+    counter.textContent = (i + 1) + ' / ' + slides.length;
+    if (history.replaceState) history.replaceState(null, '', '#f' + (i + 1));
+    if (i > 0) hint.classList.add('hidden');
+  }
+  var m = /#f(\d)/.exec(location.hash);
+  if (m) show(parseInt(m[1], 10) - 1);
+  document.addEventListener('keydown', function(e){
+    if (e.key === 'ArrowRight' || e.key === 'ArrowDown' || e.key === 'PageDown' || e.key === ' ' || e.key === 'Enter') { e.preventDefault(); show(i + 1); }
+    else if (e.key === 'ArrowLeft' || e.key === 'ArrowUp' || e.key === 'PageUp' || e.key === 'Backspace') { e.preventDefault(); show(i - 1); }
+    else if (e.key === 'Home') { show(0); }
+    else if (e.key === 'End') { show(slides.length - 1); }
+  });
+  document.addEventListener('click', function(e){
+    if (e.target.closest('a')) return;
+    if (e.clientX < window.innerWidth * 0.25) show(i - 1); else show(i + 1);
+  });
+})();
+</script>
+</body>
+</html>
