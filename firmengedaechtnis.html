@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Das Firmengedächtnis | KI Kurt</title>
-<meta name="description" content="Was das Firmengedächtnis ist, was es leistet und was es von Ihnen verlangt. Zugesagte Antwortzeiten, Aufbau in drei Monaten, Ihr Wissensbestand bleibt im Haus.">
+<meta name="description" content="Was Ihr jetziger Zustand kostet, mit Ihren Zahlen gerechnet. Aufbau in drei Monaten, Ihr Wissensbestand bleibt im Haus, BAFA-förderfähig. Und was ein Käufer sieht, wenn das Wissen nur in Köpfen steht.">
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
 <style>
 @font-face{font-family:'Cormorant Garamond';font-style:normal;font-weight:300 700;font-display:swap;src:url("fonts/cormorant-garamond-latin.woff2") format("woff2")}
@@ -212,6 +212,9 @@ section{padding:5rem 0}
   .tab thead{display:none}
   .tab{margin-top:2rem}
   .tab tr{border:1px solid var(--border);border-radius:6px;padding:1.25rem;margin-bottom:1rem;background:var(--bg)}
+  .dunkel .tab tr{background:rgba(255,255,255,0.05);border-color:rgba(255,255,255,0.16)}
+  .dunkel .tab td::before{color:rgba(255,255,255,0.45)}
+  .dunkel .tab td:first-child::before{color:var(--accent-light)}
   .tab tr:last-child{margin-bottom:0}
   .tab td{border:none;padding:0.55rem 0}
   .tab td:first-child{padding-top:0}
@@ -222,6 +225,83 @@ section{padding:5rem 0}
 @media(max-width:480px){
   .hero h1{font-size:2rem}
   .rang li{grid-template-columns:2rem 1fr;gap:0.75rem}
+}
+
+/* ===== PYRAMIDE, 03.10.2026 ===== */
+
+/* EBENE 3: aufklappbare Details, offen voreingestellt */
+.mehr{margin-top:2.5rem;border-top:1px solid var(--border)}
+.mehr>summary{cursor:pointer;list-style:none;padding:1.1rem 0 0.9rem;font-size:0.72rem;font-weight:600;text-transform:uppercase;letter-spacing:0.12em;color:var(--accent);display:flex;align-items:center;gap:0.65rem}
+.mehr>summary::-webkit-details-marker{display:none}
+.mehr>summary::after{content:'';width:7px;height:7px;border-right:2px solid currentColor;border-bottom:2px solid currentColor;transform:rotate(-135deg);margin-top:3px;transition:transform 0.2s}
+.mehr:not([open])>summary::after{transform:rotate(45deg);margin-top:-3px}
+.mehr>summary:hover{color:var(--accent-hover)}
+.mehr>summary:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+.mehr h3{font-family:var(--font-display);font-size:1.3rem;font-weight:600;color:var(--text);margin:2rem 0 0.7rem;letter-spacing:-0.01em}
+.mehr h3:first-child{margin-top:0.5rem}
+.mehr p{font-size:0.93rem;color:var(--text-mid);line-height:1.72;max-width:720px;margin-top:0.8rem}
+.mehr .tab{margin-top:1.75rem}
+.mehr .punkte,.mehr .hinweis{margin-top:1.75rem}
+.mehr-schluss{margin-top:1.5rem;font-size:0.93rem;color:var(--text-mid);line-height:1.72;max-width:720px}
+.dunkel .mehr{border-top-color:rgba(255,255,255,0.18)}
+.dunkel .mehr>summary{color:var(--accent-light)}
+.dunkel .mehr h3{color:#FFF}
+.dunkel .mehr p,.dunkel .mehr-schluss{color:rgba(255,255,255,0.72)}
+
+/* Tabellen auf dunklem Grund. Ohne diese Regeln erbt .tab die hellen
+   Textfarben und wird auf #1A1D26 unlesbar, Kontrast 1,0. Aufgefallen
+   am 03.10.2026 bei der Ueberschriftenpruefung, nachdem die drei Listen
+   mit der Nachtschicht in eine dunkle Sektion zusammengelegt wurden. */
+.dunkel .tab th{color:var(--accent-light);border-bottom-color:rgba(255,255,255,0.22)}
+.dunkel .tab td{color:rgba(255,255,255,0.72);border-bottom-color:rgba(255,255,255,0.12)}
+.dunkel .tab td:first-child{color:#FFF}
+.dunkel .tab .zusage{color:var(--accent-light)}
+.dunkel .tab tr:last-child td{border-bottom:none}
+
+/* EURO-ZEILE */
+.euro{background:var(--accent-bg);border-top:1px solid var(--border);border-bottom:1px solid var(--border);padding:4.5rem 0}
+.euro-grid{display:grid;grid-template-columns:1fr 330px;gap:3.5rem;align-items:start;margin-top:2.5rem}
+.euro-felder{display:grid;gap:1.4rem;max-width:460px}
+.euro-feld label{display:block;font-size:0.86rem;font-weight:500;color:var(--text);margin-bottom:0.4rem;line-height:1.5}
+.euro-feld input{width:100%;max-width:180px;padding:0.7rem 0.9rem;background:#FFF;border:1px solid var(--border);border-radius:4px;font-family:var(--font-body);font-size:1rem;color:var(--text);outline:none;transition:border-color 0.15s}
+.euro-feld input:focus{border-color:var(--accent)}
+.euro-feld .hint{font-size:0.76rem;color:var(--text-muted);margin-top:0.35rem;line-height:1.5}
+.euro-ergebnis{display:grid;gap:1.6rem;margin-top:2.5rem;padding-top:2rem;border-top:1px solid var(--border)}
+.euro-zahl{font-family:var(--font-display);font-size:2.1rem;font-weight:600;color:var(--accent);line-height:1.05;letter-spacing:-0.01em}
+.euro-zahl.leer{color:var(--text-light)}
+.euro-label{font-size:0.84rem;color:var(--text-mid);margin-top:0.3rem;line-height:1.6;max-width:430px}
+.euro-beispiel{background:#FFF;border:1px solid var(--border);border-radius:8px;padding:1.75rem 1.6rem;position:relative}
+.euro-beispiel::before{content:'';position:absolute;top:0;left:1.5rem;right:1.5rem;height:2px;background:var(--accent);border-radius:0 0 2px 2px}
+.euro-beispiel p{font-size:0.86rem;color:var(--text-mid);line-height:1.7}
+.euro-beispiel p+p{margin-top:0.9rem}
+.euro-beispiel b{color:var(--text);font-weight:600}
+.euro-fazit{margin-top:3rem;max-width:720px}
+.euro-fazit p{font-size:1rem;color:var(--text-mid);line-height:1.78}
+.euro-fazit p+p{margin-top:1rem}
+.euro-fazit b{color:var(--text);font-weight:600}
+
+/* ZWEI GESCHAEFTSFUEHRER */
+.zwei{display:grid;grid-template-columns:1fr 1fr;gap:3rem;margin-top:2.5rem}
+.zwei-sp h3{font-family:var(--font-display);font-size:1.35rem;font-weight:600;color:var(--text);margin-bottom:0.65rem;letter-spacing:-0.01em}
+.zwei-sp p{font-size:0.95rem;color:var(--text-mid);line-height:1.72}
+.zwei-fazit{margin-top:2.5rem;font-size:1.05rem;color:var(--text);line-height:1.7;font-weight:500;max-width:760px}
+.zwei-wert{margin-top:1.5rem;font-size:0.97rem;color:var(--text-mid);line-height:1.75;max-width:760px}
+
+/* FRAGENLISTE */
+.fragen{list-style:none;counter-reset:f;margin-top:2.5rem;max-width:780px}
+.fragen li{counter-increment:f;display:grid;grid-template-columns:2.25rem 1fr;gap:1rem;padding:1.1rem 0;border-bottom:1px solid var(--border);align-items:baseline}
+.fragen li:last-child{border-bottom:none}
+.fragen li::before{content:counter(f);font-family:var(--font-display);font-size:1.45rem;font-weight:600;color:var(--accent);line-height:1}
+.fragen b{color:var(--text);font-weight:600;font-size:0.98rem;line-height:1.55}
+
+@media(max-width:900px){
+  .euro-grid{grid-template-columns:1fr;gap:2.5rem}
+  .zwei{grid-template-columns:1fr;gap:2rem}
+  .euro{padding:3.5rem 0}
+}
+@media(max-width:480px){
+  .euro-zahl{font-size:1.75rem}
+  .fragen li{grid-template-columns:1.75rem 1fr;gap:0.75rem}
 }
 </style>
 <noscript><style>.reveal{opacity:1;transform:none}</style></noscript>
@@ -249,8 +329,8 @@ section{padding:5rem 0}
 <header class="hero" id="top">
   <div>
     <div class="eyebrow reveal">Das Produkt</div>
-    <h1 class="reveal">Ihr Büro vergisst nichts mehr.</h1>
-    <p class="hero-body reveal">Das Firmengedächtnis ist kein weiteres Programm, das Ihre Leute bedienen müssen. Es ist Ihr eigenes Wissen, aufbereitet und befragbar: Ihre Projekte, Ihre Prozesse, Ihre Kunden, und die Gründe hinter Ihren Entscheidungen.<br><br>Aufgebaut in drei Monaten. Gepflegt in jeder Nacht. Und es bleibt in Ihrem Haus.</p>
+    <h1 class="reveal">Das meiste, was Ihr Büro weiß, steht nirgends.</h1>
+    <p class="hero-body reveal">Es steht in Köpfen, in alten Mails und in Ordnern, die nur einer findet. Das trägt, solange alle da sind.<br><br>Das Firmengedächtnis ist Ihr eigenes Wissen, aufbereitet und befragbar: Ihre Projekte, Ihre Prozesse, Ihre Kunden, und die Gründe hinter Ihren Entscheidungen. Aufgebaut in drei Monaten, gepflegt in jeder Nacht, und es bleibt in Ihrem Haus.</p>
   </div>
   <div class="hero-visual reveal">
     <div class="hv-label">Auf einen Blick</div>
@@ -263,13 +343,150 @@ section{padding:5rem 0}
   </div>
 </header>
 
+<section class="euro" id="ihre-zahl">
+  <div class="wrap">
+    <div class="eyebrow reveal">Ihre Zahl</div>
+    <h2 class="reveal">Was der jetzige Zustand kostet, rechnen Sie in zwanzig Sekunden selbst aus.</h2>
+
+    <div class="euro-grid reveal">
+      <div>
+        <div class="euro-felder">
+          <div class="euro-feld">
+            <label for="such">Stunden pro Woche, die Ihr Team mit Suchen verbringt</label>
+            <input type="number" id="such" min="0" max="200" step="0.5" inputmode="decimal" placeholder="z.B. 6">
+            <div class="hint">In Büros dieser Größe meist zwischen 3 und 8.</div>
+          </div>
+          <div class="euro-feld">
+            <label for="satz">Durchschnittlicher Stundensatz Ihres Teams, in Euro</label>
+            <input type="number" id="satz" min="0" max="500" step="1" inputmode="numeric" placeholder="z.B. 45">
+          </div>
+          <div class="euro-feld">
+            <label for="gehalt">Monatsgehalt einer Schlüsselperson, brutto in Euro</label>
+            <input type="number" id="gehalt" min="0" max="50000" step="100" inputmode="numeric" placeholder="z.B. 5200">
+          </div>
+        </div>
+
+        <div class="euro-ergebnis">
+          <div>
+            <div class="euro-zahl leer" id="aus-suchen">noch keine Angabe</div>
+            <div class="euro-label">kostet Sie das Suchen, jedes Jahr. Läuft weiter, auch wenn niemand kündigt.</div>
+          </div>
+          <div>
+            <div class="euro-zahl leer" id="aus-abgang">noch keine Angabe</div>
+            <div class="euro-label">kostet ein einziger Abgang. Gerechnet mit <b id="an-nach">sechs</b> Monaten bis zur Nachbesetzung und <b id="an-ein">sechs</b> Monaten bis zur vollen Leistung, beides unten änderbar.</div>
+          </div>
+          <div>
+            <div class="euro-zahl">bis 1.750 EUR</div>
+            <div class="euro-label">trägt die Förderung vom Klarheitstag, 50 Prozent je Beratung. Zwei Beratungen im Jahr sind möglich.</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="euro-beispiel">
+        <div class="hv-label">Ein Beispiel, ohne Eingabe</div>
+        <p>Ein Büro mit achtzehn Leuten: sechs Stunden Suchen pro Woche, 45 Euro Stundensatz, 5.200 Euro Monatsgehalt einer Schlüsselperson, sechs Monate bis zur Nachbesetzung, sechs Monate bis zur vollen Leistung.</p>
+        <p><b>14.040 Euro im Jahr fürs Suchen. 48.360 Euro beim Abgang eines Einzigen</b>, davon 20.280 Vakanz, 12.480 Nachbesetzung, 15.600 Einarbeitung.</p>
+      </div>
+    </div>
+
+    <div class="euro-fazit reveal">
+      <p>Ein KI-Abo kostet fünfzig Euro im Monat. Nach vier Wochen öffnet es niemand mehr, weil es Ihr Haus nicht kennt und deshalb nichts von dem beantwortet, was Sie wirklich fragen.</p>
+      <p><b>Die Zahlen oben laufen weiter, egal was Sie zahlen oder nicht zahlen.</b></p>
+    </div>
+
+    <details class="mehr reveal">
+      <summary>Wie gerechnet wird, und was der Preis ist</summary>
+      <div class="mehr-inhalt">
+        <h3>Die beiden Annahmen, und Sie können sie ändern</h3>
+        <p>Die Kosten eines Abgangs hängen an zwei Zeiträumen, die jedes Büro anders erlebt. Voreingestellt sind sechs und sechs.</p>
+        <div class="euro-felder" style="margin-top:1.5rem">
+          <div class="euro-feld">
+            <label for="nach">Monate, bis die Stelle wieder besetzt ist</label>
+            <input type="number" id="nach" min="0" max="36" step="1" inputmode="numeric" value="6">
+          </div>
+          <div class="euro-feld">
+            <label for="ein">Monate, bis ein Nachfolger die volle Leistung bringt</label>
+            <input type="number" id="ein" min="0" max="36" step="1" inputmode="numeric" value="6">
+          </div>
+        </div>
+        <table class="tab">
+          <thead><tr><th>Posten</th><th>Wie er entsteht</th><th>Ihre Zahl</th></tr></thead>
+          <tbody>
+            <tr>
+              <td data-label="Posten">Vakanz</td>
+              <td data-label="Wie er entsteht">Die Leistung fällt weg, das Gehalt wird gespart, ein Teil wird vom Team aufgefangen</td>
+              <td data-label="Ihre Zahl" class="zusage" id="p-vak">offen</td>
+            </tr>
+            <tr>
+              <td data-label="Posten">Nachbesetzung</td>
+              <td data-label="Wie er entsteht">Ausschreibung, Auswahl, Aufwand der Kollegen. Rund 20 Prozent eines Jahresgehalts</td>
+              <td data-label="Ihre Zahl" class="zusage" id="p-neu">offen</td>
+            </tr>
+            <tr>
+              <td data-label="Posten">Einarbeitung</td>
+              <td data-label="Wie er entsteht">Volles Gehalt bei etwa halber Leistung</td>
+              <td data-label="Ihre Zahl" class="zusage" id="p-ein">offen</td>
+            </tr>
+            <tr>
+              <td data-label="Posten">Suchen</td>
+              <td data-label="Wie er entsteht">Stunden pro Woche mal Stundensatz mal 52. Fällt jedes Jahr neu an</td>
+              <td data-label="Ihre Zahl" class="zusage" id="p-such">offen</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h3>Was das Firmengedächtnis kostet, und warum die Zahl hier nicht steht</h3>
+        <p>Der Preis besteht aus einem einmaligen Aufbau und einem monatlichen Abo. Dazu kommen Ihre eigenen Lizenzkosten für die KI-Zugänge und die Synchronisierung, die zahlen Sie direkt an die Anbieter und nicht an mich.</p>
+        <p>Der Aufwand hängt davon ab, wie viele Sie sind und in welchem Zustand Ihre Unterlagen sind. Eine Zahl auf einer Webseite wäre für die Hälfte der Leser zu hoch und für die andere Hälfte zu niedrig.</p>
+        <p>Der Klarheitstag ist über die BAFA förderfähig, mit 50 Prozent Zuschuss, höchstens 1.750 EUR. Die Förderrichtlinie begrenzt eine geförderte Beratung auf fünf Tage, deshalb wird der Klarheitstag beantragt und nicht der ganze Aufbau. Die Richtlinie erlaubt zwei geförderte Beratungen im Jahr, also bis zu 3.500 EUR, solange jede in sich abgeschlossen ist. Anträge sind nur bis zum 31. Dezember 2026 möglich.</p>
+        <p class="mehr-schluss">Die Zahl bekommen Sie im ersten Gespräch, nicht nach drei Terminen.</p>
+      </div>
+    </details>
+  </div>
+</section>
+
+<section class="hell" id="wert">
+  <div class="wrap">
+    <div class="eyebrow reveal">Was es wert ist</div>
+    <h2 class="reveal">Zwei Geschäftsführer schauen auf dasselbe Unternehmen.</h2>
+
+    <div class="zwei reveal">
+      <div class="zwei-sp">
+        <h3>Der eine verkauft.</h3>
+        <p>Der Betrieb läuft, die Auftragsbücher sind voll, und der Gutachter fragt, was davon bleibt, wenn er geht. Jede Antwort, die nur er geben kann, ist ein Abschlag.</p>
+      </div>
+      <div class="zwei-sp">
+        <h3>Der andere kauft.</h3>
+        <p>Er sieht Maschinen, Verträge und zwanzig Leute. Was er nicht sieht: warum dieser Kunde seit achtzehn Jahren bleibt, welcher Lieferant beim letzten Engpass tatsächlich geliefert hat, und warum man sich 2019 gegen die große Lösung entschieden hat.</p>
+      </div>
+    </div>
+
+    <p class="zwei-fazit reveal">Beide reden über denselben Betrieb. Der Unterschied zwischen ihren Zahlen steht in keiner Bilanz.</p>
+    <p class="zwei-wert reveal">Ein Betrieb, in dem die Mitarbeiter mit KI arbeiten und das Wissen des Hauses an einer Stelle liegt, wird anders bewertet als derselbe Betrieb ohne. Nicht weil er moderner aussieht. Weil der Käufer weniger abziehen muss für das, was mit dem Verkäufer geht.</p>
+
+    <div class="hinweis reveal">
+      <p>Und wenn Sie nicht verkaufen: dieselbe Frage stellt sich an jedem Tag, an dem jemand kündigt, lange ausfällt oder in Rente geht. Dann nur ohne Termin.</p>
+    </div>
+
+    <details class="mehr reveal">
+      <summary>Woran Sie sehen, dass es tatsächlich drin ist</summary>
+      <div class="mehr-inhalt">
+        <p>Jede Schlüsselperson hat eine Themenliste: was von ihrem Wissen hier schon steht, was noch offen ist, und wann zuletzt darüber gesprochen wurde. <b>Die Liste gehört ihr.</b></p>
+        <p>Sie sehen im Monatsbericht die Summe. Von acht Schlüsselpersonen haben sechs eine Liste, elf Themen stehen offen, vier davon seit mehr als drei Monaten.</p>
+        <p>Keine Prozentzahl, denn niemand weiß, wie viel in einem Kopf steckt. Und keine Zahl je Person: die wird als Leistung gelesen, auch wenn sie als Wissensstand gemeint war, und dann wirft niemand mehr etwas ein.</p>
+        <p class="mehr-schluss"><b>Kündigt jemand, wird seine Liste zur Übergabeliste und liegt vollständig bei Ihnen.</b></p>
+      </div>
+    </details>
+  </div>
+</section>
+
 <section class="grau" id="was">
   <div class="wrap">
     <div class="eyebrow reveal">Was es ist</div>
     <h2 class="reveal">ChatGPT kennt die Welt. Es kennt nur nicht Ihr Büro.</h2>
     <p class="lead reveal">Eine allgemeine KI weiß, wie man einen Brandschutznachweis grundsätzlich führt. Sie weiß nicht, wie Sie ihn führen, welche Prüfstelle beim letzten Mal Ärger gemacht hat und warum Sie sich 2024 gegen die dezentrale Lösung entschieden haben.</p>
     <p class="lead reveal">Ein Dokumentenmanagement findet die Datei. Es beantwortet keine Frage. Sie bekommen achtzehn Treffer und dürfen selbst lesen.</p>
-    <p class="lead reveal">Das Firmengedächtnis liegt dazwischen und ist beides nicht. Es ist Ihr Wissen, so aufbereitet, dass eine KI daraus antworten kann. Mit der Quelle daneben, damit Sie nachsehen können, woher die Antwort kommt.</p>
+
     <div class="kacheln reveal">
       <div class="kachel">
         <h3>Ihre Ordner bleiben</h3>
@@ -284,87 +501,23 @@ section{padding:5rem 0}
         <p>Nicht nur das Ergebnis, sondern den Grund. "Warum haben wir das damals so gemacht" ist die Frage, an der jedes Ablagesystem scheitert.</p>
       </div>
     </div>
-  </div>
-</section>
 
-<section class="hell" id="antwortzeiten">
-  <div class="wrap">
-    <div class="eyebrow reveal">Was Sie bekommen</div>
-    <h2 class="reveal">Wir sagen zu, wie schnell geantwortet wird.</h2>
-    <p class="lead reveal">Nicht Ihre Position im Büro bestimmt, wie schnell eine Antwort da sein muss, sondern Ihre Situation. Derselbe Projektleiter braucht im Telefonat fünf Sekunden und darf beim Angebotschreiben zehn Minuten warten.</p>
-    <p class="lead reveal">Deshalb hat das Firmengedächtnis vier Antwortklassen. Jede mit einer Zusage.</p>
-    <table class="tab reveal">
-      <thead>
-        <tr><th>Klasse</th><th>Zusage</th><th>Wann</th><th>Beispiel</th></tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td data-label="Klasse">Sofort</td>
-          <td data-label="Zusage" class="zusage">unter 10 Sekunden</td>
-          <td data-label="Wann">Im Gespräch, am Telefon, auf der Baustelle</td>
-          <td data-label="Beispiel">"Welche Betongüte bei der Bodenplatte?"</td>
-        </tr>
-        <tr>
-          <td data-label="Klasse">Kurz</td>
-          <td data-label="Zusage" class="zusage">unter 5 Minuten</td>
-          <td data-label="Wann">Am Schreibtisch, die Arbeit läuft weiter</td>
-          <td data-label="Beispiel">"Was wissen wir über Kunde Weber?"</td>
-        </tr>
-        <tr>
-          <td data-label="Klasse">Arbeitsstand</td>
-          <td data-label="Zusage" class="zusage">unter 1 Stunde</td>
-          <td data-label="Wann">Vorbereitung, Angebot, Konzept</td>
-          <td data-label="Beispiel">"Stell zusammen, was wir zu Kitas haben."</td>
-        </tr>
-        <tr>
-          <td data-label="Klasse">Auswertung</td>
-          <td data-label="Zusage" class="zusage">bis zum nächsten Werktag</td>
-          <td data-label="Wann">Bericht, Analyse, Vergleich</td>
-          <td data-label="Beispiel">"Wie war unsere Nachtragsquote 2025?"</td>
-        </tr>
-      </tbody>
-    </table>
-    <div class="hinweis reveal">
-      <p>Diese Zeiten sind Zusagen, keine Schätzungen. Sie stehen im Angebot, sie werden gemessen, und das Ergebnis steht in Ihrem Monatsbericht.</p>
-    </div>
-  </div>
-</section>
-
-<section class="grau" id="karten">
-  <div class="wrap">
-    <div class="eyebrow reveal">Die Mechanik</div>
-    <h2 class="reveal">Die schnellste Antwort ist die, die niemand mehr berechnen muss.</h2>
-    <p class="lead reveal">Die häufigsten Fragen in einem Büro sind nicht die schwierigsten. Es sind dieselben zwanzig, jeden Monat neu gestellt. Für die legt das System Antwortkarten an: eine fertige Antwort auf eine Frage, die oft kommt.</p>
-    <p class="lead reveal">Eine Antwortkarte ist sofort da, weil nichts berechnet wird. Sie kostet nichts pro Abruf, weil keine KI beteiligt ist. Sie funktioniert auf dem Handy, auf der Baustelle, mit einer Hand. Und die Quelle steht daneben.</p>
-    <div class="grenzen">
-      <h3 class="reveal">Woher das System weiß, welche Karten es braucht</h3>
-      <p class="lead reveal">Es rät nicht. Jede gestellte Frage wird protokolliert, ohne den Fragesteller. Daraus entstehen drei Listen, und jede löst etwas aus.</p>
-    </div>
-    <table class="tab reveal">
-      <thead>
-        <tr><th>Liste</th><th>Was drinsteht</th><th>Was passiert</th></tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td data-label="Liste">Häufig</td>
-          <td data-label="Was drinsteht">Dreimal oder öfter gefragt</td>
-          <td data-label="Was passiert">Bekommt eine Antwortkarte</td>
-        </tr>
-        <tr>
-          <td data-label="Liste">Unbeantwortet</td>
-          <td data-label="Was drinsteht">Gefragt, keine gute Antwort gefunden</td>
-          <td data-label="Was passiert">Das ist eine Wissenslücke. Sie kommt auf die Liste für den nächsten Aufbauschritt</td>
-        </tr>
-        <tr>
-          <td data-label="Liste">Langsam</td>
-          <td data-label="Was drinsteht">Hat länger gedauert als zugesagt</td>
-          <td data-label="Was passiert">Das Wissen liegt zu verteilt. Es wird umsortiert</td>
-        </tr>
-      </tbody>
-    </table>
-    <div class="hinweis reveal">
-      <p>Ein System, das nur speichert, wird mit der Zeit voller. Ein System, das mitliest, welche Fragen ankommen, wird mit der Zeit besser.</p>
-    </div>
+    <details class="mehr reveal">
+      <summary>Vier zugesagte Antwortzeiten</summary>
+      <div class="mehr-inhalt">
+        <p>Nicht Ihre Position im Büro bestimmt, wie schnell eine Antwort da sein muss, sondern Ihre Situation. Derselbe Projektleiter braucht im Telefonat fünf Sekunden und darf beim Angebotschreiben zehn Minuten warten.</p>
+        <table class="tab">
+          <thead><tr><th>Klasse</th><th>Zusage</th><th>Wann</th><th>Beispiel</th></tr></thead>
+          <tbody>
+            <tr><td data-label="Klasse">Sofort</td><td data-label="Zusage" class="zusage">unter 10 Sekunden</td><td data-label="Wann">Im Gespräch, am Telefon, auf der Baustelle</td><td data-label="Beispiel">"Welche Betongüte bei der Bodenplatte?"</td></tr>
+            <tr><td data-label="Klasse">Kurz</td><td data-label="Zusage" class="zusage">unter 5 Minuten</td><td data-label="Wann">Am Schreibtisch, die Arbeit läuft weiter</td><td data-label="Beispiel">"Was wissen wir über Kunde Weber?"</td></tr>
+            <tr><td data-label="Klasse">Arbeitsstand</td><td data-label="Zusage" class="zusage">unter 1 Stunde</td><td data-label="Wann">Vorbereitung, Angebot, Konzept</td><td data-label="Beispiel">"Stell zusammen, was wir zu Kitas haben."</td></tr>
+            <tr><td data-label="Klasse">Auswertung</td><td data-label="Zusage" class="zusage">bis zum nächsten Werktag</td><td data-label="Wann">Bericht, Analyse, Vergleich</td><td data-label="Beispiel">"Wie war unsere Nachtragsquote 2025?"</td></tr>
+          </tbody>
+        </table>
+        <p class="mehr-schluss">Diese Zeiten sind Zusagen, keine Schätzungen. Sie stehen im Angebot, sie werden gemessen, und das Ergebnis steht in Ihrem Monatsbericht.</p>
+      </div>
+    </details>
   </div>
 </section>
 
@@ -372,38 +525,24 @@ section{padding:5rem 0}
   <div class="wrap">
     <div class="eyebrow reveal">Wer fragen darf</div>
     <h2 class="reveal">Jeder darf fragen. Nicht jeder braucht eine Lizenz.</h2>
-    <p class="lead reveal">Die naheliegende Rechnung wäre: zwanzig Mitarbeiter, zwanzig KI-Zugänge. Die ist falsch, und sie ist teuer. Sie würde mehr kosten als das ganze System bringt.</p>
+    <p class="lead reveal">Die naheliegende Rechnung wäre: zwanzig Mitarbeiter, zwanzig KI-Zugänge. Sie würde mehr kosten als das ganze System bringt.</p>
     <p class="lead reveal">Das Firmengedächtnis löst das über die Kanäle. Wer im Dialog mit der KI arbeitet, bekommt einen eigenen Zugang. Das sind erfahrungsgemäß drei Personen. Alle anderen fragen auf einem Weg, den sie längst können.</p>
-    <table class="tab reveal">
-      <thead>
-        <tr><th>Weg</th><th>Für wen</th><th>Braucht eine Lizenz</th></tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td data-label="Weg">Antwortkarten lesen</td>
-          <td data-label="Für wen">Alle, auch mobil und offline</td>
-          <td data-label="Lizenz">Nein</td>
-        </tr>
-        <tr>
-          <td data-label="Weg">E-Mail an eine Sammeladresse</td>
-          <td data-label="Für wen">Alle</td>
-          <td data-label="Lizenz">Nein, eine geteilte reicht</td>
-        </tr>
-        <tr>
-          <td data-label="Weg">Chat, wenn Sie Teams oder Slack haben</td>
-          <td data-label="Für wen">Alle</td>
-          <td data-label="Lizenz">Nein, dieselbe</td>
-        </tr>
-        <tr>
-          <td data-label="Weg">Direktzugang für den Dialog</td>
-          <td data-label="Für wen">Geschäftsführung, eine Projektleitung, Büroleitung</td>
-          <td data-label="Lizenz">Ja, je Person</td>
-        </tr>
-      </tbody>
-    </table>
-    <div class="hinweis reveal">
-      <p>E-Mail ist der stärkste Kanal, weil ihn jeder schon kann. Kein Login, keine Schulung, funktioniert vom Handy und mit dreckigen Händen. Und dieselbe Adresse ist der Einwurfkanal: wer eine Frage schicken kann, kann auch eine Information schicken. Damit fällt die Hürde, Wissen einzupflegen, auf null.</p>
-    </div>
+
+    <details class="mehr reveal">
+      <summary>Die vier Wege, und wer eine Lizenz braucht</summary>
+      <div class="mehr-inhalt">
+        <table class="tab">
+          <thead><tr><th>Weg</th><th>Für wen</th><th>Braucht eine Lizenz</th></tr></thead>
+          <tbody>
+            <tr><td data-label="Weg">Antwortkarten lesen</td><td data-label="Für wen">Alle, auch mobil und offline</td><td data-label="Lizenz">Nein</td></tr>
+            <tr><td data-label="Weg">E-Mail an eine Sammeladresse</td><td data-label="Für wen">Alle</td><td data-label="Lizenz">Nein, eine geteilte reicht</td></tr>
+            <tr><td data-label="Weg">Chat, wenn Sie Teams oder Slack haben</td><td data-label="Für wen">Alle</td><td data-label="Lizenz">Nein, dieselbe</td></tr>
+            <tr><td data-label="Weg">Direktzugang für den Dialog</td><td data-label="Für wen">Geschäftsführung, eine Projektleitung, Büroleitung</td><td data-label="Lizenz" class="zusage">Ja, je Person</td></tr>
+          </tbody>
+        </table>
+        <p class="mehr-schluss">E-Mail ist der stärkste Kanal, weil ihn jeder schon kann. Kein Login, keine Schulung, funktioniert vom Handy und mit dreckigen Händen. Und dieselbe Adresse ist der Einwurfkanal: wer eine Frage schicken kann, kann auch eine Information schicken. Damit fällt die Hürde, Wissen einzupflegen, auf null.</p>
+      </div>
+    </details>
   </div>
 </section>
 
@@ -411,7 +550,9 @@ section{padding:5rem 0}
   <div class="wrap">
     <div class="eyebrow reveal">Wofür das Abo da ist</div>
     <h2 class="reveal">Montagmorgen ist das System besser als Freitagabend.<br>Ohne dass jemand etwas getan hat.</h2>
-    <p class="lead reveal">Alles, worauf niemand wartet, läuft nachts. Zwischen Mitternacht und sieben Uhr arbeitet ein Rechner in Ihrem Büro die Liste ab, die der Tag hinterlassen hat. In dieser Reihenfolge.</p>
+    <p class="lead reveal">Ein Werkzeug, das Sie kaufen, ist am Tag des Kaufs am besten. Dieses ist montags besser als freitags, und der Preis bleibt gleich.</p>
+    <p class="lead reveal">Alles, worauf niemand wartet, läuft nachts. Zwischen Mitternacht und sieben Uhr arbeitet ein Rechner in Ihrem Büro die Liste ab, die der Tag hinterlassen hat. Jede Frage, die dabei eine Antwortkarte wird, wird nie wieder einzeln beantwortet.</p>
+
     <ol class="rang reveal">
       <li><b>Pflicht</b><span>Eingang leeren, neue Dokumente erfassen</span></li>
       <li><b>Schmerz</b><span>Antworten überarbeiten, die eine Rückfrage ausgelöst haben</span></li>
@@ -419,12 +560,63 @@ section{padding:5rem 0}
       <li><b>Hygiene</b><span>Veraltetes, Widersprüche, tote Verweise</span></li>
       <li><b>Kür</b><span>Verknüpfungen und Suchhilfen, wenn Zeit übrig ist</span></li>
     </ol>
-    <p class="lead reveal">Um sieben Uhr ist Schluss, auch mitten in einer Aufgabe. Was liegen bleibt, steht am nächsten Abend wieder oben. Und um sieben Uhr liegt ein Bericht vor, fünf Zeilen lang: was gelaufen ist, was gefunden wurde, was liegen blieb, was Sie entscheiden müssen.</p>
-    <div class="hinweis reveal">
-      <h3>Was nachts nicht passiert</h3>
-      <p>Das System entscheidet nichts über Menschen. Widersprüche zwischen zwei Quellen, Löschungen und alles, was Personen betrifft, kommt auf einen Stapel für den Morgen. Ein System, das nachts unbeaufsichtigt über Ihre Leute urteilt, verliert das Vertrauen der Belegschaft an genau einem Tag.</p>
-    </div>
-    <p class="lead reveal">Dafür ist das monatliche Abo da. Nicht für Support, den Sie hoffentlich selten brauchen. Für die Nachtarbeit, die das System besser macht statt älter.</p>
+
+    <details class="mehr reveal">
+      <summary>Woher das System weiß, welche Karten es braucht</summary>
+      <div class="mehr-inhalt">
+        <p>Die häufigsten Fragen in einem Büro sind nicht die schwierigsten. Es sind dieselben zwanzig, jeden Monat neu gestellt. Für die legt das System Antwortkarten an: eine fertige Antwort auf eine Frage, die oft kommt.</p>
+        <p>Eine Antwortkarte ist sofort da, weil nichts berechnet wird. Sie kostet nichts pro Abruf, weil keine KI beteiligt ist. Sie funktioniert auf dem Handy, auf der Baustelle, mit einer Hand. Und die Quelle steht daneben.</p>
+        <p>Es rät nicht, welche Karten gebraucht werden. Jede gestellte Frage wird protokolliert, ohne den Fragesteller. Daraus entstehen drei Listen, und jede löst etwas aus.</p>
+        <table class="tab">
+          <thead><tr><th>Liste</th><th>Was drinsteht</th><th>Was passiert</th></tr></thead>
+          <tbody>
+            <tr><td data-label="Liste">Häufig</td><td data-label="Was drinsteht">Dreimal oder öfter gefragt</td><td data-label="Was passiert">Bekommt eine Antwortkarte</td></tr>
+            <tr><td data-label="Liste">Unbeantwortet</td><td data-label="Was drinsteht">Gefragt, keine gute Antwort gefunden</td><td data-label="Was passiert">Das ist eine Wissenslücke. Sie kommt auf die Liste für den nächsten Aufbauschritt</td></tr>
+            <tr><td data-label="Liste">Langsam</td><td data-label="Was drinsteht">Hat länger gedauert als zugesagt</td><td data-label="Was passiert">Das Wissen liegt zu verteilt. Es wird umsortiert</td></tr>
+          </tbody>
+        </table>
+        <p>Um sieben Uhr ist Schluss, auch mitten in einer Aufgabe. Was liegen bleibt, steht am nächsten Abend wieder oben. Und um sieben Uhr liegt ein Bericht vor, fünf Zeilen lang: was gelaufen ist, was gefunden wurde, was liegen blieb, was Sie entscheiden müssen.</p>
+        <div class="hinweis">
+          <h3>Was nachts nicht passiert</h3>
+          <p>Das System entscheidet nichts über Menschen. Widersprüche zwischen zwei Quellen, Löschungen und alles, was Personen betrifft, kommt auf einen Stapel für den Morgen. Ein System, das nachts unbeaufsichtigt über Ihre Leute urteilt, verliert das Vertrauen der Belegschaft an genau einem Tag.</p>
+        </div>
+        <p class="mehr-schluss">Dafür ist das monatliche Abo da. Nicht für Support, den Sie hoffentlich selten brauchen. Für die Nachtarbeit, die das System besser macht statt älter.</p>
+      </div>
+    </details>
+  </div>
+</section>
+
+<section class="grau" id="daten">
+  <div class="wrap">
+    <div class="eyebrow reveal">Datenschutz und Ausstieg</div>
+    <h2 class="reveal">Ihr Wissensbestand bleibt in Ihrem Haus.</h2>
+    <p class="lead reveal">Der Rechner, der nachts arbeitet und tagsüber antwortet, steht bei Ihnen im Büro. Nicht bei mir, nicht in einer Cloud, die ich betreibe. Ihr Wissensbestand liegt als Dateien bei Ihnen, und es gibt keinen zusätzlichen Auftragsverarbeiter, der ihn hält.</p>
+    <p class="lead reveal">Ihr Firmengedächtnis besteht aus Textdateien in Ordnern. Kein Datenbankformat, kein Export nötig, kein Anbieter, der die Tür zumacht.</p>
+
+    <details class="mehr reveal">
+      <summary>Die vier Zusagen, die Grenze und der Ausstieg</summary>
+      <div class="mehr-inhalt">
+        <ul class="punkte">
+          <li><b>Bevor das erste Dokument erfasst wird</b>, liegt das Datenschutzpaket vor: Auftragsverarbeitungsvertrag, technische und organisatorische Maßnahmen, Datenschutzhinweise für Ihre Mitarbeiter. Nicht danach.</li>
+          <li><b>Keine Leistungs- und keine Verhaltenskontrolle.</b> Das ist eine Zusage im Vertrag, keine Absichtserklärung. Wer Wissen einwirft, erfährt selbst, wie oft es Kollegen geholfen hat. Die Geschäftsführung sieht nur Summen, nie Namen.</li>
+          <li><b>Ihre E-Mails werden nicht mitgeschnitten.</b> Was ins System soll, leitet der Mitarbeiter selbst weiter. Ein Klick, und er entscheidet.</li>
+          <li><b>Ihr Betriebsrat bekommt eine ehrliche Antwort</b>, weil die Zusagen technisch gedeckt sind und nicht nur gut klingen.</li>
+        </ul>
+
+        <h3>Und was das System nicht kann</h3>
+        <p>Ein Punkt, den ich lieber vorher sage als hinterher: die Ordnerbeschriftung ist kein Zugriffsschutz. Wer das System geöffnet hat, kann jede Datei darin lesen, auch die, auf der "Nur Geschäftsführung" steht. Es gibt keine Rechteverwaltung auf Ordnerebene.</p>
+        <p>Deshalb liegt Vertrauliches gar nicht erst im gemeinsamen System, sondern in einer getrennten Instanz für die Geschäftsführung. Das ist die einzige Lösung, die einer Nachfrage standhält.</p>
+        <p>Und der Punkt, den Sie sonst irgendwann selbst herausfinden: wenn Sie eine Frage stellen, geht der Text dieser Frage an die KI, zusammen mit den zwei bis vier Notizen, die zur Beantwortung gelesen werden. Die Verarbeitung läuft bei Anthropic in den USA, abgesichert über das EU-US Data Privacy Framework und Standardvertragsklauseln, ohne dass Ihre Daten in ein Training fließen. Ihr Bestand bleibt bei Ihnen, die einzelne Frage nicht. Wer Ihnen etwas anderes erzählt, hat entweder nicht nachgesehen oder verkauft Ihnen ein anderes Produkt.</p>
+        <p>Eine Ausnahme davon ist wichtig: Eintritt, Austritt, Abwesenheit und Vertretung sind keine vertraulichen Informationen. Wenn das gemeinsame System nicht weiß, dass ein Projektleiter gegangen ist, nennt es monatelang seinen Namen als zuständig. Vertraulich sind die Gründe, nicht die Tatsache.</p>
+
+        <h3>Wenn Sie aufhören</h3>
+        <p>Sie können jede einzelne Datei mit dem Editor öffnen, der auf Ihrem Rechner ohnehin installiert ist. Das Abo ist monatlich kündbar. Wenn Sie kündigen, wird nichts abgeschaltet und nichts verschlechtert. Das System antwortet weiter auf alles, was drinsteht.</p>
+        <div class="hinweis">
+          <h3>Was ohne Abo aufhört</h3>
+          <p>Der Nachtbetrieb. Keine neuen Antwortkarten, keine Quellenabholung, kein Aufräumen, keine Berichte. Das System wird nicht schlechter, aber es wird auch nicht mehr besser. Ihr Wissen altert dann in dem Tempo, in dem Ihr Geschäft sich ändert, und niemand meldet es Ihnen.</p>
+        </div>
+      </div>
+    </details>
   </div>
 </section>
 
@@ -433,224 +625,49 @@ section{padding:5rem 0}
     <div class="eyebrow reveal">Der Lieferumfang</div>
     <h2 class="reveal">Was in drei Monaten passiert, und was Sie dabei tun.</h2>
     <p class="lead reveal">Der Aufbau ist kein IT-Projekt, das im Hintergrund läuft und irgendwann fertig gemeldet wird. Er kostet Sie Zeit. Nicht viel, aber die Zeit der richtigen Leute, und die ist bei Ihnen am knappsten.</p>
+
     <table class="tab reveal">
-      <thead>
-        <tr><th>Wann</th><th>Was ich mache</th><th>Was Sie beisteuern</th></tr>
-      </thead>
+      <thead><tr><th>Wann</th><th>Was ich mache</th><th>Was Sie beisteuern</th></tr></thead>
       <tbody>
-        <tr>
-          <td data-label="Wann">Klarheitstag</td>
-          <td data-label="Was ich mache">Ich komme zu Ihnen. Wo liegt heute welches Wissen, was geht verloren, wenn Person X morgen nicht mehr da ist, wer im Team zieht mit und wer nicht</td>
-          <td data-label="Was Sie beisteuern">Einen Tag Ihrer Zeit und einen Raum. Die Belegschaft für den Nachmittag</td>
-        </tr>
-        <tr>
-          <td data-label="Wann">Monat 1</td>
-          <td data-label="Was ich mache">System aufsetzen, Datenschutzpaket abschließen, die zehn wichtigsten Prozesse dokumentieren, mit jedem Mitarbeiter ein Kennenlerngespräch</td>
-          <td data-label="Was Sie beisteuern">Zugang zu Ihren Unterlagen. Eine Ansprechperson bei Ihnen</td>
-        </tr>
-        <tr>
-          <td data-label="Wann">Monat 2</td>
-          <td data-label="Was ich mache">Schulungstag für alle. Wissens-Interviews mit den Schlüsselpersonen. Fachwissen und Projekthistorie einpflegen</td>
-          <td data-label="Was Sie beisteuern">Einen Tag für die Schulung. Zwei bis drei Stunden je Schlüsselperson</td>
-        </tr>
-        <tr>
-          <td data-label="Wann">Monat 3</td>
-          <td data-label="Was ich mache">Antwortkarten für die häufigsten Fragen, Feinschliff, Übergabe. Der Nachtbetrieb geht an</td>
-          <td data-label="Was Sie beisteuern">Zwei bis drei Freiwillige als interne Ansprechpartner</td>
-        </tr>
+        <tr><td data-label="Wann">Klarheitstag</td><td data-label="Was ich mache">Ich komme zu Ihnen. Wo liegt heute welches Wissen, was geht verloren, wenn Person X morgen nicht mehr da ist, wer im Team zieht mit und wer nicht</td><td data-label="Was Sie beisteuern">Einen Tag Ihrer Zeit und einen Raum. Die Belegschaft für den Nachmittag</td></tr>
+        <tr><td data-label="Wann">Monat 1</td><td data-label="Was ich mache">System aufsetzen, Datenschutzpaket abschließen, die zehn wichtigsten Prozesse dokumentieren, mit jedem Mitarbeiter ein Kennenlerngespräch</td><td data-label="Was Sie beisteuern">Zugang zu Ihren Unterlagen. Eine Ansprechperson bei Ihnen</td></tr>
+        <tr><td data-label="Wann">Monat 2</td><td data-label="Was ich mache">Schulungstag für alle. Wissens-Interviews mit den Schlüsselpersonen. Fachwissen und Projekthistorie einpflegen</td><td data-label="Was Sie beisteuern">Einen Tag für die Schulung. Zwei bis drei Stunden je Schlüsselperson</td></tr>
+        <tr><td data-label="Wann">Monat 3</td><td data-label="Was ich mache">Antwortkarten für die häufigsten Fragen, Feinschliff, Übergabe. Der Nachtbetrieb geht an</td><td data-label="Was Sie beisteuern">Zwei bis drei Freiwillige als interne Ansprechpartner</td></tr>
       </tbody>
     </table>
+
+    <details class="mehr reveal">
+      <summary>Was Sie mitbringen müssen</summary>
+      <div class="mehr-inhalt">
+        <ul class="punkte">
+          <li><b>Einen Büro-PC, der nachts anbleibt.</b> Er macht die Nachtarbeit und beantwortet tagsüber die Fragen. Deshalb bleiben Ihre Daten im Haus.</li>
+          <li><b>Die Zeit Ihrer Schlüsselpersonen.</b> Das Wissen, das nur in Köpfen steckt, kommt nur über Gespräche heraus.</li>
+          <li><b>Eine Entscheidung, was vertraulich bleibt.</b> Die treffen Sie, nicht ich.</li>
+          <li><b>Geduld für drei Monate.</b> Nach Monat 1 kann das System wenig. Das ist normal und kein Fehler.</li>
+        </ul>
+        <p class="mehr-schluss">Am ersten Tag stehen zwanzig bis fünfzig Antwortkarten bereit. Das ist Absicht. Ein System, das am ersten Tag nichts weiß, wird kein zweites Mal gefragt.</p>
+      </div>
+    </details>
+  </div>
+</section>
+
+<section class="grau" id="fragen">
+  <div class="wrap">
+    <div class="eyebrow reveal">Bevor Sie sich entscheiden</div>
+    <h2 class="reveal">Fünf Fragen, bevor Sie sich für irgendein System entscheiden.</h2>
+    <p class="lead reveal">Die Antworten auf diese Seite stehen oben. Die Antworten der anderen bekommen Sie, wenn Sie dieselben Fragen dort stellen.</p>
+
+    <ol class="fragen reveal">
+      <li><b>Wo liegen unsere Daten, und kommt ein weiterer Auftragsverarbeiter dazu?</b></li>
+      <li><b>Wie viele Lizenzen brauchen wir wirklich, wenn zwanzig Leute fragen sollen?</b></li>
+      <li><b>In welchem Format liegt unser Wissen, wenn wir aufhören?</b></li>
+      <li><b>Kennt das System unser Haus oder die Welt?</b></li>
+      <li><b>Wer hält es aktuell, und was passiert, wenn das niemand tut?</b></li>
+    </ol>
+
     <div class="hinweis reveal">
-      <h3>Was Sie mitbringen müssen</h3>
-      <ul>
-        <li><b>Einen Büro-PC, der nachts anbleibt.</b> Er macht die Nachtarbeit und beantwortet tagsüber die Fragen. Deshalb bleiben Ihre Daten im Haus</li>
-        <li><b>Die Zeit Ihrer Schlüsselpersonen.</b> Das Wissen, das nur in Köpfen steckt, kommt nur über Gespräche heraus</li>
-        <li><b>Eine Entscheidung, was vertraulich bleibt.</b> Die treffen Sie, nicht ich</li>
-        <li><b>Geduld für drei Monate.</b> Nach Monat 1 kann das System wenig. Das ist normal und kein Fehler</li>
-      </ul>
-    </div>
-    <p class="lead reveal">Am ersten Tag stehen zwanzig bis fünfzig Antwortkarten bereit. Das ist Absicht. Ein System, das am ersten Tag nichts weiß, wird kein zweites Mal gefragt.</p>
-  </div>
-</section>
-
-<section class="pruefung" id="pruefung">
-  <div class="wrap">
-    <div class="eyebrow reveal">Qualitätsprüfung mit sechs Rollen</div>
-    <h2 class="reveal">In jedem Büro sitzt einer,<br>der beweisen will, dass es nicht funktioniert.</h2>
-    <p class="pruefung-sub reveal">Bei uns arbeitet er mit.</p>
-
-    <p class="pruefung-lead reveal"><strong>Die meisten zeigen Ihnen, was ihr System kann. Hier steht, woran es scheitern könnte, und was dagegen getan wird.</strong></p>
-    <p class="pruefung-lead reveal">Ein Wissenssystem fällt selten mit Getöse durch. Es wird einfach nicht benutzt. Und meistens liegt das an einer Stelle, die bei der Vorführung nie drankommt.</p>
-    <p class="pruefung-lead reveal">Diese Stellen suchen wir, bevor Sie darauf stoßen. Dafür gibt es ein erfundenes Architekturbüro mit erfundenen Projekten und sechs Mitarbeitern, die jeden Tag dasselbe wollen wie Ihre.</p>
-
-    <div class="lineup reveal">
-      <svg viewBox="0 0 1100 245" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Sechs Prüfrollen: Geschäftsführung, Projektleitung, die Neue am dritten Tag, Bauleitung, Büroleitung und der Skeptiker, der einen halben Schritt abseits steht.">
-      <defs>
-      <g id="torso">
-      <path d="M-30,150 C-30,96 -25,76 0,76 C25,76 30,96 30,150" fill="none" stroke="#1A6B5A" stroke-width="2.4" stroke-linecap="round"/>
-      </g>
-      </defs>
-
-      <!-- ============ 1. Geschäftsführung ============ -->
-      <g transform="translate(95,0)">
-      <circle cx="0" cy="46" r="21" fill="none" stroke="#1A6B5A" stroke-width="2.4"/>
-      <use href="#torso"/>
-      <!-- Blatt Papier in der Hand -->
-      <rect x="-26" y="104" width="46" height="32" rx="2" fill="#EEF5F3" stroke="#1A6B5A" stroke-width="2"/>
-      <line x1="-18" y1="113" x2="10" y2="113" stroke="#1A6B5A" stroke-width="1.6" opacity=".55"/>
-      <line x1="-18" y1="121" x2="12" y2="121" stroke="#1A6B5A" stroke-width="1.6" opacity=".55"/>
-      <line x1="-18" y1="129" x2="2" y2="129" stroke="#1A6B5A" stroke-width="1.6" opacity=".55"/>
-      <!-- Arm zum Blatt -->
-      <path d="M26,100 C34,112 32,128 22,134" fill="none" stroke="#1A6B5A" stroke-width="2.4" stroke-linecap="round"/>
-      <text x="0" y="196" text-anchor="middle" font-family="Inter,sans-serif" font-size="15" font-weight="600" fill="#1A1D26">Geschäftsführung</text>
-      <text x="0" y="219" text-anchor="middle" font-family="Inter,sans-serif" font-size="13" fill="#5A5D64">Überblick, sofort</text>
-      </g>
-
-      <!-- ============ 2. Projektleitung ============ -->
-      <g transform="translate(265,0)">
-      <circle cx="0" cy="46" r="21" fill="none" stroke="#1A6B5A" stroke-width="2.4"/>
-      <use href="#torso"/>
-      <!-- Arm hoch ans Ohr -->
-      <path d="M24,104 C36,96 34,68 26,56" fill="none" stroke="#1A6B5A" stroke-width="2.4" stroke-linecap="round"/>
-      <!-- Telefon -->
-      <rect x="19" y="36" width="14" height="24" rx="3.5" fill="#EEF5F3" stroke="#1A6B5A" stroke-width="2"/>
-      <!-- Hörsignal -->
-      <path d="M40,40 C46,45 46,53 40,58" fill="none" stroke="#1A6B5A" stroke-width="1.8" stroke-linecap="round" opacity=".5"/>
-      <text x="0" y="196" text-anchor="middle" font-family="Inter,sans-serif" font-size="15" font-weight="600" fill="#1A1D26">Projektleitung</text>
-      <text x="0" y="219" text-anchor="middle" font-family="Inter,sans-serif" font-size="13" fill="#5A5D64">Noch im Telefonat</text>
-      </g>
-
-      <!-- ============ 3. Die Neue, Tag 3 ============ -->
-      <g transform="translate(435,0)">
-      <circle cx="0" cy="46" r="21" fill="none" stroke="#1A6B5A" stroke-width="2.4"/>
-      <use href="#torso"/>
-      <!-- Fragezeichen über dem Kopf -->
-      <text x="30" y="30" font-family="Inter,sans-serif" font-size="27" font-weight="600" fill="#1A6B5A" opacity=".55">?</text>
-      <!-- Zusammengerollter Plan unterm Arm -->
-      <rect x="-38" y="108" width="52" height="13" rx="6.5" fill="#EEF5F3" stroke="#1A6B5A" stroke-width="2" transform="rotate(-12 -12 114)"/>
-      <path d="M-26,102 C-34,112 -33,124 -24,128" fill="none" stroke="#1A6B5A" stroke-width="2.4" stroke-linecap="round"/>
-      <text x="0" y="196" text-anchor="middle" font-family="Inter,sans-serif" font-size="15" font-weight="600" fill="#1A1D26">Die Neue, Tag 3</text>
-      <text x="0" y="219" text-anchor="middle" font-family="Inter,sans-serif" font-size="13" fill="#5A5D64">Nicht wieder fragen</text>
-      </g>
-
-      <!-- ============ 4. Bauleitung ============ -->
-      <g transform="translate(605,0)">
-      <circle cx="0" cy="48" r="21" fill="none" stroke="#1A6B5A" stroke-width="2.4"/>
-      <!-- Helm -->
-      <path d="M-25,42 C-25,20 25,20 25,42 Z" fill="#EEF5F3" stroke="#1A6B5A" stroke-width="2.4" stroke-linejoin="round"/>
-      <line x1="-29" y1="42" x2="29" y2="42" stroke="#1A6B5A" stroke-width="2.4" stroke-linecap="round"/>
-      <use href="#torso"/>
-      <!-- eine Hand hält das Handy hoch -->
-      <path d="M-24,104 C-36,98 -38,84 -32,76" fill="none" stroke="#1A6B5A" stroke-width="2.4" stroke-linecap="round"/>
-      <rect x="-40" y="58" width="15" height="25" rx="3.5" fill="#EEF5F3" stroke="#1A6B5A" stroke-width="2"/>
-      <text x="0" y="196" text-anchor="middle" font-family="Inter,sans-serif" font-size="15" font-weight="600" fill="#1A1D26">Bauleitung</text>
-      <text x="0" y="219" text-anchor="middle" font-family="Inter,sans-serif" font-size="13" fill="#5A5D64">Eine Hand frei</text>
-      </g>
-
-      <!-- ============ 5. Büroleitung ============ -->
-      <g transform="translate(775,0)">
-      <circle cx="0" cy="46" r="21" fill="none" stroke="#1A6B5A" stroke-width="2.4"/>
-      <use href="#torso"/>
-      <!-- Stapel -->
-      <rect x="-25" y="126" width="50" height="9" rx="2" fill="#EEF5F3" stroke="#1A6B5A" stroke-width="1.9"/>
-      <rect x="-22" y="115" width="44" height="9" rx="2" fill="#EEF5F3" stroke="#1A6B5A" stroke-width="1.9"/>
-      <rect x="-19" y="104" width="38" height="9" rx="2" fill="#EEF5F3" stroke="#1A6B5A" stroke-width="1.9"/>
-      <text x="0" y="196" text-anchor="middle" font-family="Inter,sans-serif" font-size="15" font-weight="600" fill="#1A1D26">Büroleitung</text>
-      <text x="0" y="219" text-anchor="middle" font-family="Inter,sans-serif" font-size="13" fill="#5A5D64">Nichts doppelt</text>
-      </g>
-
-      <!-- ============ Trennung: ein halber Schritt ============ -->
-      <line x1="875" y1="30" x2="875" y2="230" stroke="#E2E3E0" stroke-width="1.5" stroke-dasharray="3 7"/>
-
-      <!-- ============ 6. Der Skeptiker ============ -->
-      <g transform="translate(985,0)">
-      <circle cx="0" cy="46" r="21" fill="none" stroke="#1A6B5A" stroke-width="2.4"/>
-      <use href="#torso"/>
-      <!-- verschränkte Arme -->
-      <path d="M-30,100 C-22,116 6,120 26,112" fill="none" stroke="#1A6B5A" stroke-width="2.6" stroke-linecap="round"/>
-      <path d="M30,100 C22,116 -6,120 -26,112" fill="none" stroke="#1A6B5A" stroke-width="2.6" stroke-linecap="round"/>
-      <!-- hochgezogene Augenbraue -->
-      <line x1="-11" y1="38" x2="-3" y2="35" stroke="#1A6B5A" stroke-width="2" stroke-linecap="round"/>
-      <line x1="4" y1="36" x2="12" y2="36" stroke="#1A6B5A" stroke-width="2" stroke-linecap="round"/>
-      <text x="0" y="196" text-anchor="middle" font-family="Inter,sans-serif" font-size="15" font-weight="600" fill="#1A6B5A">Der Skeptiker</text>
-      <text x="0" y="219" text-anchor="middle" font-family="Inter,sans-serif" font-size="13" fill="#5A5D64">Dass es nicht geht</text>
-      </g>
-      </svg>
-    </div>
-
-    <ul class="lineup-liste reveal">
-      <li><span class="rolle">Geschäftsführung</span><span class="motiv">Überblick in fünf Minuten, ohne eine Mail zu öffnen</span></li>
-      <li><span class="rolle">Projektleitung</span><span class="motiv">Die Antwort noch im Telefonat, nicht danach</span></li>
-      <li><span class="rolle">Die Neue, Tag 3</span><span class="motiv">Nicht schon wieder jemanden fragen müssen</span></li>
-      <li><span class="rolle">Bauleitung</span><span class="motiv">Eine Zahl, auf der Baustelle, mit einer Hand am Handy</span></li>
-      <li><span class="rolle">Büroleitung</span><span class="motiv">Ordnung halten, ohne zweimal zu arbeiten</span></li>
-      <li><span class="rolle">Der Skeptiker</span><span class="motiv">Beweisen, dass es nicht funktioniert</span></li>
-    </ul>
-
-    <div class="pruefung-kacheln reveal">
-      <div class="pruefung-kachel">
-        <h3>Sechs Rollen</h3>
-        <p>Jede mit eigenem Motiv, eigener Ungeduld und einem eigenen Grund, das System liegen zu lassen.</p>
-      </div>
-      <div class="pruefung-kachel">
-        <h3>Echte Aufgaben</h3>
-        <p>Keine Erkundung. Aufgaben aus dem Alltag, formuliert mit dem Zeitdruck, den der Alltag hat.</p>
-      </div>
-      <div class="pruefung-kachel">
-        <h3>Unabhängige Gegenprüfung</h3>
-        <p>Wer sich selbst bewertet, bewertet großzügig. Jedes "gelöst" wird gegengeprüft, bevor es zählt.</p>
-      </div>
-    </div>
-
-    <div class="pruefung-warum reveal">
-      <p><strong>Warum wir das machen:</strong> Solche Systeme scheitern selten daran, dass etwas fehlt. Sie scheitern daran, dass zwei Stellen etwas Verschiedenes sagen und keine dazuschreibt, welche gilt. Genau danach suchen wir. Mit Absicht, immer wieder.</p>
-    </div>
-  </div>
-</section>
-
-<section class="grau" id="daten">
-  <div class="wrap">
-    <div class="eyebrow reveal">Datenschutz</div>
-    <h2 class="reveal">Ihr Wissensbestand bleibt in Ihrem Haus.</h2>
-    <p class="lead reveal">Der Rechner, der nachts arbeitet und tagsüber antwortet, steht bei Ihnen im Büro. Nicht bei mir, nicht in einer Cloud, die ich betreibe. Das ist keine Nebensache, sondern die Entscheidung, an der die ganze Konstruktion hängt: Ihr Wissensbestand liegt als Dateien bei Ihnen, und es gibt keinen zusätzlichen Auftragsverarbeiter, der ihn hält.</p>
-    <ul class="punkte reveal">
-      <li><b>Bevor das erste Dokument erfasst wird</b>, liegt das Datenschutzpaket vor: Auftragsverarbeitungsvertrag, technische und organisatorische Maßnahmen, Datenschutzhinweise für Ihre Mitarbeiter. Nicht danach.</li>
-      <li><b>Keine Leistungs- und keine Verhaltenskontrolle.</b> Das ist eine Zusage im Vertrag, keine Absichtserklärung. Wer Wissen einwirft, erfährt selbst, wie oft es Kollegen geholfen hat. Die Geschäftsführung sieht nur Summen, nie Namen.</li>
-      <li><b>Ihre E-Mails werden nicht mitgeschnitten.</b> Was ins System soll, leitet der Mitarbeiter selbst weiter. Ein Klick, und er entscheidet.</li>
-      <li><b>Ihr Betriebsrat bekommt eine ehrliche Antwort</b>, weil die Zusagen technisch gedeckt sind und nicht nur gut klingen.</li>
-    </ul>
-    <div class="grenzen">
-      <h3 class="reveal">Und was das System nicht kann</h3>
-      <p class="lead reveal">Ein Punkt, den ich lieber vorher sage als hinterher: <b>die Ordnerbeschriftung ist kein Zugriffsschutz.</b> Wer das System geöffnet hat, kann jede Datei darin lesen, auch die, auf der "Nur Geschäftsführung" steht. Es gibt keine Rechteverwaltung auf Ordnerebene.</p>
-      <p class="lead reveal">Deshalb liegt Vertrauliches gar nicht erst im gemeinsamen System, sondern in einer getrennten Instanz für die Geschäftsführung. Das ist die einzige Lösung, die einer Nachfrage standhält.</p>
-      <p class="lead reveal">Und der Punkt, den Sie sonst irgendwann selbst herausfinden: <b>wenn Sie eine Frage stellen, geht der Text dieser Frage an die KI, zusammen mit den zwei bis vier Notizen, die zur Beantwortung gelesen werden.</b> Die Verarbeitung läuft bei Anthropic in den USA, abgesichert über das EU-US Data Privacy Framework und Standardvertragsklauseln, ohne dass Ihre Daten in ein Training fließen. Ihr Bestand bleibt bei Ihnen, die einzelne Frage nicht. Wer Ihnen etwas anderes erzählt, hat entweder nicht nachgesehen oder verkauft Ihnen ein anderes Produkt.</p>
-      <p class="lead reveal">Eine Ausnahme davon ist wichtig: <b>Eintritt, Austritt, Abwesenheit und Vertretung sind keine vertraulichen Informationen.</b> Wenn das gemeinsame System nicht weiß, dass ein Projektleiter gegangen ist, nennt es monatelang seinen Namen als zuständig. Vertraulich sind die Gründe, nicht die Tatsache.</p>
-    </div>
-  </div>
-</section>
-
-<section class="hell" id="ausstieg">
-  <div class="wrap">
-    <div class="eyebrow reveal">Der Ausstieg</div>
-    <h2 class="reveal">Das Wissen gehört Ihnen. Auch danach.</h2>
-    <p class="lead reveal">Ihr Firmengedächtnis besteht aus Textdateien in Ordnern. Kein Datenbankformat, kein Export nötig, kein Anbieter, der die Tür zumacht. Sie können jede einzelne Datei mit dem Editor öffnen, der auf Ihrem Rechner ohnehin installiert ist.</p>
-    <p class="lead reveal">Das Abo ist monatlich kündbar. Wenn Sie kündigen, wird nichts abgeschaltet und nichts verschlechtert. Das System antwortet weiter auf alles, was drinsteht.</p>
-    <div class="hinweis reveal">
-      <h3>Was ohne Abo aufhört</h3>
-      <p>Der Nachtbetrieb. Keine neuen Antwortkarten, keine Quellenabholung, kein Aufräumen, keine Berichte. Das System wird nicht schlechter, aber es wird auch nicht mehr besser. Ihr Wissen altert dann in dem Tempo, in dem Ihr Geschäft sich ändert, und niemand meldet es Ihnen.</p>
-    </div>
-  </div>
-</section>
-
-<section class="kosten" id="kosten">
-  <div class="wrap">
-    <div class="kosten-inner">
-      <div class="eyebrow reveal">Der Preis</div>
-      <h2 class="reveal">Zwei Positionen, und beide sage ich Ihnen im Gespräch.</h2>
-      <p class="lead reveal">Der Preis besteht aus einem einmaligen Aufbau und einem monatlichen Abo. Dazu kommen Ihre eigenen Lizenzkosten für die KI-Zugänge und die Synchronisierung, die zahlen Sie direkt an die Anbieter und nicht an mich.</p>
-      <p class="lead reveal">Warum hier keine Zahl steht: der Aufwand hängt davon ab, wie viele Sie sind und in welchem Zustand Ihre Unterlagen sind. Eine Zahl auf einer Webseite wäre für die Hälfte der Leser zu hoch und für die andere Hälfte zu niedrig.</p>
-      <p class="kosten-hinweis reveal">Was ich hier sagen kann: Der Klarheitstag ist über die BAFA förderfähig, mit 50 Prozent Zuschuss, höchstens 1.750 EUR. Die Förderrichtlinie begrenzt eine geförderte Beratung auf fünf Tage, deshalb wird der Klarheitstag beantragt und nicht der ganze Aufbau. Die Richtlinie erlaubt zwei geförderte Beratungen im Jahr, also bis zu 3.500 EUR, solange jede in sich abgeschlossen ist. Anträge sind nur bis zum 31. Dezember 2026 möglich. Und Sie bekommen die Zahl im ersten Gespräch, nicht nach drei Terminen.</p>
-      <p class="kosten-rechner reveal">Was Sie der jetzige Zustand kostet, können Sie vorher selbst ausrechnen: <a href="rechner.html">zum Wissensverlust-Rechner</a></p>
+      <h3>Und die sechste, bei der wir verlieren</h3>
+      <p>Wie schnell läuft es? Ein Werkzeug aus dem Netz läuft in einer Stunde. Das Firmengedächtnis braucht drei Monate. Wer morgen etwas braucht, ist mit dem Werkzeug besser bedient.</p>
     </div>
   </div>
 </section>
@@ -693,13 +710,43 @@ section{padding:5rem 0}
     © 2026 Kurt König · Wittelsbacher Str. 2 · 97074 Würzburg ·
     <a href="impressum.html">Impressum</a> · <a href="datenschutz.html">Datenschutz</a>
   </div>
-  <div class="footer-credit">Gebaut und gepflegt mit derselben KI, mit der ich Firmengedächtnisse baue. Nicht vom Firmengedächtnis selbst. Richtung und Freigabe: Kurt König. Letzte Änderung: 29.09.2026.</div>
+  <div class="footer-credit">Gebaut und gepflegt mit derselben KI, mit der ich Firmengedächtnisse baue. Nicht vom Firmengedächtnis selbst. Richtung und Freigabe: Kurt König. Letzte Änderung: 03.10.2026.</div>
 </footer>
 
 <script>
 const io=new IntersectionObserver(es=>{es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.12});
 document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
 document.querySelectorAll('.nav-links a, .nav-cta').forEach(a=>{a.addEventListener('click',()=>{document.querySelector('.nav').classList.remove('open')})});
+
+/* Euro-Zeile, 03.10.2026. Rechenwege identisch zu rechner.html. */
+(function(){
+  const g=id=>document.getElementById(id);
+  if(!g('such'))return;
+  const eur=n=>n.toLocaleString('de-DE',{maximumFractionDigits:0})+' EUR';
+  const wert=id=>{const el=g(id);if(!el)return null;const v=parseFloat(el.value);return(isNaN(v)||v<0)?null:v};
+  const LEER='noch keine Angabe';
+  function rechne(){
+    const such=wert('such'),satz=wert('satz'),gehalt=wert('gehalt');
+    const nach=wert('nach'),ein=wert('ein');
+    const nachW=(nach===null?6:nach),einW=(ein===null?6:ein);
+    g('an-nach').textContent=(nach===null?'sechs':nachW);
+    g('an-ein').textContent=(ein===null?'sechs':einW);
+    const aS=g('aus-suchen');
+    if(such!==null&&satz!==null){const s=such*satz*52;aS.textContent=eur(s);aS.classList.remove('leer');g('p-such').textContent=eur(s);}
+    else{aS.textContent=LEER;aS.classList.add('leer');g('p-such').textContent='offen';}
+    const aA=g('aus-abgang');
+    if(gehalt!==null){
+      const vak=nachW*gehalt*0.65,nbs=gehalt*12*0.20,einA=einW*gehalt*0.5;
+      aA.textContent=eur(vak+nbs+einA);aA.classList.remove('leer');
+      g('p-vak').textContent=eur(vak);g('p-neu').textContent=eur(nbs);g('p-ein').textContent=eur(einA);
+    }else{
+      aA.textContent=LEER;aA.classList.add('leer');
+      g('p-vak').textContent='offen';g('p-neu').textContent='offen';g('p-ein').textContent='offen';
+    }
+  }
+  ['such','satz','gehalt','nach','ein'].forEach(id=>{const el=g(id);if(el)el.addEventListener('input',rechne)});
+  rechne();
+})();
 </script>
 
 </body>

@@ -98,6 +98,13 @@ h2{font-family:var(--font-display);font-size:2rem;font-weight:600;line-height:1.
 .trust-inner{max-width:var(--max-w);margin:0 auto;padding:1.1rem var(--pad);display:flex;gap:2.5rem;flex-wrap:wrap}
 .trust-item{font-size:0.78rem;font-weight:500;color:var(--text-light);display:flex;align-items:center;gap:0.5rem}
 .trust-dot{width:5px;height:5px;background:var(--accent);border-radius:50%;flex-shrink:0}
+/* Produktfakten in der Leiste, 03.10.2026. Der Hero rechts ist mit dem
+   Frage-Antwort-Beispiel belegt, deshalb stehen die Eckdaten hier:
+   zuerst das Produkt, darunter leiser die Person. */
+.trust-produkt .trust-item{color:var(--text-mid);font-weight:500;font-size:0.82rem}
+.trust-produkt .trust-dot{width:6px;height:6px}
+.trust-person{padding-top:0.15rem;padding-bottom:1.1rem}
+.trust-produkt{padding-bottom:0.85rem}
 
 /* ABGRENZUNG */
 .abgrenzung{padding:4.5rem 0;background:var(--bg-alt);border-bottom:1px solid var(--border)}
@@ -528,11 +535,16 @@ h2{font-family:var(--font-display);font-size:2rem;font-weight:600;line-height:1.
 </header>
 
 <div class="trust-bar">
-  <div class="trust-inner">
+  <div class="trust-inner trust-produkt">
+    <div class="trust-item"><span class="trust-dot"></span>Aufbau in drei Monaten</div>
+    <div class="trust-item"><span class="trust-dot"></span>Ihre Daten bleiben im Haus</div>
+    <div class="trust-item"><span class="trust-dot"></span>Jeder fragt mit, ohne eigene Lizenz</div>
+    <div class="trust-item"><span class="trust-dot"></span>BAFA-förderfähig, bis 1.750 EUR</div>
+  </div>
+  <div class="trust-inner trust-person">
     <div class="trust-item"><span class="trust-dot"></span>BAFA-gelisteter Berater</div>
     <div class="trust-item"><span class="trust-dot"></span>Dipl.-Informatiker</div>
     <div class="trust-item"><span class="trust-dot"></span>20+ Jahre Beratungserfahrung</div>
-    <div class="trust-item"><span class="trust-dot"></span>50% Förderung für KMU, 1.750 EUR je Beratung</div>
   </div>
 </div>
 
@@ -820,7 +832,7 @@ h2{font-family:var(--font-display);font-size:2rem;font-weight:600;line-height:1.
     © 2026 Kurt König · Wittelsbacher Str. 2 · 97074 Würzburg ·
     <a href="impressum.html">Impressum</a> · <a href="datenschutz.html">Datenschutz</a>
   </div>
-  <div class="footer-credit">Gebaut und gepflegt mit derselben KI, mit der ich Firmengedächtnisse baue. Nicht vom Firmengedächtnis selbst. Richtung und Freigabe: Kurt König. Letzte Änderung: 29.09.2026.</div>
+  <div class="footer-credit">Gebaut und gepflegt mit derselben KI, mit der ich Firmengedächtnisse baue. Nicht vom Firmengedächtnis selbst. Richtung und Freigabe: Kurt König. Letzte Änderung: 03.10.2026.</div>
 </footer>
 
 <script>
