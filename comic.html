@@ -4,205 +4,93 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Das Firmengedächtnis. Eine Comic-Geschichte | KI Kurt</title>
-<meta name="description" content="Das Ingenieurbüro, das sein Gedächtnis fand. Eine Comic-Geschichte in 12 Seiten über Wissensverlust, Veränderung und eine KI, die zuhört.">
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="haus.css">
 <style>
-@font-face{font-family:'Cormorant Garamond';font-style:normal;font-weight:300 700;font-display:swap;src:url("fonts/cormorant-garamond-latin.woff2") format("woff2")}
-@font-face{font-family:'Cormorant Garamond';font-style:italic;font-weight:300 700;font-display:swap;src:url("fonts/cormorant-garamond-latin-italic.woff2") format("woff2")}
-@font-face{font-family:'Inter';font-style:normal;font-weight:100 900;font-display:swap;src:url("fonts/inter-latin.woff2") format("woff2")}
-:root {
-  --bg: #FFFFFF;
-  --bg-alt: #F6F6F4;
-  --bg-dark: #1A1D26;
-  --text: #1A1D26;
-  --text-mid: #3D404A;
-  --text-muted: #5A5D64;
-  --text-light: #848790;
-  --accent: #1A6B5A;
-  --accent-hover: #145849;
-  --accent-bg: #EEF5F3;
-  --border: #E2E3E0;
-  --border-light: #EDEDEB;
-  --font-display: 'Cormorant Garamond', 'Georgia', serif;
-  --font-body: 'Inter', system-ui, -apple-system, sans-serif;
-  --max-w: 1100px;
-  --pad: 2rem;
-}
-*{margin:0;padding:0;box-sizing:border-box}
-html{scroll-behavior:smooth}
-body{background:var(--bg);color:var(--text);font-family:var(--font-body);font-size:16px;line-height:1.6;-webkit-font-smoothing:antialiased}
-
-.brand-line{height:3px;background:var(--accent)}
-.wrap{max-width:var(--max-w);margin:0 auto;padding-left:var(--pad);padding-right:var(--pad)}
-
-.nav{display:flex;justify-content:space-between;align-items:center;max-width:var(--max-w);margin:0 auto;padding:1.25rem var(--pad);position:relative}
-.nav-logo{font-family:var(--font-display);font-weight:600;font-size:1.5rem;color:var(--text);text-decoration:none;letter-spacing:-0.02em;display:inline-flex;align-items:center;gap:0.34em}
-.nav-logo .wortmarke span{color:var(--accent)}
-.nav-logo .masz{height:1.05em;width:auto;flex-shrink:0;overflow:visible}
-.nav-logo .masz path{fill:none;stroke:var(--accent);stroke-width:1.5;stroke-linecap:square;stroke-linejoin:miter;vector-effect:non-scaling-stroke}
-.nav-logo .masz-r{transform:scaleX(-1)}
-.nav-menu{display:flex;align-items:center;gap:2rem}
-.nav-links{display:flex;gap:1.5rem;list-style:none}
-.nav-links a{font-size:0.84rem;font-weight:500;white-space:nowrap;color:var(--text-muted);text-decoration:none;transition:color 0.15s}
-.nav-links a:hover{color:var(--text)}
-.nav-cta{font-size:0.82rem;font-weight:600;color:#FFF;background:var(--accent);text-decoration:none;padding:0.6rem 1.4rem;border-radius:4px;transition:background 0.15s;white-space:nowrap}
-.nav-cta:hover{background:var(--accent-hover)}
-.nav-toggle{display:none;background:none;border:none;cursor:pointer;padding:0.5rem}
-.nav-toggle svg{width:24px;height:24px;stroke:var(--text);stroke-width:2;fill:none}
-
-.comic-hero{max-width:var(--max-w);margin:0 auto;padding:4rem var(--pad) 2rem;text-align:center}
-.comic-hero h1{font-family:var(--font-display);font-size:clamp(2rem,4.5vw,3rem);font-weight:600;line-height:1.12;letter-spacing:-0.02em;color:var(--text);margin-bottom:1rem;text-wrap:balance}
-.comic-hero .lead{font-size:1.05rem;line-height:1.7;color:var(--text-mid);max-width:600px;margin:0 auto 0.5rem}
-.comic-hero .sub{font-size:0.82rem;color:var(--text-light);margin-bottom:2rem}
-
-.comic-strip{max-width:1200px;margin:0 auto;padding:0 1rem}
-
-/* Comic zum Vergroessern. Die Vorlage ist nur 1000 Pixel breit, deshalb hilft die
-   Lupe vor allem am Handy, wo das Bild sonst auf 375 Pixel geschrumpft wird.
-   Die echte Loesung ist die Neuerzeugung in Einzelseiten. */
-.comic-strip img{cursor:zoom-in}
-.lupe{position:fixed;inset:0;background:rgba(26,29,38,0.94);display:none;
-  align-items:flex-start;justify-content:flex-start;z-index:100;padding:1rem;
-  cursor:zoom-out;overflow:auto;-webkit-overflow-scrolling:touch}
+.comic-kopf{padding:72px 0 36px}
+.comic-kopf h1{font-size:clamp(34px,5.4vw,58px);max-width:15em;margin-bottom:16px}
+.comic-kopf .klein{font-family:var(--mono);font-size:12px;color:var(--grau-2);margin-top:4px}
+.strip{width:min(1200px,100%);margin:0 auto;padding:0 20px}
+.strip img{width:100%;height:auto;border:1px solid var(--haar);border-radius:6px;margin-bottom:32px;cursor:zoom-in}
+.teiler{margin:8px 0 40px}
+.ki-hinweis{font-size:13px;color:var(--grau-2);margin:0 0 8px}
+.ausklang{padding:40px 0 80px}
+.ausklang .zeile{font-family:var(--display);font-size:clamp(24px,3vw,34px);font-weight:600;letter-spacing:-.03em;line-height:1.2;color:var(--tinte);margin-bottom:18px;max-width:20em}
+.ausklang p{max-width:44rem;margin-bottom:14px}
+.schluss{background:var(--tinte);border-radius:20px;padding:clamp(24px,4vw,40px);max-width:56rem}
+.schluss h2{color:#fff;font-size:clamp(26px,3.4vw,38px);margin-bottom:12px}
+.schluss p{color:#C7C7CC;max-width:36rem}
+.schluss .knopf{background:#fff;color:var(--tinte);margin-top:22px}
+.schluss .bafa{font-family:var(--mono);font-size:12px;color:#A1A1A6;margin-top:22px}
+.schluss .bafa b{color:var(--rot);font-weight:400}
+.schluss .direkt{font-size:14px;color:#A1A1A6;margin-top:8px}
+.schluss .direkt a{color:#fff}
+.lupe{position:fixed;inset:0;background:rgba(17,18,20,.94);display:none;align-items:flex-start;justify-content:flex-start;z-index:100;padding:1rem;cursor:zoom-out;overflow:auto;-webkit-overflow-scrolling:touch}
 .lupe.auf{display:flex}
 .lupe img{max-width:none;width:auto;height:auto;margin:auto;border-radius:4px}
-.lupe-hinweis{position:fixed;left:50%;bottom:1rem;transform:translateX(-50%);
-  background:rgba(26,29,38,0.85);color:#FFF;font-size:0.76rem;padding:0.4rem 0.9rem;
-  border-radius:4px;pointer-events:none}
-@media (prefers-reduced-motion: reduce){.lupe{scroll-behavior:auto}}
-.comic-strip img{width:100%;height:auto;display:block;border-radius:6px;margin-bottom:2rem;border:1px solid var(--border)}
-
-.comic-divider{max-width:var(--max-w);margin:0 auto;padding:0 var(--pad)}
-.comic-divider-inner{border-top:1px solid var(--border-light);margin:1rem 0 3rem;position:relative}
-.comic-divider-label{position:absolute;top:-0.7rem;left:50%;transform:translateX(-50%);background:var(--bg);padding:0 1rem;font-size:0.72rem;font-weight:600;text-transform:uppercase;letter-spacing:0.12em;color:var(--text-light)}
-
-.ki-hinweis{max-width:var(--max-w);margin:0 auto 2rem;padding:0 var(--pad);font-size:0.76rem;color:var(--text-light);text-align:center}
-.comic-outro{max-width:var(--max-w);margin:0 auto;padding:2rem var(--pad) 1rem;text-align:center}
-.comic-outro p{font-size:0.95rem;color:var(--text-mid);line-height:1.7;max-width:560px;margin:0 auto 1.5rem}
-.comic-outro .tagline{font-family:var(--font-display);font-size:1.5rem;font-weight:600;color:var(--text);margin-bottom:2rem;font-style:italic}
-
-.btn{display:inline-flex;align-items:center;gap:0.5rem;background:var(--accent);color:#FFF;font-family:var(--font-body);font-size:0.88rem;font-weight:600;padding:0.85rem 2rem;border:none;border-radius:4px;cursor:pointer;text-decoration:none;transition:background 0.15s}
-.btn:hover{background:var(--accent-hover)}
-.btn svg{width:16px;height:16px;stroke:currentColor;fill:none;stroke-width:2}
-
-.cta-section{background:var(--bg-dark);color:#FFF;text-align:center;padding:4.5rem var(--pad);margin-top:3rem}
-.cta-section h2{font-family:var(--font-display);font-size:2.2rem;font-weight:600;color:#FFF;margin-bottom:1rem}
-.cta-section .cta-body{font-size:0.95rem;color:rgba(255,255,255,0.65);margin-bottom:2rem;max-width:480px;margin-left:auto;margin-right:auto;line-height:1.65}
-.cta-bafa{margin-top:1.25rem;font-size:0.78rem;color:rgba(255,255,255,0.45)}
-.cta-contact{margin-top:2rem;display:flex;justify-content:center;gap:2rem;flex-wrap:wrap}
-.cta-contact a{color:rgba(255,255,255,0.5);text-decoration:none;font-size:0.82rem;transition:color 0.15s}
-.cta-contact a:hover{color:#FFF}
-.cta-contact span{color:rgba(255,255,255,0.35);font-size:0.82rem}
-
-.footer{max-width:var(--max-w);margin:0 auto;padding:2rem var(--pad);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem}
-.footer-logo{font-family:var(--font-display);font-weight:600;font-size:1.1rem;color:var(--text-light)}
-.footer-meta{font-size:0.75rem;color:var(--text-light)}
-.footer-meta a{color:var(--text-muted);text-decoration:none}
-.footer-meta a:hover{text-decoration:underline}
-
-.reveal{opacity:0;transform:translateY(20px);transition:opacity 0.6s ease,transform 0.6s ease}
-.reveal.in{opacity:1;transform:none}
-@media (prefers-reduced-motion: reduce){
-  .reveal{opacity:1;transform:none;transition:none}
-  *{animation-duration:0.01ms!important;transition-duration:0.01ms!important;scroll-behavior:auto!important}
-}
-
-@media(max-width:980px){
-  :root{--pad:1.5rem}
-  .nav-menu{display:none}
-  .nav-toggle{display:block}
-  .nav.open .nav-menu{display:flex;flex-direction:column;position:absolute;top:100%;left:0;right:0;background:var(--bg);padding:1rem var(--pad) 1.5rem;border-bottom:1px solid var(--border);z-index:100;gap:1rem}
-  .nav.open .nav-links{flex-direction:column;gap:1rem}
-  .nav.open .nav-cta{align-self:flex-start}
-}
-.footer-credit{font-size:0.75rem;color:var(--text-light);margin-top:0.6rem;line-height:1.5}
+.lupe-hinweis{position:fixed;left:50%;bottom:1rem;transform:translateX(-50%);background:rgba(17,18,20,.85);color:#fff;font:500 12px var(--mono);padding:.4rem .9rem;border-radius:999px;pointer-events:none}
 </style>
-<noscript><style>.reveal{opacity:1;transform:none}</style></noscript>
 </head>
 <body>
 
-<div class="brand-line"></div>
+<nav class="nav"><div class="wrap">
+  <a class="logo" href="index.html"><svg viewBox="0 0 13 30"><path d="M1.25 1V29M1.25 15H13M7.5 11L2 15L7.5 19"/></svg>KI Kurt<svg class="r" viewBox="0 0 13 30"><path d="M1.25 1V29M1.25 15H13M7.5 11L2 15L7.5 19"/></svg></a>
+  <ul>
+    <li><a href="buerogeselle.html">Bürogeselle</a></li>
+    <li><a href="buerokompagnon.html">Bürokompagnon</a></li>
+    <li><a href="firmengedaechtnis.html">Firmengedächtnis</a></li>
+    <li><a href="index.html#preis">Preis</a></li>
+    <li><a href="index.html#ueber">Über mich</a></li>
+  </ul>
+  <a class="knopf" href="index.html#kontakt">Gespräch vereinbaren</a>
+</div></nav>
 
-<nav class="nav">
-  <a class="nav-logo" href="index.html"><svg class="masz" viewBox="0 0 13 30" aria-hidden="true"><path d="M1.25 1V29M1.25 15H13M7.5 11L2 15L7.5 19"/></svg><span class="wortmarke">KI <span>Kurt</span></span><svg class="masz masz-r" viewBox="0 0 13 30" aria-hidden="true"><path d="M1.25 1V29M1.25 15H13M7.5 11L2 15L7.5 19"/></svg></a>
-  <div class="nav-menu">
-        <ul class="nav-links">
-      <li><a href="buerogeselle.html">Bürogeselle</a></li>
-      <li><a href="buerokompagnon.html">Bürokompagnon</a></li>
-      <li><a href="firmengedaechtnis.html">Firmengedächtnis</a></li>
-      <li><a href="rechner.html">Ihre Zahl</a></li>
-      <li><a href="comic.html" class="aktuell">Der Comic</a></li>
-      <li><a href="index.html#ueber">&Uuml;ber mich</a></li>
-    </ul>
-    <a class="nav-cta" href="index.html#kontakt">Gespräch vereinbaren</a>
+<section class="comic-kopf"><div class="wrap">
+  <p class="ueber">Der Comic</p>
+  <h1>Das Ingenieurbüro, das sein Gedächtnis fand</h1>
+  <p class="lead">Eine Geschichte über Wissen, das in Köpfen steckt. Über Peter, der in Rente geht. Und über ein System, das zuhört.</p>
+  <p class="klein">12 Seiten. Keine Technik. Nur der Alltag, wie er ist. Und wie er sein könnte.</p>
+</div></section>
+
+<div class="strip">
+  <picture><source srcset="comics/seite-1-3.webp" type="image/webp"><img src="comics/Seite 1-3.png" alt="Seiten 1-3: Das Büro hat ein Gedächtnis, es heißt Peter. Und wenn Peter nicht da ist? Das muss doch irgendwo stehen." loading="eager"></picture>
+</div>
+
+<div class="wrap teiler"><div class="mass"><i></i>Die Veränderung beginnt<i></i></div></div>
+
+<div class="strip">
+  <picture><source srcset="comics/seite-4-12.webp" type="image/webp"><img src="comics/Seite 4-12.png" alt="Seiten 4-12: Nein. Peter ist skeptisch. Aus Erfahrung wird Wissen. 10 Sekunden statt 60 Minuten. Plötzlich weiß das Büro Bescheid. Wissen entsteht unterwegs. Peter geht. Frag KI-Kurt. Das neue Normal." loading="lazy"></picture>
+</div>
+
+<section class="ausklang"><div class="wrap">
+  <p class="ki-hinweis">Die Bilder dieser Geschichte sind mit KI erzeugt. Die Geschichte selbst stammt aus echten Gespr&auml;chen in B&uuml;ros wie Ihrem.</p>
+  <p class="zeile">Wenn Wissen da ist, kann Großes entstehen.</p>
+  <p>Diese Geschichte passiert jeden Tag. In Ingenieurbüros, Architekturbüros, Handwerksbetrieben. Peter heißt nicht immer Peter. Aber das Problem ist immer dasselbe: Wissen lebt in Köpfen. Und Köpfe gehen irgendwann.</p>
+  <p>Das Firmengedächtnis sorgt dafür, dass gute Gedanken nicht verloren gehen.</p>
+
+  <div class="schluss" style="margin-top:48px">
+    <h2>Kommt Ihnen das bekannt vor?</h2>
+    <p>Dann lassen Sie uns bei einem Kaffee herausfinden, wo Ihr Wissen heute steckt. Und wie es morgen für alle verfügbar sein kann.</p>
+    <a class="knopf" href="index.html#kontakt">Kaffee vereinbaren <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+    <p class="bafa"><b>●</b> BAFA-gelisteter Berater · 50% Förderung für KMU, 1.750 EUR je Beratung</p>
+    <p class="direkt">Oder direkt: <a href="mailto:kurt@ki-kurt.de">kurt@ki-kurt.de</a> · <a href="tel:+4993145321005">0931 45321005</a> · Würzburg · remote &amp; vor Ort</p>
   </div>
-  <button class="nav-toggle" aria-label="Menü" onclick="this.closest('.nav').classList.toggle('open')">
-    <svg viewBox="0 0 24 24"><path d="M4 6h16M4 12h16M4 18h16" stroke-linecap="round"/></svg>
-  </button>
-</nav>
+</div></section>
 
-<div class="comic-hero">
-  <h1 class="reveal">Das Ingenieurbüro, das sein Gedächtnis fand</h1>
-  <p class="lead reveal">Eine Geschichte über Wissen, das in Köpfen steckt. Über Peter, der in Rente geht. Und über ein System, das zuhört.</p>
-  <p class="sub reveal">12 Seiten. Keine Technik. Nur der Alltag, wie er ist. Und wie er sein könnte.</p>
-</div>
-
-<div class="comic-strip">
-  <picture><source srcset="comics/seite-1-3.webp" type="image/webp"><img src="comics/Seite 1-3.png" alt="Seiten 1-3: Das Büro hat ein Gedächtnis, es heißt Peter. Und wenn Peter nicht da ist? Das muss doch irgendwo stehen." class="reveal" loading="eager"></picture>
-</div>
-
-<div class="comic-divider">
-  <div class="comic-divider-inner">
-    <span class="comic-divider-label">Die Veränderung beginnt</span>
+<footer class="fuss"><div class="wrap">
+  <div class="plankopf">
+    <div><small>Planverfasser</small>Kurt König · KI Kurt</div>
+    <div><small>Ort</small>Wittelsbacher Str. 2, 97074 Würzburg</div>
+    <div><small>Stand</small>29.10.2026</div>
+    <div><small>Blätter</small><a href="impressum.html">Impressum</a> · <a href="datenschutz.html">Datenschutz</a></div>
   </div>
-</div>
-
-<div class="comic-strip">
-  <picture><source srcset="comics/seite-4-12.webp" type="image/webp"><img src="comics/Seite 4-12.png" alt="Seiten 4-12: Nein. Peter ist skeptisch. Aus Erfahrung wird Wissen. 10 Sekunden statt 60 Minuten. Plötzlich weiß das Büro Bescheid. Wissen entsteht unterwegs. Peter geht. Frag KI-Kurt. Das neue Normal." class="reveal" loading="lazy"></picture>
-</div>
-
-<p class="ki-hinweis">Die Bilder dieser Geschichte sind mit KI erzeugt. Die Geschichte selbst stammt aus echten Gespr&auml;chen in B&uuml;ros wie Ihrem.</p>
-
-<div class="comic-outro">
-  <p class="tagline reveal">Wenn Wissen da ist, kann Großes entstehen.</p>
-  <p class="reveal">Diese Geschichte passiert jeden Tag. In Ingenieurbüros, Architekturbüros, Handwerksbetrieben. Peter heißt nicht immer Peter. Aber das Problem ist immer dasselbe: Wissen lebt in Köpfen. Und Köpfe gehen irgendwann.</p>
-  <p class="reveal">Das Firmengedächtnis sorgt dafür, dass gute Gedanken nicht verloren gehen.</p>
-</div>
-
-<section class="cta-section">
-  <h2>Kommt Ihnen das bekannt vor?</h2>
-  <p class="cta-body">Dann lassen Sie uns bei einem Kaffee herausfinden, wo Ihr Wissen heute steckt. Und wie es morgen für alle verfügbar sein kann.</p>
-  <a href="index.html#kontakt" class="btn">
-    Kaffee vereinbaren
-    <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7" stroke-linecap="round" stroke-linejoin="round"/></svg>
-  </a>
-  <p class="cta-bafa">BAFA-gelisteter Berater · 50% Förderung für KMU, 1.750 EUR je Beratung</p>
-  <div class="cta-contact">
-    <a href="mailto:kurt@ki-kurt.de">kurt@ki-kurt.de</a>
-    <a href="tel:+4993145321005">0931 45321005</a>
-    <span>· Würzburg · remote &amp; vor Ort</span>
-  </div>
-</section>
-
-<footer class="footer">
-  <div class="footer-logo">KI Kurt</div>
-  <div class="footer-meta">
-    © 2026 Kurt König · Wittelsbacher Str. 2 · 97074 Würzburg ·
-    <a href="impressum.html">Impressum</a> · <a href="datenschutz.html">Datenschutz</a>
-  </div>
-  <div class="footer-credit">Gebaut und gepflegt mit derselben KI, mit der ich Firmengedächtnisse baue. Nicht vom Firmengedächtnis selbst. Richtung und Freigabe: Kurt König. Letzte Änderung: 10.10.2026.</div>
-</footer>
-
-<script>
-const io=new IntersectionObserver(es=>{es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.12});
-document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
-document.querySelectorAll('.nav-links a, .nav-cta').forEach(a=>{a.addEventListener('click',()=>{document.querySelector('.nav').classList.remove('open')})});
-</script>
+  <p class="credit">© 2026 Kurt König. Gebaut und gepflegt mit derselben KI, die in der Arbeitsfläche arbeitet. Richtung und Freigabe: Kurt König.</p>
+</div></footer>
 
 <script>
 // Comic zum Vergroessern: Bild antippen, Vollbild, nochmal tippen oder Escape schliesst.
 (function(){
-  var bilder = document.querySelectorAll('.comic-strip img');
+  var bilder = document.querySelectorAll('.strip img');
   if (!bilder.length) return;
   var lupe = document.createElement('div');
   lupe.className = 'lupe';
@@ -231,6 +119,5 @@ document.querySelectorAll('.nav-links a, .nav-cta').forEach(a=>{a.addEventListen
   document.addEventListener('keydown', function(e){ if (e.key === 'Escape') zu(); });
 })();
 </script>
-
 </body>
 </html>
