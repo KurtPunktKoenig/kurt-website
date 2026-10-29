@@ -4,50 +4,9 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Firmengedächtnis | KI Kurt</title>
-<meta name="description" content="Was Ihr Büro weiß, an einem Ort, mit Quelle. Was der jetzige Zustand kostet, mit Ihren Zahlen gerechnet. Ein Arbeitsplatz sofort, das ganze Haus in drei Monaten, BAFA-förderfähig.">
+<meta name="description" content="Was Ihr Büro weiß, an einem Ort, mit Quelle. Jede Person mit eigenem Zugang, ein gemeinsamer Bereich. Ein Arbeitsplatz sofort, das ganze Haus in drei Monaten, BAFA-förderfähig.">
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
 <link rel="stylesheet" href="haus.css">
-<style>
-.blick{background:var(--papier);border:1px solid var(--tinte)}
-.blick .k{font-family:var(--mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--rot);padding:12px 18px;border-bottom:1px solid var(--haar)}
-.blick ul{list-style:none}
-.blick li{padding:13px 18px 13px 40px;border-bottom:1px solid var(--haar);font-size:15px;color:var(--tinte-2);line-height:1.45;position:relative}
-.blick li:last-child{border-bottom:0}
-.blick li::before{content:"";position:absolute;left:18px;top:22px;width:10px;border-top:1px solid var(--tinte)}
-.euro-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:40px;align-items:start;margin-top:36px}
-@media(max-width:880px){.euro-grid{grid-template-columns:1fr}}
-.felder{display:grid;gap:14px}
-.feld{background:var(--papier);border:1px solid var(--haar);border-radius:16px;padding:16px 18px}
-.grau-bg .feld{border-color:transparent}
-.feld label{display:block;font-weight:500;font-size:15px;color:var(--tinte);margin-bottom:8px;line-height:1.4}
-.feld input{width:160px;border:1px solid var(--haar);border-radius:10px;padding:10px 12px;font:500 18px var(--display);text-align:right;background:var(--papier-2);color:var(--tinte);outline:none;font-variant-numeric:tabular-nums}
-.feld input:focus{border-color:var(--tinte);background:#fff}
-.feld .hint{display:block;font-size:13px;color:var(--grau-2);margin-top:6px}
-.euro-ergebnis{margin-top:28px;border-top:1px solid var(--tinte)}
-.euro-ergebnis>div{padding:20px 0;border-bottom:1px solid var(--haar)}
-.euro-zahl{font-family:var(--display);font-weight:600;font-size:clamp(30px,3.6vw,40px);letter-spacing:-.04em;line-height:1.05;font-variant-numeric:tabular-nums}
-.euro-zahl.leer{color:var(--grau-2);font-size:clamp(20px,2.4vw,24px)}
-.euro-label{font-size:14px;color:var(--grau);margin-top:6px;max-width:30rem}
-.beispiel{background:var(--tinte);color:#fff;border-radius:20px;padding:26px}
-.beispiel .k{font-family:var(--mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:#A1A1A6;margin-bottom:14px}
-.beispiel p{color:#C7C7CC;font-size:15px;margin-bottom:12px}
-.beispiel b{color:#fff}
-.tab td.zahlfeld{font-family:var(--mono);font-size:13px;color:var(--tinte);white-space:nowrap}
-.zwei-gf{display:grid;grid-template-columns:1fr 1fr;border-top:1px solid var(--tinte);margin-top:32px}
-@media(max-width:700px){.zwei-gf{grid-template-columns:1fr}}
-.zwei-gf>div{padding:26px 28px 26px 0;border-right:1px solid var(--haar)}
-.zwei-gf>div:last-child{border-right:0;padding-left:28px}
-@media(max-width:700px){.zwei-gf>div{border-right:0;padding:22px 0}.zwei-gf>div:last-child{padding-left:0;border-top:1px solid var(--haar)}}
-.zwei-wert{margin-top:14px;font-family:var(--display);font-size:clamp(20px,2.4vw,26px);letter-spacing:-.02em;line-height:1.3;color:var(--tinte);font-weight:500;max-width:44rem}
-ol.fragen{list-style:none;counter-reset:f;border-top:1px solid var(--tinte);margin-top:32px}
-ol.fragen li{counter-increment:f;display:flex;gap:18px;align-items:baseline;padding:16px 0;border-bottom:1px solid var(--haar)}
-ol.fragen li::before{content:"0" counter(f);font-family:var(--mono);font-size:12px;color:var(--grau-2)}
-ol.fragen b{font-family:var(--display);font-weight:600;font-size:clamp(17px,2vw,20px);letter-spacing:-.015em;color:var(--tinte)}
-.hinweis-k{margin-top:28px;background:var(--papier-2);border-radius:16px;padding:18px 22px;max-width:46rem}
-.grau-bg .hinweis-k{background:var(--papier)}
-.hinweis-k h3{font-size:16px;margin-bottom:6px}
-.hinweis-k p{font-size:15px;margin:0}
-</style>
 </head>
 <body>
 
@@ -60,6 +19,7 @@ ol.fragen b{font-family:var(--display);font-weight:600;font-size:clamp(17px,2vw,
     <li><a href="firmengedaechtnis.html" class="aktuell">Firmengedächtnis</a></li>
     <li><a href="#preis">Preis</a></li>
     <li><a href="index.html#ueber">Über mich</a></li>
+    <li><a href="warum.html">Warum</a></li>
   </ul>
   <a class="knopf" href="#kontakt">Gespräch vereinbaren</a>
 </div></nav>
@@ -68,112 +28,72 @@ ol.fragen b{font-family:var(--display);font-weight:600;font-size:clamp(17px,2vw,
   <div>
     <p class="ueber">Für Firmen ab vier Mitarbeitern</p>
     <h1>Das meiste, was Ihr Büro weiß, steht nirgends.</h1>
-    <p class="lead">Es steht in Köpfen, in alten Mails und in Ordnern, die nur einer findet. Das trägt, solange alle da sind.</p>
-    <p class="lead dunkler">Das Firmengedächtnis ist Ihr eigenes Wissen, befragbar: Ihre Projekte, Ihre Kunden und die Gründe hinter Ihren Entscheidungen. Jede Antwort nennt die Quelle, und Ihr ganzes Team fragt mit.</p>
+    <p class="lead dunkler">Es steht in Köpfen, in alten Mails und in Ordnern, die nur einer findet. Das trägt, solange alle da sind. Das Firmengedächtnis ist Ihr eigenes Wissen, befragbar: Ihre Projekte, Ihre Kunden und die Gründe hinter Ihren Entscheidungen. Jede Antwort nennt die Quelle, und Ihr ganzes Team fragt mit.</p>
+    <div class="vorteile"><span>Ihre Unterlagen in der EU</span><span>kein KI-Abo</span><span>persönlich eingerichtet aus Würzburg</span><span>Sie nehmen alles mit</span></div>
+    <div class="knoepfe"><a class="knopf" href="#kontakt">Gespräch mit Kurt</a><a class="knopf hell" href="#preis">Was es kostet</a></div>
   </div>
-  <div class="blick">
-    <div class="k">Auf einen Blick</div>
-    <ul>
-      <li>Ein eigener Rechner für Ihr Büro, Ihre Unterlagen liegen in der EU</li>
-      <li>Jede Person mit eigenem Zugang und eigenem Bereich, dazu ein gemeinsamer Bereich, den Sie freigeben</li>
-      <li>79 EUR netto je Zugang und Monat, das Modell bei Anthropic nach Verbrauch</li>
-      <li>Ein Arbeitsplatz zum Anfangen, oder der Aufbau fürs ganze Haus. Die erste Beratungsstufe ist BAFA-förderfähig</li>
-    </ul>
+  <div>
+    <div class="schirm"><div class="leiste"><i></i><i></i><i></i><span>Firmengedächtnis</span></div><img src="bilder/firmengedaechtnis-gespraech-standard-rechner.webp" alt="Arbeitsfläche Firmengedächtnis am Rechner: eine Frage in ganzen Sätzen, die Antwort mit Quelle" width="1600" height="1000"></div>
+    <p class="bildunter">Fragen in ganzen Sätzen, Antwort mit Quelle. Erfundener Betrieb, echte Antwort.</p>
   </div>
 </div></div></header>
 
-<section class="grau-bg" id="so"><div class="wrap">
+<section class="grau-bg" id="kennen"><div class="wrap">
   <div class="kopf">
-    <p class="ueber">So sieht es aus</p>
-    <h2>Fragen in ganzen Sätzen. Antwort mit Quelle.</h2>
-    <p class="lead">Eine Arbeitsfläche im Browser, am Rechner und am Handy. Oben wählen Sie, wie gründlich gearbeitet wird: Standard für Mails und Fragen zwischendurch, Professionell für Planung, Auswertungen und lange Texte.</p>
+    <p class="ueber">Sie kennen das</p>
+    <h2>„Frag den Peter. Der weiß das."</h2>
   </div>
-  <div class="bildpaar">
-    <div>
-      <div class="schirm"><div class="leiste"><i></i><i></i><i></i><span>Firmengedächtnis · Professionell</span></div><img src="bilder/firmengedaechtnis-gespraech-professionell-rechner.webp" alt="Arbeitsfläche Firmengedächtnis am Rechner, Schalter auf Professionell" width="1600" height="1000" loading="lazy"></div>
-      <p class="bildunter">Erfundener Betrieb, echte Antwort.</p>
-    </div>
-    <div>
-      <div class="handy"><img src="bilder/firmengedaechtnis-gespraech-handy.webp" alt="Arbeitsfläche Firmengedächtnis am Handy" width="560" height="1212" loading="lazy"></div>
-      <p class="bildunter">Am Handy, dasselbe Gespräch.</p>
-    </div>
+  <div class="raster-3">
+    <div class="nb"><b>Dienstag, 10 Uhr</b><h3>Die Frage</h3><p>Welche Prüfstelle hatte beim letzten Brandschutznachweis Ärger gemacht? Peter weiß es. Peter ist im Urlaub.</p></div>
+    <div class="nb"><b>Der Bauherr ruft an</b><h3>Das Projekt von 2019</h3><p>Warum man sich damals gegen die große Lösung entschieden hat, steht in keiner Akte. Es stand in einem Gespräch.</p></div>
+    <div class="nb"><b>Woche zwei</b><h3>Der neue Kollege</h3><p>Er fragt dreimal am Tag. Die Antworten stehen irgendwo. Alle wissen: irgendwo heißt nirgendwo.</p></div>
   </div>
+  <p class="tafel-zeile">Was das Suchen und ein Abgang Ihr Büro kosten, rechnen Sie in zwanzig Sekunden aus. <a href="rechner.html" style="color:var(--tinte)">Ihre Zahl →</a></p>
 </div></section>
 
-<section id="ihre-zahl"><div class="wrap">
-  <p class="ueber">Ihre Zahl</p>
-  <h2>Was der jetzige Zustand kostet, rechnen Sie in zwanzig Sekunden selbst aus.</h2>
-  <div class="euro-grid">
-    <div>
-      <div class="felder">
-        <div class="feld"><label for="such">Stunden pro Woche, die Ihr Team mit Suchen verbringt</label><input type="number" id="such" min="0" max="200" step="0.5" inputmode="decimal" placeholder="z.B. 6"><span class="hint">In Büros dieser Größe meist zwischen 3 und 8.</span></div>
-        <div class="feld"><label for="satz">Durchschnittlicher Stundensatz Ihres Teams, in Euro</label><input type="number" id="satz" min="0" max="500" step="1" inputmode="numeric" placeholder="z.B. 45"></div>
-        <div class="feld"><label for="gehalt">Monatsgehalt einer Schlüsselperson, brutto in Euro</label><input type="number" id="gehalt" min="0" max="50000" step="100" inputmode="numeric" placeholder="z.B. 5200"></div>
-      </div>
-      <div class="euro-ergebnis">
-        <div><div class="euro-zahl leer" id="aus-suchen">noch keine Angabe</div><div class="euro-label">kostet Sie das Suchen, jedes Jahr. Läuft weiter, auch wenn niemand kündigt.</div></div>
-        <div><div class="euro-zahl leer" id="aus-abgang">noch keine Angabe</div><div class="euro-label">kostet ein einziger Abgang. Gerechnet mit <b id="an-nach">sechs</b> Monaten bis zur Nachbesetzung und <b id="an-ein">sechs</b> Monaten bis zur vollen Leistung, beides unten änderbar.</div></div>
-      </div>
-    </div>
-    <div class="beispiel">
-      <div class="k">Ein Beispiel, ohne Eingabe</div>
-      <p>Ein Büro mit achtzehn Leuten: sechs Stunden Suchen pro Woche, 45 Euro Stundensatz, 5.200 Euro Monatsgehalt einer Schlüsselperson, sechs Monate bis zur Nachbesetzung, sechs Monate bis zur vollen Leistung.</p>
-      <p><b>14.040 Euro im Jahr fürs Suchen. 48.360 Euro beim Abgang eines Einzigen</b>, davon 20.280 Vakanz, 12.480 Nachbesetzung, 15.600 Einarbeitung.</p>
-    </div>
+<section id="tut"><div class="wrap">
+  <div class="kopf">
+    <p class="ueber">Was es für Sie tut</p>
+    <h2>ChatGPT kennt die Welt. Es kennt nur nicht Ihr Büro.</h2>
+    <p class="lead">Eine allgemeine KI weiß, wie man einen Brandschutznachweis grundsätzlich führt, nicht wie Sie ihn führen. Ein Dokumentenmanagement findet die Datei und beantwortet keine Frage.</p>
   </div>
-  <div class="randnotiz" style="margin-top:36px">
-    <p>Ein allgemeines KI-Abo öffnet nach vier Wochen niemand mehr, weil es Ihr Haus nicht kennt und deshalb nichts von dem beantwortet, was Sie wirklich fragen.</p>
-    <p><b>Die Zahlen oben laufen weiter, egal was Sie zahlen oder nicht zahlen.</b></p>
+  <div class="tafel">
+    <div><b>Antwort mit Quelle</b><p>Sie fragen in ganzen Sätzen. Darunter steht, aus welcher Notiz oder welchem Blatt die Antwort stammt, oder dass es keinen Beleg gibt</p></div>
+    <div><b>Es weiß, was Sie entschieden haben</b><p>Nicht nur das Ergebnis, sondern den Grund. „Warum haben wir das damals so gemacht" ist die Frage, an der jede Ablage scheitert</p></div>
+    <div><b>Eigener Bereich, gemeinsamer Bereich</b><p>Jede Person arbeitet in ihrem Bereich, gesperrt für die anderen. Was alle wissen sollen, liegt im gemeinsamen Bereich; wer ihn sieht, legen Sie fest. Ohne Aufpreis</p></div>
+    <div><b>Fertige Schreiben als Datei</b><p>Angebot, Protokoll, Bericht, Tabelle: als Word, Excel oder PowerPoint zum Herunterladen, aus dem Vorgang geschrieben</p></div>
+    <div><b>Foto, PDF, Diktat</b><p>Über die Büroklammer geben Sie Unterlagen herein, über das Mikrofon sprechen Sie statt zu tippen</p></div>
+    <div><b>Zusagen mit Datum</b><p>Was wem bis wann versprochen wurde, steht als Zeile im Vorgang</p></div>
+    <div><b>Fragt nach, statt zu erfinden</b><p>Fehlt eine Angabe, fragt die Assistenz. Zahlen aus Fotos zeigt sie zurück</p></div>
+    <div><b>Der Faden reißt nicht</b><p>Unterbrechen, am nächsten Tag weiß die Assistenz, wo jeder stand</p></div>
+    <div><b>Morgens liegt der Bericht da</b><p>Nachts wird gesichert und geordnet. Am Morgen weiß die Assistenz, was offen ist</p></div>
+    <div><b>Neue Stände kommen von selbst</b><p>Ohne dass jemand im Büro etwas tut. Was neu ist, steht in der Hilfe</p></div>
   </div>
-  <details class="mehr">
-    <summary>Wie gerechnet wird, und die beiden Annahmen</summary>
-    <div class="mehr-inhalt">
-      <p>Die Kosten eines Abgangs hängen an zwei Zeiträumen, die jedes Büro anders erlebt. Voreingestellt sind sechs und sechs.</p>
-      <div class="felder" style="margin:16px 0;max-width:620px">
-        <div class="feld"><label for="nach">Monate, bis die Stelle wieder besetzt ist</label><input type="number" id="nach" min="0" max="36" step="1" inputmode="numeric" value="6"></div>
-        <div class="feld"><label for="ein">Monate, bis ein Nachfolger die volle Leistung bringt</label><input type="number" id="ein" min="0" max="36" step="1" inputmode="numeric" value="6"></div>
-      </div>
-      <table class="tab">
-        <thead><tr><th>Posten</th><th>Wie er entsteht</th><th>Ihre Zahl</th></tr></thead>
-        <tbody>
-          <tr><td data-label="Posten">Vakanz</td><td data-label="Wie er entsteht">Die Leistung fällt weg, das Gehalt wird gespart, ein Teil wird vom Team aufgefangen</td><td data-label="Ihre Zahl" class="zahlfeld" id="p-vak">offen</td></tr>
-          <tr><td data-label="Posten">Nachbesetzung</td><td data-label="Wie er entsteht">Ausschreibung, Auswahl, Aufwand der Kollegen. Rund 20 Prozent eines Jahresgehalts</td><td data-label="Ihre Zahl" class="zahlfeld" id="p-neu">offen</td></tr>
-          <tr><td data-label="Posten">Einarbeitung</td><td data-label="Wie er entsteht">Volles Gehalt bei etwa halber Leistung</td><td data-label="Ihre Zahl" class="zahlfeld" id="p-ein">offen</td></tr>
-          <tr><td data-label="Posten">Suchen</td><td data-label="Wie er entsteht">Stunden pro Woche mal Stundensatz mal 52. Fällt jedes Jahr neu an</td><td data-label="Ihre Zahl" class="zahlfeld" id="p-such">offen</td></tr>
-        </tbody>
-      </table>
-    </div>
-  </details>
+  <p class="tafel-zeile"><b>Standard</b> für Mails und Fragen zwischendurch, <b>Professionell</b> für Planung, Auswertungen und lange Texte. Oben im Gespräch umschaltbar.</p>
 </div></section>
 
-<section class="grau-bg" id="wert"><div class="wrap">
-  <p class="ueber">Was es wert ist</p>
-  <h2>Zwei Geschäftsführer schauen auf dasselbe Unternehmen.</h2>
-  <div class="zwei-gf">
-    <div><h3>Der eine verkauft.</h3><p>Der Betrieb läuft, die Auftragsbücher sind voll, und der Gutachter fragt, was davon bleibt, wenn er geht. Jede Antwort, die nur er geben kann, ist ein Abschlag.</p></div>
-    <div><h3>Der andere kauft.</h3><p>Er sieht Maschinen, Verträge und zwanzig Leute. Was er nicht sieht: warum dieser Kunde seit achtzehn Jahren bleibt, welcher Lieferant beim letzten Engpass tatsächlich geliefert hat, und warum man sich 2019 gegen die große Lösung entschieden hat.</p></div>
+<section class="grau-bg" id="sonst"><div class="wrap">
+  <div class="kopf">
+    <p class="ueber">Was Sie sonst einkaufen</p>
+    <h2>Dienste, für die sonst eine Rechnung kommt.</h2>
   </div>
-  <p class="lead" style="margin-top:28px">Beide reden über denselben Betrieb. Der Unterschied zwischen ihren Zahlen steht in keiner Bilanz.</p>
-  <p class="zwei-wert">Ein Betrieb, in dem die Mitarbeiter mit KI arbeiten und das Wissen des Hauses an einer Stelle liegt, wird anders bewertet als derselbe Betrieb ohne. Nicht weil er moderner aussieht. Weil der Käufer weniger abziehen muss für das, was mit dem Verkäufer geht.</p>
-  <div class="hinweis-k"><p>Und wenn Sie nicht verkaufen: dieselbe Frage stellt sich an jedem Tag, an dem jemand kündigt, lange ausfällt oder in Rente geht. Dann nur ohne Termin.</p></div>
+  <table class="tab" style="max-width:56rem">
+    <thead><tr><th style="width:30%">Sonst liefert das</th><th>Bei der Assistenz im Preis</th></tr></thead>
+    <tbody>
+      <tr><td data-label="Sonst liefert das"><b>Social-Media-Agentur, Texter</b></td><td data-label="Bei der Assistenz im Preis">Beiträge und Profiltexte für LinkedIn, Instagram, Facebook, TikTok, YouTube und das Google-Unternehmensprofil, aus Ihrer Ablage, geprüft gegen die Pflichtangaben je Kanal</td></tr>
+      <tr><td data-label="Sonst liefert das"><b>Büroservice, Assistenz</b></td><td data-label="Bei der Assistenz im Preis">Aufgaben organisieren: was ansteht, was wartet, was fällig ist, mit Fristen und Wiedervorlagen, je Vorgang die offenen Punkte</td></tr>
+      <tr><td data-label="Sonst liefert das"><b>Präsentationsgestalter</b></td><td data-label="Bei der Assistenz im Preis">Ein Foliensatz aus einem Dokument oder drei Stichworten</td></tr>
+      <tr><td data-label="Sonst liefert das"><b>Unternehmensberater</b></td><td data-label="Bei der Assistenz im Preis">Eine Entscheidungsvorlage auf einer Seite, mit Empfehlung und Gegenrede</td></tr>
+      <tr><td data-label="Sonst liefert das"><b>Projektbüro</b></td><td data-label="Bei der Assistenz im Preis">Protokoll und Statusbericht aus Notizen und Ablage</td></tr>
+      <tr><td data-label="Sonst liefert das"><b>Moderator</b></td><td data-label="Bei der Assistenz im Preis">Ein Workshop: Agenda, Moderationsplan, Ergebnisprotokoll aus den Fotos der Karten</td></tr>
+      <tr><td data-label="Sonst liefert das"><b>Qualitätsberater</b></td><td data-label="Bei der Assistenz im Preis">Maßstab und Prüfliste für das erste Blatt einer Art</td></tr>
+      <tr><td data-label="Sonst liefert das"><b>Kanzlei, Dienstleister</b></td><td data-label="Bei der Assistenz im Preis">Angaben über Dritte aus Unterlagen nehmen, bevor sie weitergehen: Personen werden Rollen, Anschriften werden Orte. Sie sehen das Ergebnis vorher, unsichere Stellen nennt die Assistenz</td></tr>
+    </tbody>
+  </table>
+  <p class="tafel-zeile">Online stellen Sie selbst, mit einem Klick, und das bleibt so.</p>
 </div></section>
 
-<section id="was"><div class="wrap">
-  <p class="ueber">Was es ist</p>
-  <h2>ChatGPT kennt die Welt. Es kennt nur nicht Ihr Büro.</h2>
-  <p class="lead">Eine allgemeine KI weiß, wie man einen Brandschutznachweis grundsätzlich führt. Sie weiß nicht, wie Sie ihn führen, welche Prüfstelle beim letzten Mal Ärger gemacht hat und warum Sie sich 2024 gegen die dezentrale Lösung entschieden haben.</p>
-  <p class="lead">Ein Dokumentenmanagement findet die Datei. Es beantwortet keine Frage. Sie bekommen achtzehn Treffer und dürfen selbst lesen.</p>
-  <div class="raster-3" style="margin-top:32px">
-    <div class="nb"><b>01</b><h3>Antwort statt Trefferliste</h3><p>Sie fragen in ganzen Sätzen und bekommen eine Antwort in ganzen Sätzen. Darunter steht, aus welcher Notiz oder welchem Blatt sie stammt.</p></div>
-    <div class="nb"><b>02</b><h3>Es weiß, was Sie entschieden haben</h3><p>Nicht nur das Ergebnis, sondern den Grund. "Warum haben wir das damals so gemacht" ist die Frage, an der jedes Ablagesystem scheitert.</p></div>
-    <div class="nb"><b>03</b><h3>Eigener Bereich, gemeinsamer Bereich</h3><p>Jede Person arbeitet in ihrem eigenen Bereich, gesperrt für die anderen. Was alle wissen sollen, liegt im gemeinsamen Bereich; wer ihn sieht, legen Sie fest.</p></div>
-    <div class="nb"><b>04</b><h3>Fertige Schreiben als Datei</h3><p>Angebot, Protokoll, Bericht, Tabelle: als Word-Datei oder Präsentation zum Herunterladen, aus dem Vorgang geschrieben.</p></div>
-    <div class="nb"><b>05</b><h3>Foto, PDF, Diktat</h3><p>Über die Büroklammer geben Sie Unterlagen herein, über das Mikrofon sprechen Sie statt zu tippen.</p></div>
-    <div class="nb"><b>06</b><h3>Morgens liegt der Bericht da</h3><p>Nachts wird gesichert und geordnet. Am Morgen weiß die Assistenz, was offen ist und wo jeder gestern aufgehört hat.</p></div>
-  </div>
-</div></section>
-
-<section class="grau-bg" id="wege"><div class="wrap">
+<section id="wege"><div class="wrap">
   <div class="kopf">
     <p class="ueber">Zwei Wege hinein</p>
     <h2>Mit einem Arbeitsplatz anfangen, oder gleich das ganze Haus.</h2>
@@ -183,7 +103,7 @@ ol.fragen b{font-family:var(--display);font-weight:600;font-size:clamp(17px,2vw,
       <b>Der kleine Weg</b>
       <h3 style="font-size:22px">Ein Arbeitsplatz, dann Schritt für Schritt</h3>
       <p style="margin-bottom:14px">Sie oder eine Schlüsselperson arbeiten zuerst allein mit der Assistenz. Dann kommen Mitarbeiter dazu, je ein Zugang. Wenn mehrere Leute dieselben Fragen stellen, kommt der gemeinsame Wissensbestand dazu, mit einer Schulung, die ich beim Umstieg anbiete.</p>
-      <p>Ihre Arbeit bleibt, wo sie ist. Nichts wird eingefordert, Sie bleiben auf jeder Stufe, so lange Sie wollen.</p>
+      <p>Ihre Arbeit bleibt, wo sie ist. Nichts wird eingefordert.</p>
     </div>
     <div class="nb" style="padding:28px">
       <b>Der direkte Weg</b>
@@ -209,6 +129,28 @@ ol.fragen b{font-family:var(--display);font-weight:600;font-size:clamp(17px,2vw,
   </details>
 </div></section>
 
+<section class="grau-bg" id="offen"><div class="wrap">
+  <div class="offen-raster">
+    <div>
+      <p class="ueber">Was die Assistenz nicht tut</p>
+      <div class="grenze">
+        <small>Offen gesagt</small>
+        <p>Sie liest kein Postfach, geht nicht ans Telefon und schickt nichts selbst hinaus. Hinaus geht nur, was jemand aus Ihrem Büro abschickt. Und sie weiß am ersten Tag nur, was Sie ihr geben; dass das ganze Haus mitfragt und die Antworten tragen, dauert beim direkten Weg drei Monate.</p>
+      </div>
+    </div>
+    <div>
+      <p class="ueber">Sie sind nie allein</p>
+      <ul class="punkte">
+        <li><b>Hilfe in der Arbeitsfläche.</b> Jede Person sucht selbst, oder fragt die Assistenz: sie erklärt die Bedienung im Gespräch, Schritt für Schritt.</li>
+        <li><b>Persönlich eingerichtet,</b> mit Grundkurs für die ersten Zugänge und Schulung beim Umstieg.</li>
+        <li><b>Blätter zum Nachlesen,</b> als PDF, für den Schlüssel bei Anthropic und den ersten Tag.</li>
+      </ul>
+      <div class="schirm"><div class="leiste"><i></i><i></i><i></i><span>Firmengedächtnis · Hilfe</span></div><img src="bilder/firmengedaechtnis-hilfe-rechner.webp" alt="Die Hilfe in der Arbeitsfläche Firmengedächtnis: Suchfeld, Frag die Assistenz, und die Abschnitte zum Nachlesen" width="1600" height="1000" loading="lazy"></div>
+      <p class="bildunter">Die Hilfe, in der Arbeitsfläche selbst.</p>
+    </div>
+  </div>
+</div></section>
+
 <section id="preis"><div class="wrap">
   <div class="kopf">
     <p class="ueber">Der Preis</p>
@@ -222,7 +164,7 @@ ol.fragen b{font-family:var(--display);font-weight:600;font-size:clamp(17px,2vw,
       <ul>
         <li>Ein eigener Rechner für Ihr Büro, mit Ablage, Sicherung und Morgenbericht</li>
         <li>Die Arbeitsfläche am Rechner und am Handy, mit Standard und Professionell</li>
-        <li>Eingerichtet von mir, mit Grundkurs, Hilfe und Videos</li>
+        <li>Eingerichtet von mir, mit Grundkurs und Hilfe in der Arbeitsfläche</li>
         <li>Bezahlt ab dem ersten Tag, monatlich zum Monatsende kündbar</li>
       </ul>
     </div>
@@ -237,53 +179,38 @@ ol.fragen b{font-family:var(--display);font-weight:600;font-size:clamp(17px,2vw,
       </ul>
     </div>
   </div>
+  <div class="knoepfe"><a class="knopf" href="#kontakt">Gespräch mit Kurt</a></div>
+  <p class="knopf-satz">Welcher Weg zu Ihrem Büro passt, klären wir in einem Gespräch. Danach richte ich die ersten Zugänge ein.</p>
+  <p class="knopf-satz leise">Angebot nur für Unternehmer, Preise zuzüglich Umsatzsteuer.</p>
   <div class="anfrage-weg">
     <h3>Lieber eine Rechnung für alles?</h3>
     <p>Dann liefere ich das Modell gleich mit, über Amazon in Rechenzentren der EU. Das Gesamtkonzept rechne ich Ihnen auf Anfrage, zusammen mit dem Aufbau.</p>
   </div>
 </div></section>
 
-<section class="grau-bg" id="daten"><div class="wrap">
-  <div class="kopf">
-    <p class="ueber">Datenschutz und Ausstieg</p>
-    <h2>Offen gesagt, bevor Ihr Betriebsrat fragt.</h2>
-  </div>
-  <ul class="punkte">
-    <li>Ihre Unterlagen, Notizen und Dokumente liegen auf <b>einem eigenen Rechner nur für Ihren Betrieb</b>, in einem Rechenzentrum von Amazon in der Region Europa, in Stockholm. Dort liegen auch die Sicherungen.</li>
-    <li>Wenn jemand eine Frage stellt, gehen die Frage und die Unterlagen, die zur Antwort gelesen werden, über den Schlüssel Ihres Betriebs an Anthropic. Anthropic verarbeitet sie auch in den USA, nach dem Vertrag, den Ihr Betrieb mit Anthropic hat. Nach Anthropics Bedingungen für Unternehmen trainiert Anthropic seine Modelle nicht mit Ihren Inhalten. Ihr Bestand liegt bei Ihnen, die einzelne Frage nicht.</li>
-    <li>Amazon und Anthropic sind amerikanische Unternehmen.</li>
-    <li>Ich betreibe den Rechner und kann technisch zugreifen. Das geschieht nur für Einrichtung, Störung, Herausgabe und Löschung oder auf Ihren Wunsch, und jeder solche Zugriff wird festgehalten. Was im Einzelnen gilt, steht im Vertrag zur Auftragsverarbeitung.</li>
-    <li><b>Der eigene Bereich jeder Person ist für die anderen gesperrt.</b> Den gemeinsamen Bereich sehen nur die, die Sie dafür freigeben.</li>
-  </ul>
-  <div class="hinweis-k">
-    <h3>Wenn Sie aufhören</h3>
-    <p>Ihr Wissen liegt in lesbaren Dateien, kein Datenbankformat. Sie bekommen alles als Paket zum Herunterladen, 30 Tage lang. Danach lösche ich den Rechner mit allen Sicherungen und bestätige es Ihnen schriftlich.</p>
-  </div>
-</div></section>
-
-<section id="fragen"><div class="wrap">
-  <p class="ueber">Bevor Sie sich entscheiden</p>
-  <h2>Fünf Fragen, bevor Sie sich für irgendein System entscheiden.</h2>
-  <p class="lead">Die Antworten für diese Seite stehen oben. Die Antworten der anderen bekommen Sie, wenn Sie dieselben Fragen dort stellen.</p>
-  <ol class="fragen">
-    <li><b>Wo liegen unsere Daten, und wer verarbeitet sie?</b></li>
-    <li><b>Wer sieht was, wenn zwanzig Leute damit arbeiten?</b></li>
-    <li><b>In welchem Format liegt unser Wissen, wenn wir aufhören?</b></li>
-    <li><b>Kennt das System unser Haus oder die Welt?</b></li>
-    <li><b>Was zahlen wir, wenn einer viel damit arbeitet, und wer setzt die Grenze?</b></li>
-  </ol>
-  <div class="hinweis-k">
-    <h3>Und die sechste, bei der wir verlieren</h3>
-    <p>Wie schnell weiß es alles? Ein Arbeitsplatz läuft nach der Einrichtung. Dass das ganze Haus mitfragt und die Antworten tragen, dauert beim direkten Weg drei Monate. Wer morgen alles braucht, ist mit einem Werkzeug aus dem Netz schneller bedient.</p>
-  </div>
+<section class="grau-bg" id="daten" style="padding-bottom:64px"><div class="wrap">
+  <p class="ueber">Datenschutz und Ausstieg</p>
+  <p class="lead dunkler" style="max-width:52rem"><b>Ihre Unterlagen liegen auf einem eigenen Rechner in der EU, bei Amazon in Stockholm.</b> Amazon und Anthropic sind amerikanische Unternehmen. Der eigene Bereich jeder Person ist für die anderen gesperrt.</p>
+  <details class="mehr" style="max-width:52rem">
+    <summary>Offen gesagt, bevor Ihr Betriebsrat fragt</summary>
+    <div class="mehr-inhalt">
+      <ul class="punkte">
+        <li>Ihre Unterlagen, Notizen und Dokumente liegen auf <b>einem eigenen Rechner nur für Ihren Betrieb</b>, in einem Rechenzentrum von Amazon in der Region Europa, in Stockholm. Dort liegen auch die Sicherungen.</li>
+        <li>Wenn jemand eine Frage stellt, gehen die Frage und die Unterlagen, die zur Antwort gelesen werden, über den Schlüssel Ihres Betriebs an Anthropic. Anthropic verarbeitet sie auch in den USA, nach dem Vertrag, den Ihr Betrieb mit Anthropic hat. Nach Anthropics Bedingungen für Unternehmen trainiert Anthropic seine Modelle nicht mit Ihren Inhalten. Ihr Bestand liegt bei Ihnen, die einzelne Frage nicht.</li>
+        <li>Ich betreibe den Rechner und kann technisch zugreifen. Das geschieht nur für Einrichtung, Störung, Herausgabe und Löschung oder auf Ihren Wunsch, und jeder solche Zugriff wird festgehalten. Was im Einzelnen gilt, steht im Vertrag zur Auftragsverarbeitung.</li>
+        <li>Der eigene Bereich jeder Person ist für die anderen gesperrt. Den gemeinsamen Bereich sehen nur die, die Sie dafür freigeben.</li>
+        <li><b>Wenn Sie aufhören:</b> Ihr Wissen liegt in lesbaren Dateien, kein Datenbankformat. Sie bekommen alles als Paket zum Herunterladen, 30 Tage lang. Danach lösche ich den Rechner mit allen Sicherungen und bestätige es Ihnen schriftlich.</li>
+      </ul>
+    </div>
+  </details>
 </div></section>
 
 <section class="kontakt" id="kontakt"><div class="wrap">
   <div class="raster">
     <div>
       <h2>Reden wir über Ihr Büro.</h2>
-      <p>Sie wissen jetzt, was das Firmengedächtnis ist und was es von Ihnen verlangt. Was Sie noch nicht wissen, ist, ob es für Ihr Büro das Richtige ist.</p>
-      <p>Das finden wir in einem Gespräch heraus. Und wenn die Antwort nein lautet, sage ich Ihnen das.</p>
+      <p>Sie wissen jetzt, was das Firmengedächtnis ist und was es von Ihnen verlangt. Ob es für Ihr Büro das Richtige ist, finden wir in einem Gespräch heraus.</p>
+      <p>Und wenn die Antwort nein lautet, sage ich Ihnen das.</p>
       <p class="bafa"><b>●</b> BAFA-gelisteter Berater · 50% Förderung für KMU, 1.750 EUR je Beratung</p>
     </div>
     <form class="anfrage" action="https://formsubmit.co/kurt@ki-kurt.de" method="POST">
@@ -303,45 +230,15 @@ ol.fragen b{font-family:var(--display);font-weight:600;font-size:clamp(17px,2vw,
 </div></section>
 
 <footer class="fuss"><div class="wrap">
+  <p class="leise-zeile" style="padding:0 0 32px">Was ein Betrieb mit Gedächtnis wert ist, und fünf Fragen an jedes System. <a href="warum.html">Zur Seite Warum →</a></p>
   <div class="plankopf">
     <div><small>Planverfasser</small>Kurt König · KI Kurt</div>
     <div><small>Ort</small>Wittelsbacher Str. 2, 97074 Würzburg</div>
-    <div><small>Stand</small>29.10.2026</div>
+    <div><small>Stand</small>30.10.2026</div>
     <div><small>Blätter</small><a href="impressum.html">Impressum</a> · <a href="datenschutz.html">Datenschutz</a></div>
   </div>
   <p class="credit">© 2026 Kurt König. Firmengedächtnis ist ein Zuschnitt von KI Kurt für Firmen ab vier Mitarbeitern.</p>
 </div></footer>
-
-<script>
-/* Euro-Zeile, Rechenwege identisch zur echten Seite */
-(function(){
-  const g=id=>document.getElementById(id);
-  const eur=n=>n.toLocaleString('de-DE',{maximumFractionDigits:0})+' EUR';
-  const wert=id=>{const el=g(id);if(!el)return null;const v=parseFloat(el.value);return(isNaN(v)||v<0)?null:v};
-  const LEER='noch keine Angabe';
-  function rechne(){
-    const such=wert('such'),satz=wert('satz'),gehalt=wert('gehalt');
-    const nach=wert('nach'),ein=wert('ein');
-    const nachW=(nach===null?6:nach),einW=(ein===null?6:ein);
-    g('an-nach').textContent=(nach===null?'sechs':nachW);
-    g('an-ein').textContent=(ein===null?'sechs':einW);
-    const aS=g('aus-suchen');
-    if(such!==null&&satz!==null){const s=such*satz*52;aS.textContent=eur(s);aS.classList.remove('leer');g('p-such').textContent=eur(s);}
-    else{aS.textContent=LEER;aS.classList.add('leer');g('p-such').textContent='offen';}
-    const aA=g('aus-abgang');
-    if(gehalt!==null){
-      const vak=nachW*gehalt*0.65,nbs=gehalt*12*0.20,einA=einW*gehalt*0.5;
-      aA.textContent=eur(vak+nbs+einA);aA.classList.remove('leer');
-      g('p-vak').textContent=eur(vak);g('p-neu').textContent=eur(nbs);g('p-ein').textContent=eur(einA);
-    }else{
-      aA.textContent=LEER;aA.classList.add('leer');
-      g('p-vak').textContent='offen';g('p-neu').textContent='offen';g('p-ein').textContent='offen';
-    }
-  }
-  ['such','satz','gehalt','nach','ein'].forEach(id=>{const el=g(id);if(el)el.addEventListener('input',rechne)});
-  rechne();
-})();
-</script>
 
 </body>
 </html>
