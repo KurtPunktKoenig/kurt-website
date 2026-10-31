@@ -13,6 +13,10 @@
 .comic-kopf .klein{font-family:var(--mono);font-size:12px;color:var(--grau-2);margin-top:4px}
 .strip{width:min(1200px,100%);margin:0 auto;padding:0 20px}
 .strip img{width:100%;height:auto;border:1px solid var(--haar);border-radius:6px;margin-bottom:32px;cursor:zoom-in}
+.strip.seiten img{display:block;margin:0 auto 28px}
+.strip img.hoch{max-width:560px}
+.strip img.quer{max-width:880px}
+.strip .gesamt{text-align:center;font-size:14px;color:var(--grau);margin:0 0 32px}
 .teiler{margin:8px 0 40px}
 .ki-hinweis{font-size:13px;color:var(--grau-2);margin:0 0 8px}
 .ausklang{padding:40px 0 80px}
@@ -52,17 +56,28 @@
   <p class="ueber">Der Comic</p>
   <h1>Das Ingenieurbüro, das sein Gedächtnis fand</h1>
   <p class="lead">Eine Geschichte über Wissen, das in Köpfen steckt. Über Peter, der in Rente geht. Und über ein System, das zuhört.</p>
-  <p class="klein">12 Seiten. Keine Technik. Nur der Alltag, wie er ist. Und wie er sein könnte.</p>
+  <p class="klein">12 Seiten. Keine Technik. Nur der Alltag, wie er ist. Und wie er sein könnte. Jede Seite lässt sich antippen und groß lesen.</p>
 </div></section>
 
-<div class="strip">
-  <picture><source srcset="comics/seite-1-3.webp" type="image/webp"><img src="comics/Seite 1-3.png" alt="Seiten 1-3: Das Büro hat ein Gedächtnis, es heißt Peter. Und wenn Peter nicht da ist? Das muss doch irgendwo stehen." loading="eager"></picture>
+<div class="strip seiten">
+  <img class="hoch" src="comics/seiten/seite-01.webp" alt="Comic Seite 1: Das Büro hat ein Gedächtnis" loading="eager">
+  <img class="hoch" src="comics/seiten/seite-02.webp" alt="Comic Seite 2: Und wenn Peter nicht da ist?" loading="lazy">
+  <img class="hoch" src="comics/seiten/seite-03.webp" alt="Comic Seite 3: Das muss doch irgendwo stehen" loading="lazy">
 </div>
 
 <div class="wrap teiler"><div class="mass"><i></i>Die Veränderung beginnt<i></i></div></div>
 
-<div class="strip">
-  <picture><source srcset="comics/seite-4-12.webp" type="image/webp"><img src="comics/Seite 4-12.png" alt="Seiten 4-12: Nein. Peter ist skeptisch. Aus Erfahrung wird Wissen. 10 Sekunden statt 60 Minuten. Plötzlich weiß das Büro Bescheid. Wissen entsteht unterwegs. Peter geht. Frag KI-Kurt. Das neue Normal." loading="lazy"></picture>
+<div class="strip seiten">
+  <img class="quer" src="comics/seiten/seite-04.webp" alt="Comic Seite 4: Nein." loading="lazy">
+  <img class="quer" src="comics/seiten/seite-05.webp" alt="Comic Seite 5: Der Klarheitstag." loading="lazy">
+  <img class="quer" src="comics/seiten/seite-06.webp" alt="Comic Seite 6: Peter erzählt." loading="lazy">
+  <img class="quer" src="comics/seiten/seite-07.webp" alt="Comic Seite 7: 10 Sekunden statt 60 Minuten." loading="lazy">
+  <img class="quer" src="comics/seiten/seite-08.webp" alt="Comic Seite 8: Plötzlich weiß das Büro Bescheid." loading="lazy">
+  <img class="quer" src="comics/seiten/seite-09.webp" alt="Comic Seite 9: Wissen entsteht unterwegs." loading="lazy">
+  <img class="quer" src="comics/seiten/seite-10.webp" alt="Comic Seite 10: Peter geht." loading="lazy">
+  <img class="quer" src="comics/seiten/seite-11.webp" alt="Comic Seite 11: Frag KI-Kurt." loading="lazy">
+  <img class="quer" src="comics/seiten/seite-12.webp" alt="Comic Seite 12: Das neue Normal." loading="lazy">
+  <p class="gesamt">Alle Seiten als Übersicht: <a href="comics/Seite 1-3.png">Seiten 1 bis 3</a> · <a href="comics/Seite 4-12.png">Seiten 4 bis 12</a></p>
 </div>
 
 <section class="ausklang"><div class="wrap">
