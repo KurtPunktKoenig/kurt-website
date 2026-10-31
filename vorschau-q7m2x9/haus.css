@@ -305,6 +305,18 @@ body.werkzeug{background:var(--braun-platte)}
 .streifen ol a{color:var(--tinte)}
 .werkzeug .streifen{background:var(--braun-platte);border-color:var(--braun-haar)}
 
+/* Startblock So starten Sie: der naechste Schritt mit Kosten und Ergebnis an einer Stelle (Kurt 31.10.2026) */
+.streifen.start{max-width:42rem;padding:18px 20px}
+.start .kopfzeile{flex-wrap:wrap;gap:6px 14px;font-size:18px}
+.start .wolke-klein{display:inline-flex;align-items:center;gap:6px;font-size:13.5px;font-weight:500;color:var(--grau)}
+.start .wolke-klein svg{width:19px;height:19px}
+.start dl{display:grid;grid-template-columns:9.5rem 1fr;gap:8px 16px;margin:12px 0 16px;font-size:15px;line-height:1.5}
+.start dt{font-weight:600;color:var(--tinte)}
+.start dd{margin:0;color:var(--tinte-2)}
+.start .knoepfe{margin:0 0 8px}
+.start .start-satz{font-size:13.5px;color:var(--grau);margin:0}
+@media(max-width:600px){.start dl{grid-template-columns:1fr;gap:2px}.start dd{margin-bottom:10px}}
+
 /* Figur und Zeile von Hand aus der Tür, auch oben auf der Produktseite (Kurt 31.10.2026) */
 .hero svg.figur{width:120px;height:auto}
 .hero svg.figur.team{width:190px}
