@@ -57,7 +57,8 @@ section{padding:104px 0}
 .nav ul a:hover{color:var(--tinte)}
 .nav ul a.aktuell{color:var(--tinte);font-weight:600}
 .nav .knopf{padding:8px 16px;font-size:14px;white-space:nowrap}
-@media(max-width:900px){.nav ul{display:none}}
+/* Am Handy steht das Menue als zweite Zeile zum Wischen, statt zu verschwinden (Kurt 31.10.2026, Handytest) */
+@media(max-width:900px){.nav .wrap{flex-wrap:wrap;height:auto;padding-top:10px;row-gap:2px}.nav ul{order:3;width:100%;overflow-x:auto;white-space:nowrap;gap:18px;padding:6px 0 10px;scrollbar-width:none;-webkit-overflow-scrolling:touch}.nav ul::-webkit-scrollbar{display:none}}
 
 /* Hero */
 .hero{position:relative;padding:92px 0 72px;overflow:hidden}
